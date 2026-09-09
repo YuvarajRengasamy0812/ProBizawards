@@ -60,14 +60,15 @@ body {
 .main-header {
     background-color: rgba(0, 0, 0, 0.95);
     border-bottom: 1px solid rgba(212, 175, 55, 0.25);
-    padding: 14px 0;
+    padding: 10px 0;
     position: sticky;
     top: 0;
     z-index: 1030;
 }
 
 .main-header .container-fluid {
-    gap: 18px;
+    min-height: 112px;
+    gap: 14px;
     padding-left: clamp(16px, 2.5vw, 38px);
     padding-right: clamp(16px, 2.5vw, 38px);
 }
@@ -81,22 +82,27 @@ body {
 .probiz-brand {
     display: inline-flex;
     align-items: center;
+    justify-content: flex-start;
     flex-shrink: 0;
-    margin-right: 12px;
+    width: clamp(188px, 13.5vw, 230px);
+    margin-right: 8px;
     padding: 0;
 }
 
 .header-logo {
     display: block;
-    width: min(230px, 30vw);
+    width: 100%;
     height: auto;
-    max-height: 86px;
     object-fit: contain;
+    object-position: left center;
 }
 
 .sponsor-modal-logo {
-    width: min(230px, 70vw);
+    display: block;
+    width: min(330px, 78vw);
     height: auto;
+    margin: 0 auto;
+    object-fit: contain;
 }
 
 .edition-text {
@@ -325,8 +331,11 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
 }
 
 .footer-logo {
-    max-width: 250px;
+    display: block;
+    width: min(250px, 100%);
+    height: auto;
     margin-bottom: 20px;
+    object-fit: contain;
 }
 
 .footer-description {
@@ -514,6 +523,15 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
 
 /* Tablet and below (992px) */
 @media (max-width: 991px) {
+    .main-header {
+        padding: 8px 0;
+    }
+
+    .main-header .container-fluid {
+        min-height: 88px;
+        align-items: center;
+    }
+
     .top-bar {
         font-size: 12px;
         padding: 10px 0;
@@ -527,9 +545,9 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
         margin-top: 10px;
     }
 
-    .header-logo {
-        width: 190px;
-        max-height: 72px;
+    .probiz-brand {
+        width: 188px;
+        margin-right: 0;
     }
 
     .navbar-nav {
@@ -672,9 +690,12 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
         gap: 10px;
     }
 
-    .header-logo {
+    .main-header .container-fluid {
+        min-height: 80px;
+    }
+
+    .probiz-brand {
         width: 168px;
-        max-height: 64px;
     }
 
     .edition-text {
@@ -692,6 +713,11 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
         padding: 10px 20px;
         font-size: 13px;
         max-width: 200px;
+    }
+
+    .cta-buttons .btn-nominate,
+    .cta-buttons .btn-sponsor {
+        max-width: none;
     }
 
     .footer {
@@ -759,9 +785,12 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
         display: block;
     }
 
-    .header-logo {
+    .main-header .container-fluid {
+        min-height: 72px;
+    }
+
+    .probiz-brand {
         width: 148px;
-        max-height: 58px;
     }
 
     .footer-logo {
@@ -790,9 +819,12 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
         margin-left: 5px;
     }
 
-    .header-logo {
+    .main-header .container-fluid {
+        min-height: 68px;
+    }
+
+    .probiz-brand {
         width: 136px;
-        max-height: 54px;
     }
 
     .edition-text {

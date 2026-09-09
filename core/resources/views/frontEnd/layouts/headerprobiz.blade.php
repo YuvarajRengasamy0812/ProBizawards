@@ -25,7 +25,7 @@
         <div class="container-fluid">
             <!-- Logo -->
             <a class="navbar-brand probiz-brand" href="{{ url('/') }}" aria-label="ProBiz Awards 2026">
-                <img src="{{ asset('assets/keditor/probiz/assets/probiz-awards-dubai-2026-dark.png') }}"
+                <img src="{{ asset('assets/keditor/probiz/assets/probiz-awards-dubai-2026-light.png') }}"
                     alt="ProBiz Awards Dubai 2026" class="header-logo">
             </a>
 
