@@ -1,11 +1,11 @@
-@extends('frontEnd.layouts.profx')
+@extends('frontEnd.layouts.probiz')
 
 @section('content')
 <!-- Hero Section -->
 <div class="hero-section">
     <div class="trophies-container">
         <div class="award-text">
-            <h1>PREVIOUS PROFX AWARDS 2024</h1>
+            <h1>PREVIOUS ProBiz Awards 2024</h1>
         </div>
     </div>
 </div>
@@ -26,14 +26,14 @@ $Awards = Helper::Topics(Helper::GeneralWebmasterSettings("home_content6_section
 
                 $title = $Topic->$title_var ?: $Topic->{'title_en'};
                 $details = $Topic->$details_var ?: $Topic->{'details_en'};
-                $img = $Topic->photo_file ? URL::to('uploads/topics/'.$Topic->photo_file) : asset('assets/keditor/profx/assets/awards-best.png');
+                $img = $Topic->photo_file ? URL::to('uploads/topics/'.$Topic->photo_file) : asset('assets/keditor/probiz/assets/awards-best.png');
                 ?>
                 <div class="col-md-3 award-card" style="text-align: center; padding: 15px; ">
                     <div class="aw-award-image" style="margin-bottom: 10px;">
                         <img src="{{ $img }}" alt="{{ $title }}" style="width: 100%; height: auto;">
                     </div>
                     <p class="aw-download-label"><strong>Download as</strong></p>
-                    <textarea class="aw-code-textarea" readonly style="width: 100%; height: 60px; margin-bottom: 10px; padding: 5px; font-size: 14px; border-radius: 6px; border: 1px solid #ccc;">&lt;a href="https://profxawards.com/awards" target="_blank"&gt;&lt;img src="{{ $img }}" alt="{{ $title }}"&gt;&lt;/a&gt;</textarea>
+                    <textarea class="aw-code-textarea" readonly style="width: 100%; height: 60px; margin-bottom: 10px; padding: 5px; font-size: 14px; border-radius: 6px; border: 1px solid #ccc;">&lt;a href="https://probizawards.com/awards" target="_blank"&gt;&lt;img src="{{ $img }}" alt="{{ $title }}"&gt;&lt;/a&gt;</textarea>
                     <div class="aw-button-group" style="display: flex; justify-content: center; gap: 10px;">
                         <button class="aw-btn aw-btn-png" data-img="{{ $img }}" style="padding: 6px 12px; font-size: 14px; border-radius: 6px; background-color: #007bff; color: #fff; border: none; cursor: pointer;">PNG</button>
                         <button class="aw-btn aw-btn-copy" style="padding: 6px 12px; font-size: 14px; border-radius: 6px; background-color: #28a745; color: #fff; border: none; cursor: pointer;">COPY CODE</button>

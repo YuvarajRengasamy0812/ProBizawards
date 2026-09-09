@@ -1,4 +1,4 @@
-@extends('frontEnd.layouts.profx')
+@extends('frontEnd.layouts.probiz')
 
 @section('content')
     <!-- Hero Section -->

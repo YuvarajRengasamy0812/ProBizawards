@@ -30,6 +30,10 @@ class WebmasterSectionsController extends Controller
     {
         $this->middleware('auth');
 
+        if (app()->runningInConsole()) {
+            return;
+        }
+
         // Check Permissions
         if (!@Auth::user()->permissionsGroup->modules_status) {
             return Redirect::to(route('NoPermission'))->send();

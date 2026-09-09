@@ -12,7 +12,6 @@ use App\Models\Banner;
 use App\Mail\NotificationEmail;
 use App\Models\Comment;
 use App\Models\Contact;
-use App\Models\Nomination;
 use App\Models\Section;
 use App\Models\Setting;
 use App\Models\Topic;
@@ -630,8 +629,7 @@ class HomeController extends Controller
 
     public function contact_submited(Request $request)
     {
-        // Validate input
-        $request->validate([
+        $validated = $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -640,45 +638,54 @@ class HomeController extends Controller
             'country' => 'required|string|max:255',
         ]);
 
-        // Optionally, save data or send email
-        //  Contact::create($request->all());
+        $fullName = trim(strip_tags($validated['first_name']) . ' ' . strip_tags($validated['last_name']));
+        $siteEmail = @Helper::GeneralSiteSettings('site_webmails');
+        $recipient = array_filter(explode(',', str_replace(' ', '', $siteEmail)));
 
-        // return response()->json([
-        //     'status' => 'sponsor_success',
-        //     'message' => 'Form submitted successfully!'
-        // ]);
-         return redirect()->back()
-            ->with('sponsor_success', 'sponsor submitted successfully.');
+        $details = [
+            'Company' => strip_tags($validated['company'] ?? ''),
+            'Country' => strip_tags($validated['country']),
+            'Phone' => strip_tags($validated['phone'] ?? ''),
+            'Email' => strip_tags($validated['email']),
+        ];
+
+        $messageDetails = collect($details)
+            ->filter()
+            ->map(function ($value, $label) {
+                return '<strong>' . $label . ':</strong> ' . e($value);
+            })
+            ->implode('<br>');
+
+        $Webmail = new Webmail;
+        $Webmail->cat_id = 0;
+        $Webmail->group_id = null;
+        $Webmail->title = 'Sponsor Inquiry - ProBiz Awards 2026';
+        $Webmail->details = $messageDetails;
+        $Webmail->date = now();
+        $Webmail->from_email = strip_tags($validated['email']);
+        $Webmail->from_name = $fullName;
+        $Webmail->from_phone = strip_tags($validated['phone'] ?? '');
+        $Webmail->to_email = $siteEmail;
+        $Webmail->to_name = 'ProBiz Awards';
+        $Webmail->status = 0;
+        $Webmail->flag = 0;
+        $Webmail->save();
+
+        if (@Helper::GeneralSiteSettings('notify_messages_status') && count($recipient) > 0) {
+            try {
+                Mail::to($recipient)->send(new NotificationEmail([
+                    'title' => 'Sponsor Inquiry - ProBiz Awards 2026',
+                    'details' => $messageDetails,
+                    'from_email' => strip_tags($validated['email']),
+                    'from_name' => $fullName,
+                ]));
+            } catch (\Exception $e) {
+            }
+        }
+
+        return redirect()->back()->with('sponsor_success', 'Sponsor inquiry submitted successfully.');
     }
 
-    public function nomination_submitted(Request $request)
-{
-    // Validate input
-    $request->validate([
-        'company'       => 'nullable|string|max:255',
-        'contact'       => 'required|string|max:255',
-        'jobtitle'      => 'nullable|string|max:255',
-        'email'         => 'required|email|max:255',
-        'confirm_email' => 'required|email|same:email|max:255',
-        'phone'         => 'nullable|string|max:20',
-        'website'       => 'nullable|string|max:255',
-        'country'       => 'required|string|max:255',
-        'description'   => 'nullable|string',
-        'statement'     => 'nullable|string',
-        'category'      => 'required|string',
-        'consent1'      => 'nullable|boolean',
-        'consent2'      => 'nullable|boolean',
-    ]);
-
-    
-    // Return success message
-    return response()->json([
-        'status'  => 'success',
-        'message' => 'Nomination submitted successfully!'
-    ]);
-}
-
-    
     public function subscribe_submit(Request $request)
     {
         $validator = Validator::make($request->all(), [

@@ -162,7 +162,7 @@ body {
     color: #e74c3c;
 }
 
-.form-contro {
+.form-section .form-control {
     width: 100%;
     padding: 12px 15px;
     border: 2px solid #d4af37;
@@ -172,17 +172,17 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-.form-contro:focus {
+.form-section .form-control:focus {
     outline: none;
     border-color: #c9a961;
 }
 
-textarea.form-contro {
+.form-section textarea.form-control {
     min-height: 120px;
     resize: vertical;
 }
 
-select.form-contro {
+.form-section select.form-control {
     cursor: pointer;
     appearance: none;
     background-image: url('data:image/svg+xml,<svg width="12" height="8" xmlns="http://www.w3.org/2000/svg"><path d="M6 8L0 0h12z" fill="%23333"/></svg>');
@@ -192,17 +192,17 @@ select.form-contro {
     
 }
 
-select.form-contro {
+.form-section select.form-control {
     border: 2px solid #d4af37;
     outline: none;
 }
 
-select.form-contro:focus {
+.form-section select.form-control:focus {
     border-color: #d4af37;
     box-shadow: 0 0 5px #d4af37;
 }
 
-select.form-contro option:hover {
+.form-section select.form-control option:hover {
     background-color: #d4af37 !important;
     color: #fff !important;
 }
@@ -540,7 +540,7 @@ border: 4px solid rgba(255, 255, 255, 0.06);
 .hero-section {
     position: relative;
     height: 400px;
-    background-image: url('https://profxawards.com/wp-content/uploads/2025/03/sponsership.png');
+    background-image: url('https://probizawards.com/wp-content/uploads/2025/03/sponsership.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -560,7 +560,7 @@ border: 4px solid rgba(255, 255, 255, 0.06);
 .hero-sections {
     position: relative;
     height: 600px;
-    background-image: url('https://profxawards.com/wp-content/uploads/2025/06/awards-banner.jpg');
+    background-image: url('https://probizawards.com/wp-content/uploads/2025/06/awards-banner.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -31,6 +31,10 @@ class PopupController extends Controller
     {
         $this->middleware('auth');
 
+        if (app()->runningInConsole()) {
+            return;
+        }
+
         // Check Permissions
         if (!@Auth::user()->permissionsGroup->popups_status || !Helper::GeneralWebmasterSettings("popups_status")) {
             return Redirect::to(route('NoPermission'))->send();

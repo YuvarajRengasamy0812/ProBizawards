@@ -27,6 +27,10 @@ class WebmailsController extends Controller
     {
         $this->middleware('auth');
 
+        if (app()->runningInConsole()) {
+            return;
+        }
+
         // Check Permissions
         if (!@Auth::user()->permissionsGroup->inbox_status) {
             return Redirect::to(route('NoPermission'))->send();

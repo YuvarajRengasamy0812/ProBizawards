@@ -22,6 +22,10 @@ class WebmasterBannersController extends Controller
     {
         $this->middleware('auth');
 
+        if (app()->runningInConsole()) {
+            return;
+        }
+
         // Check Permissions
         if (!@Auth::user()->permissionsGroup->banners_status) {
             return Redirect::to(route('NoPermission'))->send();

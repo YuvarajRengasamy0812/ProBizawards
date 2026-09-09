@@ -177,9 +177,13 @@ class Helper
 
     static function SaveVisitorInfo($PageTitle)
     {
+        if (app()->runningInConsole()) {
+            return null;
+        }
+
         if (config('smartend.geoip_status')) {
-            $visitor_ip = $_SERVER['REMOTE_ADDR'];
-            $current_page_full_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+            $visitor_ip = request()->ip();
+            $current_page_full_link = request()->fullUrl();
             $page_load_time = round((microtime(true) - LARAVEL_START), 8);
 
             // Check is it already saved today to visitors?
@@ -341,7 +345,7 @@ class Helper
     static function SocialShare($social, $title)
     {
         $shareLink = "";
-        $URL = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+        $URL = request()->fullUrl();
 
         switch ($social) {
             case "facebook":

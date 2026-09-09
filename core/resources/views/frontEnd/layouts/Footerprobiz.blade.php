@@ -9,29 +9,28 @@
         <div class="row">
             <!-- About Section -->
             <div class="col-lg-4 col-md-6 mb-4 text-lg-start">
-                <a href="{{ url('/') }}" target="_blank" rel="noopener noreferrer">
-                    <img src=" {{ asset('assets/keditor/profx/assets/Awards.png') }}" alt="PROPX Awards Logo"
+                <a href="{{ url('/') }}">
+                    <img src="{{ asset('assets/keditor/probiz/assets/probiz-awards-dubai-2026-dark.png') }}" alt="ProBiz Awards Dubai 2026"
                         class="footer-logo">
                 </a>
                 <p class="footer-description">
-                    Asia Premier ProFx Awards Platform That Offers Rewards and The platform helps investors to make easy
-                    to get sponsorship and membership
+                    Asia's premier ProBiz Awards platform for financial, fintech, brokerage, and trading excellence.
                 </p>
                 <div class="d-flex align-items-center justify-content-center gap-5">
 
                     <div>
 
-                        <div class="presented-by mt-5 text-center">Organiser By</div>
-                        <a href="https://profxmedia.com/" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('assets/keditor/profx/assets/Media-logo.png') }}" alt="ProFX Media"
-                                class="profx-media-logo">
+                        <div class="presented-by mt-5 text-center">Organised By</div>
+                        <a href="https://probizawards.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('assets/keditor/probiz/assets/Media-logo.png') }}" alt="ProBiz Media"
+                                class="probiz-media-logo">
                         </a>
                     </div>
                     <div>
 
                         <div class="presented-by mt-5 text-center">Official Sponsor</div>
-                        <a href="https://profxmedia.com/" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('assets/keditor/profx/assets/Untitled-1.png') }}" alt="ProFX Media"
+                        <a href="https://probizawards.com/" target="_blank" rel="noopener noreferrer">
+                            <img src="{{ asset('assets/keditor/probiz/assets/Untitled-1.png') }}" alt="Official Sponsor"
                                 class="" >
                         </a>
                     </div>
@@ -70,30 +69,24 @@
 
                 @if(Helper::GeneralSiteSettings("style_subscribe"))
 
-                                <form id="newsletterForm" class="newsletter-forms">
-
-                                    {{-- Laravel Collective Form --}}
-                                    {{ Form::open(['route' => 'subscribeSubmit', 'method' => 'POST', 'id' => 'subscribeForm']) }}
-                                    @csrf
-                                    {!! Form::email('subscribe_email', old('subscribe_email'), [
-                        'placeholder' => "info@profxawards.com",
+                    {{ Form::open(['route' => 'subscribeSubmit', 'method' => 'POST', 'id' => 'subscribeForm', 'class' => 'newsletter-forms']) }}
+                    {!! Form::email('subscribe_email', old('subscribe_email'), [
+                        'placeholder' => 'info@probizawards.com',
                         'class' => 'newsletter-input',
                         'id' => 'subscribe_email',
                         'required' => 'required',
                         'autocomplete' => 'off'
                     ]) !!}
-
-                                    <button type="submit" id="subscribeFormSubmit" class="newsletter-btn">
-                                        <i class="bi bi-send">Send</i>
-                                    </button>
-                                    {{ Form::close() }}
-                                </form>
+                    <button type="submit" id="subscribeFormSubmit" class="newsletter-btn" aria-label="Subscribe">
+                        <i class="bi bi-send"></i>
+                    </button>
+                    {{ Form::close() }}
 
                 @endif
                 <div class="social-icons-footer">
-                    <a href="https://www.facebook.com/profxmedia" target="_blank" rel="noopener noreferrer"
+                    <a href="https://www.facebook.com/probizawards" target="_blank" rel="noopener noreferrer"
                         aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                    <a href="https://www.instagram.com/profxmedia.official?igsh=MTgzbmx0bDh5dnl5eA%3D%3D"
+                    <a href="https://www.instagram.com/probizawards?igsh=MTgzbmx0bDh5dnl5eA%3D%3D"
                         target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
                             class="bi bi-instagram"></i></a>
                     <a href="https://www.youtube.com/channel/UCH48JVPRS6QMuuATpSelwXA" target="_blank"
@@ -115,8 +108,8 @@
                     <div class="association-section">
                         <span class="association-text">Association With</span>
                         <div class="association-logos">
-                            <img src="{{ asset('assets/keditor/profx/assets/Association-with.png') }}"
-                                alt="ProFx League">
+                            <img src="{{ asset('assets/keditor/probiz/assets/Association-with.png') }}"
+                                alt="Association partner">
 
                         </div>
                     </div>
@@ -125,7 +118,7 @@
                 <!-- Copyright -->
                 <div class="col-lg-4 col-md-12 mb-3 mb-lg-0">
                     <p class="copyright mb-0">
-                        Copyright © {{ date('Y') }} <strong>ProFxAwards</strong>. All Rights Reserved.
+                        Copyright &copy; {{ date('Y') }} <strong>ProBiz Awards</strong>. All Rights Reserved.
                     </p><br>
                     
                 </div>
@@ -133,9 +126,9 @@
                 <!-- Bottom Links -->
                 <div class="col-lg-3 col-md-12">
                     <div class="footer-bottom-links">
-                        <a href="{{ asset('assets/keditor/profx/assets/privacy-policy.pdf') }}" download>Terms &
+                        <a href="{{ asset('assets/keditor/probiz/assets/Terms-and-Condition.pdf') }}" download>Terms &
                             Conditions</a>
-                        <a href="{{ asset('assets/keditor/profx/assets/Terms-and-Condition.pdf') }}" download>Privacy
+                        <a href="{{ asset('assets/keditor/probiz/assets/privacy-policy.pdf') }}" download>Privacy
                             Policy</a>
                     </div>
                 </div>

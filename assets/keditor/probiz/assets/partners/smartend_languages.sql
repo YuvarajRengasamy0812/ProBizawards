@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Oct 23, 2025 at 03:01 AM
+-- Generation Time: Oct 23, 2026 at 03:01 AM
 -- Server version: 10.6.23-MariaDB-cll-lve
 -- PHP Version: 8.3.25
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `profx_leaguelive`
+-- Database: `probiz_awards`
 --
 
 -- --------------------------------------------------------
@@ -48,7 +48,7 @@ CREATE TABLE `smartend_languages` (
 --
 
 INSERT INTO `smartend_languages` (`id`, `title`, `code`, `direction`, `left`, `right`, `icon`, `box_status`, `status`, `created_by`, `updated_by`, `created_at`, `updated_at`) VALUES
-(1, 'English', 'en', 'ltr', 'left', 'right', 'us', 1, 1, 1, NULL, '2025-06-17 06:38:50', '2025-06-17 06:38:50');
+(1, 'English', 'en', 'ltr', 'left', 'right', 'us', 1, 1, 1, NULL, '2026-06-17 06:38:50', '2026-06-17 06:38:50');
 
 --
 -- Indexes for dumped tables

@@ -1,4 +1,6 @@
-@extends('frontEnd.layouts.profx')
+@extends('frontEnd.layouts.probiz')
+
+@push('styles')
 <!--Carousel styles-->
 <style>
     .awards-wrapper {
@@ -392,12 +394,13 @@
 }
 
 </style>
+@endpush
 @section('content')
     <!-- Video Hero Section -->
-    <section id="top" class="video-hero" id="home">
+    <section id="home" class="video-hero">
         <!-- Background Video -->
         <video autoplay muted loop playsinline class="video-background">
-            <source src="{{ asset('assets/keditor/profx/assets/background.mp4') }}" type="video/mp4">
+            <source src="{{ asset('assets/keditor/probiz/assets/background.mp4') }}" type="video/mp4">
             <!-- Fallback for browsers that don't support video -->
             Your browser does not support the video tag.
         </video>
@@ -407,12 +410,12 @@
 
         <!-- Hero Content -->
         <div class="hero-content">
-            <h1 class="hero-title">PROFX Awards 2025</h1>
-            <p class="" style="font-size:25px; color: #fff;">Thank You For Making PROFX Awards 2025 a Success!</p>
+            <h1 class="hero-title">ProBiz Awards 2026</h1>
+            <p class="" style="font-size:25px; color: #fff;">Thank You For Making ProBiz Awards 2026 a Success!</p>
             <div class="hero-buttons">
-                <a href="{{ url('/winner') }}" class="btn-hero-sponsor" data-bs-toggle="modal" data-bs-target="#winner2025">View Winners & Gallery
+                <a href="{{ url('/winner') }}" class="btn-hero-sponsor">View Winners & Gallery
                   </a>
-                <!--<a href="https://secure.profxawards.com/login" class="btn-hero-login">LOGIN</a>-->
+                <!--<a href="https://secure.probizawards.com/login" class="btn-hero-login">LOGIN</a>-->
             </div>
         </div>
 
@@ -427,20 +430,20 @@
             <div class="brochure-content" data-aos="fade-down-right">
                 <div class="brochure-image">
                     <div>
-                        <img src="{{ asset('assets/keditor/profx/assets/Logo.png') }}" alt="Resource Brochure">
+                        <img src="{{ asset('assets/keditor/probiz/assets/probiz-awards-dubai-2026-dark.png') }}" alt="ProBiz Awards Dubai 2026">
                         
                     </div>
 
                 </div>
                 <div class="brochure-text" data-aos="fade-down-left" data-aos-delay="200">
-                    <p style="font-size: 20px; color: #fff;">• Who we are •</p>
+                    <p style="font-size: 20px; color: #fff;">&bull; Who we are &bull;</p>
                     <h2 class="brochure-title">
                         World of Ethical &<br>
                         Transparent Financial &<br>
                         Online Trading Awards
                     </h2>
                     <ul class="brochure-features">
-                        <p>Asia Premier ProFx Awards Platform That Offers Rewards and The platform helps investors to make
+                        <p>Asia Premier ProBiz Awards Platform That Offers Rewards and The platform helps investors to make
                             easy to get sponsership and membership</p>
                     </ul>
                     <a href="{{ url('/winner') }}" class="cta-button">View Winners / Gallery</a>
@@ -451,7 +454,7 @@
 
     <section class="sponsors-section">
         <div class="container">
-            <p class="section-title"><span class="section-title-span">•</span>PROFX AWARDS SPONSORS <span
+            <p class="section-title"><span class="section-title-span">•</span>ProBiz Awards SPONSORS <span
                     class="section-title-span">•</span></p>
             <h2 class="section-heading">Check Who Made The Event <p
                     style="font-weight: 600;font-size: 35px;color: #d4af37;">Possible</p>
@@ -464,7 +467,7 @@
             <!--    <div class="sponsor-grid">-->
 
             <!--        <div class="ga-image-wrappertest">-->
-            <!--            <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/zara-fx-logo.jpeg') }}"  loading="lazy">-->
+            <!--            <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/zara-fx-logo.jpeg') }}"  loading="lazy">-->
             <!--            <div class="ga-hover-layertest">-->
             <!--                <h3 style="font-weight:600">ZARA FX</h3>-->
             <!--                <a href="https://www.zara-fx.com/" class="ga-view-btn">View Website</a>-->
@@ -481,7 +484,7 @@
                 <p class="tier-title">Official Sponsor</p>
                 <div class="sponsor-grid mb-5">
                     <div class="ga-image-wrappertest">
-                        <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/Domino Markets.png') }}"
+                        <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/Domino Markets.png') }}"
                             loading="lazy">
                         <div class="ga-hover-layertest">
                             <h3 style="font-weight:600">Dominion Markets</h3>
@@ -497,7 +500,7 @@
                     <div class="sponsor-grid">
 
                         <div class="ga-image-wrappertest">
-                            <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/bridgingfx.png') }}"
+                            <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/bridgingfx.png') }}"
                                 loading="lazy">
                             <div class="ga-hover-layertest">
                                 <h3 style="font-weight:600">Bridging Fx</h3>
@@ -509,7 +512,7 @@
 
                         </div>
                         <div class="ga-image-wrappertest">
-                            <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/finxcart.png') }}"
+                            <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/finxcart.png') }}"
                                 loading="lazy">
                             <div class="ga-hover-layertest">
                                 <h3 style="font-weight:600">Finx Crad</h3>
@@ -529,7 +532,7 @@
                         <div class="sponsor-grid">
 
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/award/10.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/award/10.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Swiset</h3>
@@ -539,7 +542,7 @@
 
 
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/award/13.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/award/13.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Taurex</h3>
@@ -555,7 +558,7 @@
                         <p class="tier-title"> Award Winners</p>
                         <div class="sponsor-grid">
                             <!--<div class="ga-image-wrappertest">-->
-                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/award/14.png') }}"-->
+                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/award/14.png') }}"-->
                             <!--        loading="lazy">-->
                             <!--    <div class="ga-hover-layertest">-->
                             <!--        <h3 style="font-weight:600">XM</h3>-->
@@ -565,7 +568,7 @@
                             <!--</div>-->
                             <div class="ga-image-wrappertest">
                                 <img class="d-flex"
-                                    src="{{ asset('assets/keditor/profx/assets/sponsors/9-yamarkets.png') }}"
+                                    src="{{ asset('assets/keditor/probiz/assets/sponsors/9-yamarkets.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Yamarkets</h3>
@@ -574,7 +577,7 @@
                                 </div>
                             </div>
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/award/6.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/award/6.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">NXG Markets</h3>
@@ -583,7 +586,7 @@
                                 </div>
                             </div>
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/award/7.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/award/7.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Puprime</h3>
@@ -592,7 +595,7 @@
                                 </div>
                             </div>
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/award/2.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/award/2.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Avora Markets</h3>
@@ -603,7 +606,7 @@
                             </div>
                             <div class="ga-image-wrappertest">
                                 <img class="d-flex"
-                                    src="{{ asset('assets/keditor/profx/assets/sponsors/hyrotrader.png') }}"
+                                    src="{{ asset('assets/keditor/probiz/assets/sponsors/hyrotrader.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Hyro Trader</h3>
@@ -613,7 +616,7 @@
 
                             </div>
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/award/8.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/award/8.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Salma Markets</h3>
@@ -622,7 +625,7 @@
                                 </div>
                             </div>
                             <!--<div class="ga-image-wrappertest">-->
-                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/award/5.png') }}"  loading="lazy">-->
+                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/award/5.png') }}"  loading="lazy">-->
                             <!--    <div class="ga-hover-layertest">-->
                             <!--        <h3 style="font-weight:600">Lirunex</h3>-->
                             <!--        <a href="https://lirunex.eu/" target="_blank" class="ga-view-btn">View Website</a>                         -->
@@ -630,7 +633,7 @@
                             <!--    </div>-->
                             <div class="ga-image-wrappertest">
                                 <img class="d-flex"
-                                    src="{{ asset('assets/keditor/profx/assets/sponsors/leveragemarkets.png') }}"
+                                    src="{{ asset('assets/keditor/probiz/assets/sponsors/leveragemarkets.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Leverage Markets</h3>
@@ -639,7 +642,7 @@
                                 </div>
                             </div>
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/pipstones.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/pipstones.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Pipstone Capital</h3>
@@ -649,7 +652,7 @@
                             </div>
                             <div class="ga-image-wrappertest">
                                 <img class="d-flex"
-                                    src="{{ asset('assets/keditor/profx/assets/sponsors/forexer.png') }}"
+                                    src="{{ asset('assets/keditor/probiz/assets/sponsors/forexer.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Forexer</h3>
@@ -659,7 +662,7 @@
                             </div>
                             <div class="ga-image-wrappertest">
                                 <img class="d-flex"
-                                    src="{{ asset('assets/keditor/profx/assets/partners/tradeultra.png') }}"
+                                    src="{{ asset('assets/keditor/probiz/assets/partners/tradeultra.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Trade Ultra</h3>
@@ -669,7 +672,7 @@
                             </div>
                             <div class="ga-image-wrappertest">
                                 <img class="d-flex"
-                                    src="{{ asset('assets/keditor/profx/assets/sponsors/libertymarkets.png') }}"
+                                    src="{{ asset('assets/keditor/probiz/assets/sponsors/libertymarkets.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Liberty Groups</h3>
@@ -679,7 +682,7 @@
                                 </div>
                             </div>
                             <!--<div class="ga-image-wrappertest">-->
-                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/3-cmvcapital.png') }}"  loading="lazy">-->
+                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/3-cmvcapital.png') }}"  loading="lazy">-->
                             <!--    <div class="ga-hover-layertest">-->
                             <!--        <h3 style="font-weight:600">CMV Capital</h3>-->
                             <!--        <a href="https://www.cmvcapitals.com/" target="_blank" class="ga-view-btn">View Website</a>                         -->
@@ -687,14 +690,14 @@
 
                             <!--</div>-->
                             <!--<div class="ga-image-wrappertest">-->
-                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/4-delta-international.png') }}"  loading="lazy">-->
+                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/4-delta-international.png') }}"  loading="lazy">-->
                             <!--    <div class="ga-hover-layertest">-->
                             <!--        <h3 style="font-weight:600">Delta International</h3>-->
                             <!--        <a href="https://deltainstitutions.com/" target="_blank" class="ga-view-btn">View Website</a>                         -->
                             <!--    </div>-->
                             <!--</div>-->
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/award/1.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/award/1.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Arabic Borker</h3>
@@ -704,14 +707,14 @@
 
                             </div>
                             <!--<div class="ga-image-wrappertest">-->
-                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/6-carlton.png') }}"  loading="lazy">-->
+                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/6-carlton.png') }}"  loading="lazy">-->
                             <!--    <div class="ga-hover-layertest">-->
                             <!--        <h3 style="font-weight:600">Carlton Fx</h3>-->
                             <!--        <a href="https://carltonfx.com/" target="_blank" class="ga-view-btn">View Website</a>                         -->
                             <!--    </div>-->
                             <!--</div>-->
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/award/9.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/award/9.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Supreme Fx</h3>
@@ -720,7 +723,7 @@
                                 </div>
                             </div>
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/award/3.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/award/3.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Financial Markets</h3>
@@ -730,7 +733,7 @@
                             </div>
                             <div class="ga-image-wrappertest">
                                 <img class="d-flex"
-                                    src="{{ asset('assets/keditor/profx/assets/sponsors/15-fx-broker-startup.png') }}"
+                                    src="{{ asset('assets/keditor/probiz/assets/sponsors/15-fx-broker-startup.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">FX Brokers Startup</h3>
@@ -740,7 +743,7 @@
                             </div>
                             <div class="ga-image-wrappertest">
                                 <img class="d-flex"
-                                    src="{{ asset('assets/keditor/profx/assets/sponsors/Domino Markets.png') }}"
+                                    src="{{ asset('assets/keditor/probiz/assets/sponsors/Domino Markets.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Dominion Markets</h3>
@@ -750,7 +753,7 @@
                             </div>
                             <div class="ga-image-wrappertest">
                                 <img class="d-flex"
-                                    src="{{ asset('assets/keditor/profx/assets/sponsors/bridgingfx.png') }}"
+                                    src="{{ asset('assets/keditor/probiz/assets/sponsors/bridgingfx.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Bridging Fx</h3>
@@ -760,7 +763,7 @@
                             </div>
                             <div class="ga-image-wrappertest">
                                 <img class="d-flex"
-                                    src="{{ asset('assets/keditor/profx/assets/sponsors/hybridsolution.png') }}"
+                                    src="{{ asset('assets/keditor/probiz/assets/sponsors/hybridsolution.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Hybrid Solution</h3>
@@ -769,7 +772,7 @@
                                 </div>
                             </div>
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/setupfx.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/setupfx.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Setup FX</h3>
@@ -778,7 +781,7 @@
                             </div>
                             <div class="ga-image-wrappertest">
                                 <img class="d-flex"
-                                    src="{{ asset('assets/keditor/profx/assets/sponsors/domino Funding.png') }}"
+                                    src="{{ asset('assets/keditor/probiz/assets/sponsors/domino Funding.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">Dominion Funding</h3>
@@ -788,7 +791,7 @@
                             </div>
                             <div class="ga-image-wrappertest">
                                 <img class="d-flex"
-                                    src="{{ asset('assets/keditor/profx/assets/sponsors/spt_trading.png') }}"
+                                    src="{{ asset('assets/keditor/probiz/assets/sponsors/spt_trading.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">STP TRADING</h3>
@@ -797,7 +800,7 @@
                                 </div>
                             </div>
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/bsx.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/bsx.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">BSX</h3>
@@ -806,7 +809,7 @@
                                 </div>
                             </div>
                             <!--<div class="ga-image-wrappertest">-->
-                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/clt-acadamy.png') }}"  loading="lazy">-->
+                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/clt-acadamy.png') }}"  loading="lazy">-->
                             <!--    <div class="ga-hover-layertest">-->
                             <!--        <h3 style="font-weight:600">CLT ACADAMY</h3>-->
                             <!--        <a href="https://clt-academy.com/" target="_blank" class="ga-view-btn">View Website</a>                         -->
@@ -815,7 +818,7 @@
 
                             <div class="ga-image-wrappertest">
                                 <img class="d-flex"
-                                    src="{{ asset('assets/keditor/profx/assets/sponsors/mymarkets.png') }}"
+                                    src="{{ asset('assets/keditor/probiz/assets/sponsors/mymarkets.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">MYMAA Markets</h3>
@@ -825,7 +828,7 @@
 
                             </div>
                             <!--<div class="ga-image-wrappertest">-->
-                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/AltusFX.png') }}"-->
+                            <!--    <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/AltusFX.png') }}"-->
                             <!--        loading="lazy">-->
                             <!--    <div class="ga-hover-layertest">-->
                             <!--        <h3 style="font-weight:600">Altus Fx</h3>-->
@@ -833,7 +836,7 @@
                             <!--    </div>-->
                             <!--</div>-->
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/bakara.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/bakara.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">BAKARA</h3>
@@ -841,7 +844,7 @@
                                 </div>
                             </div>
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/primex.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/primex.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">PRIME X</h3>
@@ -850,7 +853,7 @@
                                 </div>
                             </div>
                             <div class="ga-image-wrappertest">
-                                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/sponsors/xchief.png') }}"
+                                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/sponsors/xchief.png') }}"
                                     loading="lazy">
                                 <div class="ga-hover-layertest">
                                     <h3 style="font-weight:600">XCHIEF</h3>
@@ -876,93 +879,93 @@
                 <div class="lr-partners-track">
                     <a href="https://aff.ninja/" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/aff-tweaks.png') }}"
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/aff-tweaks.png') }}"
                                 alt="Media partner">
                         </div>
                     </a>
                     <a href="https://www.arabictrader.com/ar/home" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/arabic-trader.png') }}"
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/arabic-trader.png') }}"
                                 alt="Media partner">
                         </div>
                     </a>
                     <a href="https://affmaven.com/" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/be.png') }}" alt="Media partner">
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/be.png') }}" alt="Media partner">
                         </div>
                     </a>
                     <a href="https://www.ig.com/uk?source=dailyfx/" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/dailyfx-2.png') }}"
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/dailyfx-2.png') }}"
                                 alt="Media partner">
                         </div>
                     </a>
                     <a href="https://www.financialmarkets.media/" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/financial-markets-media.png') }}"
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/financial-markets-media.png') }}"
                                 alt="Media partner">
                         </div>
                     </a>
                     <a href="https://fintechnews.ae/" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/fintech-news.png') }}"
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/fintech-news.png') }}"
                                 alt="Media partner">
                         </div>
                     </a>
                     <a href="https://investinglive.com/" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/forex-live-1.png') }}"
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/forex-live-1.png') }}"
                                 alt="Media partner">
                         </div>
                     </a>
                     <a href="https://www.fxempire.com/" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/fx-empire.png') }}"
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/fx-empire.png') }}"
                                 alt="Media partner">
                         </div>
                     </a>
                     <a href="https://www.fxmag.com/" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/fxmag-1.png') }}"
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/fxmag-1.png') }}"
                                 alt="Media partner">
                         </div>
                     </a>
                     <a href="https://www.khaleejtimes.com/" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/khaleej-times.png') }}"
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/khaleej-times.png') }}"
                                 alt="Media partner">
                         </div>
                     </a>
                     <a href="https://www.msn.com/en-ae" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/msn.png') }}" alt="Media partner">
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/msn.png') }}" alt="Media partner">
                         </div>
                     </a>
                     <a href="https://www.mirchi.ae/" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/radio-mirchi.png') }}"
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/radio-mirchi.png') }}"
                                 alt="Media partner">
                         </div>
                     </a>
                     <a href="https://www.tradeup.com/" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/traderup.png') }}" alt="Media partner">
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/traderup.png') }}" alt="Media partner">
                         </div>
                     </a>
                     <a href="https://coinstelegram.com/" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/coinstelegram1.png') }}"
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/coinstelegram1.png') }}"
                                 alt="Media partner">
                         </div>
                     </a>
                     <a href="https://cryptoken.media/" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/media.png') }}" alt="Media partner">
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/media.png') }}" alt="Media partner">
                         </div>
                     </a>
                     <a href="www.coingabbar.com" target="_blank">
                         <div class="lr-partner-logo">
-                            <img src="{{ asset('assets/keditor/profx/assets/partners/gabber.webp') }}"
+                            <img src="{{ asset('assets/keditor/probiz/assets/partners/gabber.webp') }}"
                                 alt="Media partner">
                         </div>
                     </a>
@@ -973,34 +976,34 @@
             <div class="rl-partners-carousel">
             <div class="rl-partners-track">
                 <a href="https://aff.ninja/" target="_blank" class="rl-partner-logo">
-                    <img src="{{ asset('assets/keditor/profx/assets/awardsmedia/arabicbroker.png') }}" alt="">
+                    <img src="{{ asset('assets/keditor/probiz/assets/awardsmedia/arabicbroker.png') }}" alt="">
                 </a>
         
                 <a href="https://www.arabictrader.com/ar/home" target="_blank" class="rl-partner-logo">
-                    <img src="{{ asset('assets/keditor/profx/assets/awardsmedia/capitalinsighthub.png') }}" alt="">
+                    <img src="{{ asset('assets/keditor/probiz/assets/awardsmedia/capitalinsighthub.png') }}" alt="">
                 </a>
         
                 <a href="https://affmaven.com/" target="_blank" class="rl-partner-logo">
-                    <img src="{{ asset('assets/keditor/profx/assets/awardsmedia/coingabbar.png') }}" alt="">
+                    <img src="{{ asset('assets/keditor/probiz/assets/awardsmedia/coingabbar.png') }}" alt="">
                 </a>
         
                 <a href="https://www.ig.com/uk?source=dailyfx/" target="_blank" class="rl-partner-logo">
-                    <img src="{{ asset('assets/keditor/profx/assets/awardsmedia/coinpedia.png') }}" alt="">
+                    <img src="{{ asset('assets/keditor/probiz/assets/awardsmedia/coinpedia.png') }}" alt="">
                 </a>
         
                 <a href="https://affmaven.com/" target="_blank" class="rl-partner-logo">
-                    <img src="{{ asset('assets/keditor/profx/assets/awardsmedia/cryptobroker.png') }}" alt="">
+                    <img src="{{ asset('assets/keditor/probiz/assets/awardsmedia/cryptobroker.png') }}" alt="">
                 </a>
         
                 <a href="https://www.ig.com/uk?source=dailyfx/" target="_blank" class="rl-partner-logo">
-                    <img src="{{ asset('assets/keditor/profx/assets/awardsmedia/industrialevents.png') }}" alt="">
+                    <img src="{{ asset('assets/keditor/probiz/assets/awardsmedia/industrialevents.png') }}" alt="">
                 </a>
                  <a href="https://affmaven.com/" target="_blank" class="rl-partner-logo">
-                    <img src="{{ asset('assets/keditor/profx/assets/partners/bot.png') }}" alt="">
+                    <img src="{{ asset('assets/keditor/probiz/assets/partners/bot.png') }}" alt="">
                 </a>
         
                 <a href="https://www.ig.com/uk?source=dailyfx/" target="_blank" class="rl-partner-logo">
-                    <img src="{{ asset('assets/keditor/profx/assets/partners/thecoinrepublic.png') }}" alt="">
+                    <img src="{{ asset('assets/keditor/probiz/assets/partners/thecoinrepublic.png') }}" alt="">
                 </a>
             </div>
         </div>
@@ -1035,56 +1038,56 @@
             <!--    <button class="carousel-btn prev">&#10094;</button>-->
             <!--    <div class="impact-track">-->
             <!--        <div class="impact-card">-->
-            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/profx/assets/competitive-Icon.png') }}" alt="Media partner"></div>-->
+            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/probiz/assets/competitive-Icon.png') }}" alt="Media partner"></div>-->
             <!--            <h3 class="impact-title">Enhanced Visibility</h3>-->
             <!--            <p class="impact-description">-->
             <!--                Winning or being nominated for an award significantly increases a broker's visibility in the market, attracting more clients and partners.-->
             <!--            </p>-->
             <!--        </div>-->
             <!--        <div class="impact-card">-->
-            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/profx/assets/competitive-Icon.png') }}" alt="Media partner"></div>-->
+            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/probiz/assets/competitive-Icon.png') }}" alt="Media partner"></div>-->
             <!--            <h3 class="impact-title">Competitive Advantage</h3>-->
             <!--            <p class="impact-description">-->
             <!--                Awards provide a competitive edge by differentiating the broker from competitors and showcasing their unique strengths.-->
             <!--            </p>-->
             <!--        </div>-->
             <!--        <div class="impact-card">-->
-            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/profx/assets/reputation-icon.png') }}" alt="Media partner"></div>-->
+            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/probiz/assets/reputation-icon.png') }}" alt="Media partner"></div>-->
             <!--            <h3 class="impact-title">Networking Opportunities</h3>-->
             <!--            <p class="impact-description">-->
             <!--                Award ceremonies and events offer valuable networking opportunities with industry leaders, potential clients, and media.-->
             <!--            </p>-->
             <!--        </div>-->
             <!--        <div class="impact-card">-->
-            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/profx/assets/showcase-icon.png') }}" alt="Media partner"></div>-->
+            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/probiz/assets/showcase-icon.png') }}" alt="Media partner"></div>-->
             <!--            <h3 class="impact-title">Promoting Your Excellence</h3>-->
             <!--            <p class="impact-description">-->
             <!--                Awards highlight excellence in various aspects of brokerage services, from customer support to technological innovation.-->
             <!--            </p>-->
             <!--        </div>-->
             <!--        <div class="impact-card">-->
-            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/profx/assets/visibilty.png') }}" alt="Media partner"></div>-->
+            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/probiz/assets/visibilty.png') }}" alt="Media partner"></div>-->
             <!--            <h3 class="impact-title">Business Growth</h3>-->
             <!--            <p class="impact-description">-->
             <!--                Recognition attracts partnerships, clients, and investors — leading to sustainable business growth.-->
             <!--            </p>-->
             <!--        </div>-->
             <!--        <div class="impact-card">-->
-            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/profx/assets/networking-icon.png') }}" alt="Media partner"></div>-->
+            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/probiz/assets/networking-icon.png') }}" alt="Media partner"></div>-->
             <!--            <h3 class="impact-title">Industry Credibility</h3>-->
             <!--            <p class="impact-description">-->
             <!--                Awards enhance reputation and trust, positioning brokers as credible leaders in the financial industry.-->
             <!--            </p>-->
             <!--        </div>-->
             <!--        <div class="impact-card">-->
-            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/profx/assets/showcase-icon1.png') }}" alt="Media partner"></div>-->
+            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/probiz/assets/showcase-icon1.png') }}" alt="Media partner"></div>-->
             <!--            <h3 class="impact-title">Partnership Expansion</h3>-->
             <!--            <p class="impact-description">-->
             <!--                Recognition opens doors to new collaborations and long-term business relationships.-->
             <!--            </p>-->
             <!--        </div>-->
             <!--        <div class="impact-card">-->
-            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/profx/assets/visibilty.png') }}" alt="Media partner"></div>-->
+            <!--            <div class="impact-icon"><img src="{{ asset('assets/keditor/probiz/assets/visibilty.png') }}" alt="Media partner"></div>-->
             <!--            <h3 class="impact-title">Market Confidence</h3>-->
             <!--            <p class="impact-description">-->
             <!--                Awards inspire confidence among clients and partners, strengthening the brand’s standing in the market.-->
@@ -1130,7 +1133,7 @@
 
 
     <div class="area-bg" id="agendarecap"
-        style="background-image: url('{{ asset('assets/keditor/profx/assets/roadmap_bg.png') }}'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
+        style="background-image: url('{{ asset('assets/keditor/probiz/assets/roadmap_bg.png') }}'); background-size: cover; background-position: center center; background-repeat: no-repeat;">
         <!-- roadMap-area -->
         <section id="roadmap" class="roadmap-area pt-130 pb-130">
             <div class="container custom-container-two">
@@ -1138,7 +1141,7 @@
                     <div class="col-xl-5 col-lg-8">
                         <div class="section-title text-center mb-60">
                             <span class="section-title-span">•</span>Our Agenda<span class="section-title-span">•</span>
-                            <h2 class="title"> <span style="color: #d4af37;">PROFX Awards</span> Program Agenda </h2>
+                            <h2 class="title"> <span style="color: #d4af37;">ProBiz Awards</span> Program Agenda </h2>
                         </div>
                     </div>
                 </div>
@@ -1150,8 +1153,8 @@
                                     <span class="roadmap-title">6:00 PM</span>
                                     <div class="roadmap-content">
                                         <span class="dot"></span>
-                                        <h4 class="title">Opening Cermony</h4>
-                                        <span>Anchor Speech ProFx Into & Teaser</span>
+                                        <h4 class="title">Opening Ceremony</h4>
+                                        <span>Anchor Speech, ProBiz Intro & Teaser</span>
                                         <span>Trophy Launch</span>
 
                                     </div>
@@ -1223,18 +1226,18 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-7 order-2 order-lg-0" data-aos="fade-down-right">
                         <div class="document-img text-center wow fadeInUp" data-wow-delay=".2s">
-                            <img src="{{ asset('assets/keditor/profx/assets/bannerimage.png') }}" alt="">
+                            <img src="{{ asset('assets/keditor/probiz/assets/bannerimage.png') }}" alt="">
                         </div>
                     </div>
-                    <div class="col-lg-5 col-md-7 data-aos="fade-down-left"">
+                    <div class="col-lg-5 col-md-7" data-aos="fade-down-left">
                         <div class="document-content mt-50 wow fadeInRight" data-wow-delay=".2s">
                             <div class="section-title mb-35">
                                 <p
                                     style="text-align: left; font-weight: 600;font-size: 20px; color: #fff; text-transform: capitalize;">
                                     <span class="section-title-span">•</span>Discover Excellence<span
                                         class="section-title-span">•</span></p>
-                                <h2 class="title" style="text-align: left;">Download The ProFxAwards Dubai <p
-                                        style="color: #d4af37;font-weight: 600;font-size: 35px;"> 2025 Brochure</p>
+                                <h2 class="title" style="text-align: left;">Download The ProBiz Awards Dubai <p
+                                        style="color: #d4af37;font-weight: 600;font-size: 35px;"> 2026 Brochure</p>
                                 </h2>
                             </div>
                             <ul class="document-list">
@@ -1243,7 +1246,7 @@
                                 <li>Prepare To Participate</li>
                                 <li>Our T&C for Awards</li>
                             </ul>
-                            <a href="{{ asset('assets/keditor/profx/assets/ProFXAwardsDubai2025.pdf') }}" download
+                            <a href="{{ asset('assets/keditor/probiz/assets/ProBizAwardsDubai2026.pdf') }}" download
                                 class="btn-nominate">Download Doc</a>
                         </div>
                     </div>
@@ -1265,7 +1268,7 @@
 
                     <div class="venue-details">
                         <p style="color: #d4af37;"><strong>Venue:</strong> Le Méridien, Airport Road, Dubai UAE</p>
-                        <p style="color: #d4af37;"><strong>Date:</strong> 19th December 2025</p>
+                        <p style="color: #d4af37;"><strong>Date:</strong> 19th December 2026</p>
                         <p style="color: #d4af37;"><strong>Time:</strong> 6:00 pm – 11:00 pm</p>
                     </div>
 
@@ -1289,42 +1292,42 @@
     <!-- Carousel Script-->
     <script>
         const impactData = [{
-                icon: 'assets/keditor/profx/assets/competitive-Icon.png',
+                icon: 'assets/keditor/probiz/assets/competitive-Icon.png',
                 title: 'Enhanced Visibility',
                 description: "Winning or being nominated for an award significantly increases a broker's visibility in the market, attracting more clients and partners."
             },
             {
-                icon: 'assets/keditor/profx/assets/competitive-Icon.png',
+                icon: 'assets/keditor/probiz/assets/competitive-Icon.png',
                 title: 'Competitive Advantage',
                 description: 'Awards provide a competitive edge by differentiating the broker from competitors and showcasing their unique strengths.'
             },
             {
-                icon: 'assets/keditor/profx/assets/reputation-icon.png',
+                icon: 'assets/keditor/probiz/assets/reputation-icon.png',
                 title: 'Networking Opportunities',
                 description: 'Award ceremonies and events offer valuable networking opportunities with industry leaders, potential clients, and media.'
             },
             {
-                icon: 'assets/keditor/profx/assets/showcase-icon.png',
+                icon: 'assets/keditor/probiz/assets/showcase-icon.png',
                 title: 'Promoting Your Excellence',
                 description: 'Awards highlight excellence in various aspects of brokerage services, from customer support to technological innovation.'
             },
             {
-                icon: 'assets/keditor/profx/assets/visibilty.png',
+                icon: 'assets/keditor/probiz/assets/visibilty.png',
                 title: 'Business Growth',
                 description: 'Recognition attracts partnerships, clients, and investors � leading to sustainable business growth.'
             },
             {
-                icon: 'assets/keditor/profx/assets/networking-icon.png',
+                icon: 'assets/keditor/probiz/assets/networking-icon.png',
                 title: 'Industry Credibility',
                 description: 'Awards enhance reputation and trust, positioning brokers as credible leaders in the financial industry.'
             },
             {
-                icon: 'assets/keditor/profx/assets/showcase-icon1.png',
+                icon: 'assets/keditor/probiz/assets/showcase-icon1.png',
                 title: 'Partnership Expansion',
                 description: 'Recognition opens doors to new collaborations and long-term business relationships.'
             },
             {
-                icon: 'assets/keditor/profx/assets/visibilty.png',
+                icon: 'assets/keditor/probiz/assets/visibilty.png',
                 title: 'Market Confidence',
                 description: "Awards inspire confidence among clients and partners, strengthening the brand's standing in the market."
             }
@@ -1534,100 +1537,6 @@
         document.addEventListener('DOMContentLoaded', () => new InfiniteCarousel());
     </script>
     </div>
-
-
-
-
-    <div class="modal fade z-index-9999" id="sponsorModal" tabindex="-1" aria-labelledby="sponsorModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content rounded-4 shadow">
-                <div class="modal-header">
-                    <h5 class="modal-title text-dark fw-semibold" id="sponsorModalLabel">Become a Sponsor</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-
-                <div class="modal-body">
-                    @if (session('success'))
-                        <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-                            {{ session('success') }}
-                            <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                aria-label="Close"></button>
-                        </div>
-                    @endif
-                    <form action="{{ route('contactPageSubmited') }}" method="POST">
-                        @csrf
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label class="form-label">First Name</label>
-                                <input type="text" name="first_name" class="form-control"
-                                    placeholder="Enter first name" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Last Name</label>
-                                <input type="text" name="last_name" class="form-control"
-                                    placeholder="Enter last name" required>
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Enter email"
-                                    required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">Phone</label>
-                                <input type="tel" name="phone" class="form-control"
-                                    placeholder="Enter phone number">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Company Name</label>
-                                <input type="text" name="company" class="form-control"
-                                    placeholder="Enter company name">
-                            </div>
-
-                            <div class="col-md-6">
-                                <label class="form-label">Country</label>
-                                <select name="country" class="form-select" required>
-                                    <option value="">Select Country</option>
-                                    <option>United States</option>
-                                    <option>United Kingdom</option>
-                                    <option>India</option>
-                                    <option>United Arab Emirates</option>
-                                    <option>Canada</option>
-                                    <option>Australia</option>
-                                    <option>Germany</option>
-                                    <option>France</option>
-                                    <option>Japan</option>
-                                    <option>China</option>
-                                    <option>Brazil</option>
-                                    <option>South Africa</option>
-                                    <option>Italy</option>
-                                    <option>Spain</option>
-                                    <option>Mexico</option>
-                                    <option>Singapore</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="text-center mt-4">
-                            <button type="submit" class="btn btn-primary px-5 py-2">Submit</button>
-                        </div>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            @if (session('success'))
-                var sponsorModal = new bootstrap.Modal(document.getElementById('sponsorModal'));
-                sponsorModal.show();
-            @endif
-        });
-    </script>
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const track = document.querySelector(".rl-partners-track");

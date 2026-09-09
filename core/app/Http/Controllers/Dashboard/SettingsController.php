@@ -21,6 +21,10 @@ class SettingsController extends Controller
     {
         $this->middleware('auth');
 
+        if (app()->runningInConsole()) {
+            return;
+        }
+
         // Check Permissions
         if (!@Auth::user()->permissionsGroup->settings_status || !Helper::GeneralWebmasterSettings("settings_status")) {
             return Redirect::to(route('NoPermission'))->send();

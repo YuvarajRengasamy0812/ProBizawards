@@ -1,41 +1,19 @@
     <!-- Top Bar -->
- 
- <style>
-        @media (max-width: 991.98px) {
-            .navbar .dropdown-menu {
-                display: none;
-                position: static;
-                float: none;
-            }
-
-            .navbar .dropdown-menu.show {
-                display: block;
-            }
-
-            .navbar .dropdown-menu .dropdown-item {
-                transition: background 0.3s ease;
-            }
-
-            .navbar .dropdown-menu .dropdown-item:hover {
-                background: linear-gradient(to right, #BD8A3C, #DDC686) !important;
-            }
-        }
-    </style>
     <div class="top-bar" id="top">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-9 col-md-12 text-center text-lg-start mb-2 mb-lg-0">
                     <div class="venue-info">
                         <strong>Venue:</strong> Le Meridian, Airport Road, Dubai UAE
-                        <span class="venue-date"><strong>Date & Time:</strong> 19th December 2025, 6:00PM - 11:00PM</span>
+                        <span class="venue-date"><strong>Date & Time:</strong> 19th December 2026, 6:00PM - 11:00PM</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-12 text-center text-lg-end">
                     <div class="social-icons">
-                        <a href="https://www.facebook.com/profxmedia" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="https://www.instagram.com/profxmedia.official?igsh=MTgzbmx0bDh5dnl5eA%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.facebook.com/probizawards" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/probizawards?igsh=MTgzbmx0bDh5dnl5eA%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                         <a href="https://www.youtube.com/channel/UCH48JVPRS6QMuuATpSelwXA" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
-                        <a href="https://api.whatsapp.com/send/?phone=%2B971588845033&text&type=phone_number&app_absent=0" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=%2B971588845033&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -43,16 +21,12 @@
     </div>
 
     <!-- Main Navigation -->
-    <nav class="navbar navbar-expand-lg main-header"  style="position: sticky; top: 0; z-index:41;">
+    <nav class="navbar navbar-expand-lg main-header">
         <div class="container-fluid">
             <!-- Logo -->
-            <a class="navbar-brand" href="#">
-                <div class="logo-section">
-
- <a  href="{{ url('/') }}" >
-                    <img src=" {{ asset('assets/keditor/profx/assets/Awards.png') }}" alt="PROPX Awards Logo">
-                    </a>                    
-                </div>
+            <a class="navbar-brand probiz-brand" href="{{ url('/') }}" aria-label="ProBiz Awards 2026">
+                <img src="{{ asset('assets/keditor/probiz/assets/probiz-awards-dubai-2026-dark.png') }}"
+                    alt="ProBiz Awards Dubai 2026" class="header-logo">
             </a>
 
             <!-- Mobile Toggle Button -->
@@ -63,7 +37,7 @@
 
             <!-- Navigation Menu -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
+                <ul class="navbar-nav mx-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/') }}">HOME</a>
                     </li>
@@ -81,7 +55,7 @@
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                            data-bs-auto-close="outside" aria-expanded="false">
                             SPONSORS
                         </a>
                         <ul class="dropdown-menu">
@@ -92,7 +66,7 @@
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                            data-bs-auto-close="outside" aria-expanded="false">
                             CATEGORIES
                         </a>
                         <ul class="dropdown-menu">
@@ -109,9 +83,9 @@
 
                         </ul>
                     </li>
- <li class="nav-item dropdown">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                            data-bs-auto-close="outside" aria-expanded="false">
                           PREVIOUS AWARDS
                         </a>
                         <ul class="dropdown-menu">
@@ -125,37 +99,16 @@
                 </ul>
 
                 <!-- CTA Buttons -->
-                <div class="cta-buttons d-flex gap-2">
+                <div class="cta-buttons d-flex align-items-center gap-2">
                     <a href="{{ url('/winner') }}" class="btn-nominate">WINNERS</a>
-                    <!--<a href="#sponsor" class="btn-sponsor" data-bs-toggle="modal"-->
-                    <!--    data-bs-target="#sponsorModal25">SPONSOR 2025</a>-->
-                    <!--<a href="https://secure.profxawards.com/login" class="btn-login">LOGIN</a>-->
+                    <a href="{{ url('/nomination') }}" class="btn-nominate">NOMINATE</a>
+                    <a href="#sponsor" class="btn-sponsor" data-bs-toggle="modal"
+                        data-bs-target="#sponsorModal">SPONSOR 2026</a>
                 </div>
-                <!--  <div class="cta-buttons d-flex gap-2">-->
-                <!--    <a href="{{ url('/nomination') }}" class="btn-nominate">NOMINATE</a>-->
-                <!--    <a href="#sponsor" class="btn-sponsor" data-bs-toggle="modal"-->
-                <!--        data-bs-target="#sponsorModal25">SPONSOR</a>-->
-                    <!--<a href="https://secure.profxawards.com/login" class="btn-login">LOGIN</a>-->
-                <!--</div>-->
-
-
             </div>
         </div>
     </nav>
-
-    <!-- Include Bootstrap CSS and JS -->
-
-
-<!-- Your Existing Top Bar & Navigation -->
-<!-- (You can keep your same top bar and nav as it is) -->
-
-<!-- Replace only the SPONSOR button to trigger the Bootstrap modal -->
-
-
-<!-- Bootstrap Sponsor Modal -->
-
-
-<div class="modal fade z-index-9999" id="sponsorModal25" tabindex="-1" aria-labelledby="sponsorModalLabel" aria-hidden="true">
+<div class="modal fade z-index-9999" id="sponsorModal" tabindex="-1" aria-labelledby="sponsorModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content rounded-4 shadow">
       <div class="modal-header">
@@ -164,12 +117,10 @@
       </div>
 
       <div class="modal-body">
-  <!--       @if(session('success'))-->
-  <!--  <div class="alert alert-success alert-dismissible fade show text-center" role="alert">-->
-  <!--    {{ session('success') }}-->
-  <!--    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>-->
-  <!--  </div>-->
-  <!--@endif-->
+      <div class="text-center mb-3">
+        <img src="{{ asset('assets/keditor/probiz/assets/probiz-awards-dubai-2026-light.png') }}"
+          alt="ProBiz Awards Dubai 2026" class="sponsor-modal-logo">
+      </div>
       <form action="{{ route('contactPageSubmited') }}" method="POST">
   @csrf
   <div class="row g-3">
@@ -240,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function() {
     @endif
 
     if(sponsorSuccess){
-        var sponsorModalEl = document.getElementById('sponsorModal25');
+        var sponsorModalEl = document.getElementById('sponsorModal');
         if(sponsorModalEl){
             var sponsorModal = new bootstrap.Modal(sponsorModalEl);
             sponsorModal.show();
@@ -254,14 +205,3 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-<script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const navbarCollapse = document.getElementById("navbarNav");
-
-            // Prevent collapsing when clicking a dropdown on mobile
-            navbarCollapse.addEventListener("hide.bs.collapse", function(e) {
-                const openDropdown = navbarCollapse.querySelector(".dropdown-menu.show");
-                if (openDropdown) e.preventDefault();
-            });
-        });
-    </script>

@@ -1,6 +1,6 @@
 
 
-@extends('frontEnd.layouts.profx')
+@extends('frontEnd.layouts.probiz')
 
 @section('content')
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -8,10 +8,10 @@
 <div class="hero-section">
     <div class="trophies-container">
        
-            <div class="award-text">            <h1>Nominate Your Business For PROFX Awards 2025</h1>
+            <div class="award-text">            <h1>Nominate Your Business For ProBiz Awards 2026</h1>
  <p class="hero-subtitle">Showcase your excellence. Get global recognition.</p>
             <p class="hero-description">
-                The PROFX Awards celebrate Innovation, excellence, and leadership in the industry / niche you serve! Complete the form below to submit your business for one of nine categories. All winners will receive full recognition and awards at the awards ceremony.
+                The ProBiz Awards celebrate Innovation, excellence, and leadership in the industry / niche you serve! Complete the form below to submit your business for one of nine categories. All winners will receive full recognition and awards at the awards ceremony.
             </p>
         </div>
         </div>
@@ -21,8 +21,6 @@
 
 @if(session('success'))
 
-<?php echo '1';
-?>
 <script>
     Swal.fire({
         icon: 'success',
@@ -35,8 +33,6 @@
 
 @if(session('error'))
 
-<?php echo '3';
-?>
 <script>
     Swal.fire({
         icon: 'error',
@@ -55,36 +51,36 @@
                 <div class="col-md-6 form-group">
 
                     <label>Business / Company Name</label>
-                    <input type="text" name="company" class="form-contro" required>
+                    <input type="text" name="company" class="form-control" required>
 
 
                 </div>
 
                 <div class="col-md-6 form-group">
                     <label>Contact Person</label>
-                    <input type="text" name="contact" class="form-contro" required>
+                    <input type="text" name="contact" class="form-control" required>
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-md-6 form-group">
                     <label>Job Title / Role</label>
-                    <input type="text" name="jobtitle" class="form-contro" required>
+                    <input type="text" name="jobtitle" class="form-control" required>
                 </div>
 
                 <div class="col-md-6 form-group">
                     <label>Email</label>
-                    <input type="email" name="email" class="form-contro" required>
+                    <input type="email" name="email" class="form-control" required>
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-md-6 form-group">
                     <label>Confirm Email Address</label>
-                    <input type="email" name="confirm_email" class="form-contro" required>
+                    <input type="email" name="confirm_email" class="form-control" required>
                 </div>
 
                 <div class="col-md-6 form-group">
                     <label>Phone Number</label>
-                    <input type="tel" name="phone" class="form-contro" required>
+                    <input type="tel" name="phone" class="form-control" required>
                 </div>
             </div>
             <div class="row mb-3">
@@ -92,7 +88,7 @@
                
                 <div class="col-md-6 form-group">
                     <label>Select Award Category</label>
-                    <select id="category" name="category" class="form-contro" required>
+                    <select id="category" name="category" class="form-control" required>
                         <option value="">-- Select Category --</option>
                         <option value="ForexBrokerageExcellenceAwards">Forex & Brokerage Excellence Awards</option>
                         <option value="PropFirmAwards">Prop Firm Awards</option>
@@ -107,24 +103,24 @@
 
                 <div class="col-md-6 form-group" style="margin-top: 15px;">
                     <label>Select Subcategory</label>
-                    <select id="subcategory" name="subcategory" class="form-contro" required>
+                    <select id="subcategory" name="subcategory" class="form-control" required>
                         <option value="">-- Select Subcategory --</option>
                     </select>
                 </div>
                  <div class="col-md-6 form-group">
                     <label>Country / Region</label>
-                    <input type="text" name="country" class="form-contro" required>
+                    <input type="text" name="country" class="form-control" required>
                 </div>
 
             </div>
             <div class="row mb-3">
                 <div class=" form-group col-md-6">
                     <label>Supporting Statement - Why You Deserve to Win</label>
-                    <textarea name="statement" class="form-contro" placeholder="Max 500 words"></textarea>
+                    <textarea name="statement" class="form-control" placeholder="Max 500 words"></textarea>
                 </div>
                 <div class=" form-group col-md-6">
                     <label>Short Description / Tagline of Business</label>
-                    <textarea name="description" class="form-contro" placeholder="Max 50-100 words"></textarea>
+                    <textarea name="description" class="form-control" placeholder="Max 50-100 words"></textarea>
                 </div>
 
             </div>
@@ -138,7 +134,7 @@
 
                 <div class="form-group">
                     <label>Privacy / Data Consent</label>
-                    <label><input type="checkbox" name="consent2" required> I consent to ProfX storing and processing my submitted
+                    <label><input type="checkbox" name="consent2" required> I consent to ProBiz storing and processing my submitted
                         information.</label>
                 </div>
             </div>
@@ -152,24 +148,24 @@
   <!-- Benefits Section -->
     <section class="benefits-section">
         <div class="benefits-header">
-            <h2>Why Nominate with PROFX Awards</h2>
+            <h2>Why Nominate with ProBiz Awards</h2>
             <p class="benefits-description">
-                This section is your "selling / persuasive" section. You word potential nominees to see value in submitting. You said you want "simple text content you can use / adapt:
+                Nominees gain visibility, credibility, and access to a focused network of financial and trading industry leaders.
             </p>
         </div>
 
        <div class="benefits-grid">
             <div class="benefit-card">
                 <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/profx/assets/Nomination/globalreach.svg') }}" alt="Global Reach">
+                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/globalreach.svg') }}" alt="Global Reach">
                 </div>
                 <h3 class="benefit-title">Global Reach</h3>
-                <p class="benefit-description">Your brand will be recognised, your credibility in your industry</p>
+                <p class="benefit-description">Build recognition and credibility across your industry.</p>
             </div>
 
             <div class="benefit-card">
                 <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/profx/assets/Nomination/mediaexposure.svg') }}" alt="Global Reach">
+                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/mediaexposure.svg') }}" alt="Global Reach">
                 </div>
                 <h3 class="benefit-title">Media Exposure</h3>
                 <p class="benefit-description">Nominees and winners get published across high-authority, local & international network</p>
@@ -177,7 +173,7 @@
 
             <div class="benefit-card">
                 <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/profx/assets/Nomination/network.svg') }}" alt="Global Reach">
+                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/network.svg') }}" alt="Global Reach">
                 </div>
                 <h3 class="benefit-title">Networking Opportunities</h3>
                 <p class="benefit-description">Connect with industry leaders, potential clients, partners, and investors</p>
@@ -185,15 +181,15 @@
 
             <div class="benefit-card">
                 <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/profx/assets/Nomination/benchmark.svg') }}" alt="Global Reach">
+                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/benchmark.svg') }}" alt="Global Reach">
                 </div>
                 <h3 class="benefit-title">Benchmark Against the Best</h3>
-                <p class="benefit-description">Use the nomination process to showcase efforts, and gain valuable insights into what are payment trends</p>
+                <p class="benefit-description">Use the nomination process to showcase your strengths and benchmark your progress.</p>
             </div>
 
             <div class="benefit-card">
                <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/profx/assets/Nomination/marketing.svg') }}" alt="Global Reach">
+                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/marketing.svg') }}" alt="Global Reach">
                 </div>
                 <h3 class="benefit-title">Marketing Credibility</h3>
                 <p class="benefit-description">Winners and finalists can use the official logo and certificate that can be added to marketing, social media, and team collateral</p>
@@ -201,15 +197,15 @@
 
             <div class="benefit-card">
                 <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/profx/assets/Nomination/longterm.svg') }}" alt="Global Reach">
+                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/longterm.svg') }}" alt="Global Reach">
                 </div>
                 <h3 class="benefit-title">Long-Term Prestige</h3>
-                <p class="benefit-description">Being an awards winner or finalist gives your brand measurable criteria. (You can mention any existing metrics, or reveal initiatives you plan.)</p>
+                <p class="benefit-description">Winner or finalist recognition gives your brand a lasting trust signal.</p>
             </div>
 
             <div class="benefit-card">
                 <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/profx/assets/Nomination/dedicatedsupport.svg') }}" alt="Global Reach">
+                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/dedicatedsupport.svg') }}" alt="Global Reach">
                 </div>
                 <h3 class="benefit-title">Dedicated Support</h3>
                 <p class="benefit-description">Nominees will receive updates, checklist, and support to clarify process if you need help, our team is available to address queries through the process</p>
@@ -217,10 +213,10 @@
 
             <div class="benefit-card">
                 <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/profx/assets/Nomination/independent.svg') }}" alt="Global Reach">
+                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/independent.svg') }}" alt="Global Reach">
                 </div>
                 <h3 class="benefit-title">Independent Judging</h3>
-                <p class="benefit-description">All entries are evaluated by neutral panel and fair way—no conflict of interest, measurable criteria</p>
+                <p class="benefit-description">All entries are evaluated by neutral panel and fair wayï¿½no conflict of interest, measurable criteria</p>
             </div>
         </div>
     </section>
@@ -231,7 +227,7 @@
                             <div class="col-xl-5 col-lg-8">
                                 <div class="section-title text-center mb-60">
                                     <span class="section-title-span"></span>Our Agenda<span class="section-title-span"></span>
-                                    <h2 class="title"> <span style="color: #d4af37;">PROFX Awards</span>  Program Agenda  </h2>
+                                    <h2 class="title"> <span style="color: #d4af37;">ProBiz Awards</span>  Program Agenda  </h2>
                                 </div>
                             </div>
                         </div>
@@ -243,8 +239,8 @@
                                             <span class="roadmap-title">6:00 PM</span>
                                             <div class="roadmap-content">
                                                 <span class="dot"></span>
-                                                <h4 class="title">Opening Cermony</h4>
-                                                <span>Anchor Speech ProFx Into & Teaser</span>
+                                                <h4 class="title">Opening Ceremony</h4>
+                                                <span>Anchor Speech, ProBiz Intro & Teaser</span>
                                                 <span>Trophy Launch</span>
                                                
                                             </div>
@@ -444,7 +440,7 @@ document.getElementById('nominationForm').addEventListener('submit', function(e)
     if(!statement) errors.push("Please enter Supporting Statement.");
     if(!description) errors.push("Please enter Short Description / Tagline.");
     if(!consent1) errors.push("You must confirm the accuracy of the information.");
-    if(!consent2) errors.push("You must consent to ProfX storing your information.");
+    if(!consent2) errors.push("You must consent to ProBiz storing your information.");
 
     // Show errors or submit
     if(errors.length > 0){

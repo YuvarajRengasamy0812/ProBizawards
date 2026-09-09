@@ -21,6 +21,10 @@ class MenusController extends Controller
     {
         $this->middleware('auth');
 
+        if (app()->runningInConsole()) {
+            return;
+        }
+
         // Check Permissions
         if (!@Auth::user()->permissionsGroup->menus_status || !Helper::GeneralWebmasterSettings("menus_status")) {
             return Redirect::to(route('NoPermission'))->send();

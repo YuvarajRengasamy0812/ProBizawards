@@ -18,7 +18,7 @@ $mnu_title_var2 = "title_" . config('smartend.default_language');
             </a>
             <!-- brand -->
             <a class="navbar-brand" href="{{ route('adminHome') }}">
-                <img class="m-r-sm" style="width:150px;" src="{{ asset('assets/keditor/profx/assets/Awards.png') }}" alt="Control">
+                <img class="m-r-sm" style="width:150px;" src="{{ asset('assets/keditor/probiz/assets/Awards.png') }}" alt="Control">
               
             </a>
             <!-- / brand -->
@@ -36,6 +36,14 @@ $mnu_title_var2 = "title_" . config('smartend.default_language');
                     <i class="material-icons">&#xe3fc;</i>
                   </span>
                             <span class="nav-text">{{ __('backend.dashboard') }}</span>
+                        </a>
+                    </li>
+                    <li {{ (Route::currentRouteName()=="nominations.index") ? 'class=active' : '' }}>
+                        <a href="{{ route('nominations.index') }}">
+                  <span class="nav-icon">
+                    <i class="material-icons">&#xe8f9;</i>
+                  </span>
+                            <span class="nav-text">Nominations</span>
                         </a>
                     </li>
 

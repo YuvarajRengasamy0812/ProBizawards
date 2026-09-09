@@ -4,91 +4,51 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Nomination;
-use App\Models\NominationGroup;
-use App\Http\Requests;
-use App\Models\WebmasterSection;
-use Auth;
-use File;
-use Helper;
-use Illuminate\Config;
 use Illuminate\Http\Request;
-use Redirect;
 
 class NominationController extends Controller
 {
-//   public function store(Request $request)
-// {
-//     // Validate inputs
-//     $request->validate([
-//         'email' => 'nullable|email',
-//         'confirm_email' => 'nullable|email|same:email',
-//     ]);
+    public function index()
+    {
+        $nominations = Nomination::latest()->paginate(config('smartend.backend_pagination'));
 
-//     try {
-//         // Create nomination
-//         $nomination = new Nomination();
-//         $nomination->company       = strip_tags($request->company);
-//         $nomination->contact       = strip_tags($request->contact);
-//         $nomination->jobtitle      = strip_tags($request->jobtitle);
-//         $nomination->email         = strip_tags($request->email);
-//         $nomination->confirm_email = strip_tags($request->confirm_email);
-//         $nomination->phone         = $request->phone;
-//         $nomination->country       = strip_tags($request->country);
-//         $nomination->description   = $request->description;
-//         $nomination->statement     = $request->statement;
-//         $nomination->category      = $request->category;
-//         $nomination->consent1      = $request->has('consent1');
-//         $nomination->consent2      = $request->has('consent2');
+        return view('dashboard.nominations.index', compact('nominations'));
+    }
 
-//         if($nomination->save()){
-//             // Success redirect
-//            return redirect()->back()
-//     ->with('success', 'Nomination submitted successfully.');
-//         } else {
-//             // Failure redirect
-//             return redirect()->back()
-//                              ->with('error', 'Failed to submit nomination. Please try again.');
-//         }
-
-//     } catch (\Exception $e) {
-//         // Exception redirect
-//         return redirect()->back()
-//                          ->with('error', 'An error occurred: ' . $e->getMessage());
-//     }
-// }
-
-public function store(Request $request)
-{
-    $request->validate([
-        // 'company'       => 'required|string|max:255',
-        // 'contact'       => 'required|string|max:255',
-        'email'         => 'nullable|email',
-        'confirm_email' => 'nullable|email|same:email',
-    ]);
-
-    try {
-        Nomination::create([
-            'company'       => strip_tags($request->company),
-            'contact'       => strip_tags($request->contact),
-            'jobtitle'      => strip_tags($request->jobtitle),
-            'email'         => strip_tags($request->email),
-            'confirm_email' => strip_tags($request->confirm_email),
-            'phone'         => $request->phone,
-            'country'       => strip_tags($request->country),
-            'description'   => $request->description,
-            'statement'     => $request->statement,
-            'category'      => $request->category,
-            'subcategory'   => $request->subcategory,
-            'consent1'      => $request->has('consent1'),
-            'consent2'      => $request->has('consent2'),
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'company' => 'required|string|max:255',
+            'contact' => 'required|string|max:255',
+            'jobtitle' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'confirm_email' => 'required|email|max:255|same:email',
+            'phone' => 'required|string|max:30',
+            'country' => 'required|string|max:255',
+            'category' => 'required|string|max:255',
+            'subcategory' => 'required|string|max:255',
+            'statement' => 'required|string|max:5000',
+            'description' => 'required|string|max:1000',
+            'consent1' => 'accepted',
+            'consent2' => 'accepted',
         ]);
 
-        return redirect()->back()
-            ->with('success', 'Nomination submitted successfully.');
+        $validated['company'] = strip_tags($validated['company']);
+        $validated['contact'] = strip_tags($validated['contact']);
+        $validated['jobtitle'] = strip_tags($validated['jobtitle']);
+        $validated['email'] = strip_tags($validated['email']);
+        $validated['confirm_email'] = strip_tags($validated['confirm_email']);
+        $validated['phone'] = strip_tags($validated['phone']);
+        $validated['country'] = strip_tags($validated['country']);
+        $validated['category'] = strip_tags($validated['category']);
+        $validated['subcategory'] = strip_tags($validated['subcategory']);
+        $validated['statement'] = strip_tags($validated['statement']);
+        $validated['description'] = strip_tags($validated['description']);
+        $validated['consent1'] = true;
+        $validated['consent2'] = true;
 
-    } catch (\Exception $e) {
-        return redirect()->back()
-            ->with('error', 'An error occurred: ' . $e->getMessage());
+        Nomination::create($validated);
+
+        return redirect()->back()->with('success', 'Nomination submitted successfully.');
     }
-}
 }

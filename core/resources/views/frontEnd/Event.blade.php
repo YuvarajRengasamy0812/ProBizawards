@@ -1,4 +1,4 @@
-@extends('frontEnd.layouts.profx')
+@extends('frontEnd.layouts.probiz')
 
 @section('content')
 
@@ -29,7 +29,7 @@
     <div class="sponsor-grid">
         @foreach ($partners as $partner)
             <div class="ga-image-wrappertest">
-                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/Event/' . $partner['img']) }}" loading="lazy">
+                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/Event/' . $partner['img']) }}" loading="lazy">
                 <div class="ga-hover-layertest">
                     <h3 style="font-weight:600">{{ $partner['name'] }}</h3>
                     <a href="{{ $partner['url'] }}" class="ga-view-btn" target="_blank">View Website</a>

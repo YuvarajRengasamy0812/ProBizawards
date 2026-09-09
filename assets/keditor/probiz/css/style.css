@@ -58,8 +58,18 @@ body {
 
 /* ==================== MAIN HEADER ==================== */
 .main-header {
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.95);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.main-header .container-fluid {
+    gap: 18px;
+    padding-left: clamp(16px, 2.5vw, 38px);
+    padding-right: clamp(16px, 2.5vw, 38px);
 }
 
 .logo-section {
@@ -68,8 +78,25 @@ body {
     gap: 15px;
 }
 
-.logo-section img {
-    height: 60px;
+.probiz-brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-right: 12px;
+    padding: 0;
+}
+
+.header-logo {
+    display: block;
+    width: min(230px, 30vw);
+    height: auto;
+    max-height: 86px;
+    object-fit: contain;
+}
+
+.sponsor-modal-logo {
+    width: min(230px, 70vw);
+    height: auto;
 }
 
 .edition-text {
@@ -85,9 +112,11 @@ body {
     font-weight: 600;
 
 
-    font-size: 15.5px;
-    padding: 0.8rem !important;
+    font-size: 14px;
+    line-height: 1.25;
+    padding: 0.65rem 0.55rem !important;
     transition: color 0.3s;
+    white-space: nowrap;
 }
 
 .navbar-nav .nav-link {
@@ -121,9 +150,17 @@ body {
 background: linear-gradient(to right, #BD8A3C, #DDC686);
     color:#0c0b0b;
     border: 2px solid var(--gold);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-weight: 600;
-    padding: 10px 20px;
-    border-radius: 15px;
+    line-height: 1.15;
+    min-height: 46px;
+    padding: 10px 18px;
+    border-radius: 14px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
     transition: all 0.3s;
 }
 
@@ -136,9 +173,17 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
     background-color: transparent;
     color: var(--gold);
     border: 2px solid var(--gold);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     font-weight: 400;
-    padding: 10px 20px;
-    border-radius: 15px;
+    line-height: 1.15;
+    min-height: 46px;
+    padding: 10px 18px;
+    border-radius: 14px;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
     transition: all 0.3s;
 }
 
@@ -165,16 +210,35 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
 .dropdown-menu {
     background-color: rgba(0, 0, 0, 0.95);
     border: 1px solid var(--gold);
+    z-index: 1040;
+    min-width: 220px;
+    padding: 8px 0;
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.35);
 }
 
 .dropdown-item {
     color: white;
+    font-weight: 600;
+    line-height: 1.35;
+    padding: 10px 16px;
+    white-space: normal;
     transition: all 0.3s;
 }
 
 .dropdown-item:hover {
     background-color: var(--gold);
     color: var(--navy);
+}
+
+@media (min-width: 992px) {
+    .main-header .dropdown:hover > .dropdown-menu {
+        display: block;
+        margin-top: 0;
+    }
+
+    .main-header .dropdown:hover > .dropdown-toggle::after {
+        transform: rotate(180deg);
+    }
 }
 
 /* ==================== SIDEBAR SOCIAL ==================== */
@@ -280,7 +344,7 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
     margin-bottom: 15px;
 }
 
-.profx-media-logo {
+.probiz-media-logo {
     max-width: 180px;
 }
 
@@ -463,24 +527,50 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
         margin-top: 10px;
     }
 
-    .logo-section img {
-        height: 50px;
+    .header-logo {
+        width: 190px;
+        max-height: 72px;
     }
 
     .navbar-nav {
         margin-top: 15px;
+        align-items: stretch !important;
     }
 
     .navbar-nav .nav-link {
         padding: 10px 15px !important;
+        white-space: normal;
+    }
+
+    .navbar-collapse {
+        background: rgba(0, 0, 0, 0.98);
+        border-top: 1px solid rgba(212, 175, 55, 0.25);
+        margin-top: 12px;
+        padding: 8px 0 16px;
+    }
+
+    .navbar .dropdown-menu {
+        position: static;
+        float: none;
+        width: 100%;
+        margin: 0;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+    }
+
+    .navbar .dropdown-menu.show {
+        display: block;
     }
 
     .cta-buttons {
         margin-top: 15px;
         flex-direction: column;
+        align-items: stretch !important;
     }
 
-    .cta-buttons .btn {
+    .cta-buttons .btn-nominate,
+    .cta-buttons .btn-sponsor {
         width: 100%;
         margin-bottom: 10px;
     }
@@ -543,7 +633,7 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
         max-width: 200px;
     }
 
-    .profx-media-logo {
+    .probiz-media-logo {
         max-width: 150px;
     }
 
@@ -582,8 +672,9 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
         gap: 10px;
     }
 
-    .logo-section img {
-        height: 40px;
+    .header-logo {
+        width: 168px;
+        max-height: 64px;
     }
 
     .edition-text {
@@ -668,15 +759,16 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
         display: block;
     }
 
-    .logo-section img {
-        height: 35px;
+    .header-logo {
+        width: 148px;
+        max-height: 58px;
     }
 
     .footer-logo {
         max-width: 180px;
     }
 
-    .profx-media-logo {
+    .probiz-media-logo {
         max-width: 130px;
     }
 
@@ -698,8 +790,9 @@ background: linear-gradient(to right, #BD8A3C, #DDC686);
         margin-left: 5px;
     }
 
-    .logo-section img {
-        height: 30px;
+    .header-logo {
+        width: 136px;
+        max-height: 54px;
     }
 
     .edition-text {

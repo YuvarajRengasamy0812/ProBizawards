@@ -16,6 +16,10 @@ class FileManagerController extends Controller
     {
         $this->middleware('auth');
 
+        if (app()->runningInConsole()) {
+            return;
+        }
+
         // Check Permissions
         if (!@Auth::user()->permissionsGroup->file_manager_status || !Helper::GeneralWebmasterSettings("file_manager_status")) {
             return Redirect::to(route('NoPermission'))->send();

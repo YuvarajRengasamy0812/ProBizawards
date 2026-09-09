@@ -29,6 +29,10 @@ class APIsController extends Controller
 {
     public function __construct()
     {
+        if (app()->runningInConsole()) {
+            return;
+        }
+
         // Check API Status
         if (!Helper::GeneralWebmasterSettings("api_status")) {
             // API disabled

@@ -20,8 +20,8 @@ use Illuminate\Support\Facades\Route;
 |CategoriesFx
 */
 Route::get('/', function () {
-    return view('frontEnd.profx');
-})->name('profx');
+    return view('frontEnd.probiz');
+})->name('probiz');
 Route::get('/nomination', function () {
     return view('frontEnd.nomination');
 })->name('nomination');
@@ -121,9 +121,7 @@ Route::post('/contact-submit', [HomeController::class, 'contact_submit'])->name(
 Route::post('/', [HomeController::class, 'contact_submited'])->name('contactPageSubmited');
 
 // - Nominations
-Route::get('nominations', [NominationController::class,'index'])->name('nominations.index');
-
-Route::post('nominations/store', [NominationController::class,'store'])->name('nominations.store');
+Route::post('nominations/store', [NominationController::class, 'store'])->name('nominations.store');
 
 
 
@@ -134,4 +132,3 @@ Route::get('/tag/{tag_slug?}', [HomeController::class, 'tag'])->name('tag');
 // - All Other slugs
 Route::get('/{part1?}/{part2?}/{part3?}/{part4?}/{part5?}/{part6?}', [HomeController::class, 'seo'])->name("frontendRoute");
 // End of Frontend Route
-

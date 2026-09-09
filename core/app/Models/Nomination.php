@@ -8,12 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Nomination extends Model
 {
     use HasFactory;
-    use HasFactory;
 
-    // Table name (optional if it follows Laravel naming convention)
     protected $table = 'nominations';
 
-    // Mass assignable fields
     protected $fillable = [
         'company',
         'contact',
@@ -26,21 +23,14 @@ class Nomination extends Model
         'statement',
         'category',
         'subcategory',
-       
         'consent1',
         'consent2',
     ];
 
-    // Casts for boolean fields
     protected $casts = [
         'consent1' => 'boolean',
         'consent2' => 'boolean',
     ];
 }
-
-
-
-
-
 
 

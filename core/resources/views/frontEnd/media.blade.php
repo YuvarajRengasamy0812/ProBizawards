@@ -1,4 +1,4 @@
-@extends('frontEnd.layouts.profx')
+@extends('frontEnd.layouts.probiz')
 
 @section('content')
 
@@ -38,7 +38,7 @@
             ['name' => 'Gabbar', 'url' => 'https://www.industryevents.com/', 'img' => 'industry.png'],
             ['name' => 'Trading Beasts', 'url' => 'https://tradingbeasts.com/', 'img' => 'trading-beast.png'],
             ['name' => 'U Today', 'url' => 'https://u.today/', 'img' => 'u-today-logo.png'],
-            ['name' => 'U Today', 'url' => 'https://capitalinsighthub.com/profx-awards-dubai-2025-premier-forex-and-fintech-recognition-night/', 'img' => 'capital-insight.png'],
+            ['name' => 'U Today', 'url' => 'https://capitalinsighthub.com/probiz-awards-dubai-2026-premier-forex-and-fintech-recognition-night/', 'img' => 'capital-insight.png'],
             ];
     @endphp
 
@@ -46,7 +46,7 @@
     @foreach ($partners as $partner)
         <div class="ga-image-wrappertest">
             <a href="{{ $partner['url'] }}" target="_blank">
-                <img class="d-flex" src="{{ asset('assets/keditor/profx/assets/partners/' . $partner['img']) }}" loading="lazy" alt="{{ $partner['name'] }}">
+                <img class="d-flex" src="{{ asset('assets/keditor/probiz/assets/partners/' . $partner['img']) }}" loading="lazy" alt="{{ $partner['name'] }}">
             </a>
         </div>
     @endforeach

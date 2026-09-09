@@ -24,6 +24,10 @@ class TagController extends Controller
     {
         $this->middleware('auth');
 
+        if (app()->runningInConsole()) {
+            return;
+        }
+
         // Check Permissions
         if (!@Auth::user()->permissionsGroup->tags_status || !Helper::GeneralWebmasterSettings("tags_status")) {
             return Redirect::to(route('NoPermission'))->send();

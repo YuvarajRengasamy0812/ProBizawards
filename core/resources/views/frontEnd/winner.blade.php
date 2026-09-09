@@ -1,4 +1,4 @@
-@extends('frontEnd.layouts.profx')
+@extends('frontEnd.layouts.probiz')
 
 @section('content')
 
@@ -6,7 +6,7 @@
 <div class="hero-section">
     <div class="trophies-container">
         <div class="award-text">
-            <h1>PROFX AWARDS 2025</h1>
+            <h1>ProBiz Awards 2026</h1>
         </div>
     </div>
 </div>
@@ -28,12 +28,12 @@ $Awards = DB::table('photos')
 
             @foreach($Awards as $award)
                 @php
-                    $title = $award->title ?? 'PROFX Award';
+                    $title = $award->title ?? 'ProBiz Award';
 
                
                         $img = !empty( $award->file)
                         ? asset('uploads/topics/' .$award->file)
-                        : asset('assets/keditor/profx/assets/awards-best.png');
+                        : asset('assets/keditor/probiz/assets/awards-best.png');
                 @endphp
 
                 <div class="col-md-3 award-card" style="text-align:center;padding:15px;">
@@ -46,7 +46,7 @@ $Awards = DB::table('photos')
 
                     <textarea class="aw-code-textarea" readonly
                         style="width:100%;height:60px;margin-bottom:10px;padding:5px;border-radius:6px;border:1px solid #ccc;">
-<a href="https://profxawards.com/awards" target="_blank">
+<a href="https://probizawards.com/awards" target="_blank">
 <img src="{{ $img }}" alt="{{ $title }}">
 </a>
                     </textarea>
