@@ -10,7 +10,7 @@
             <!-- About Section -->
             <div class="col-lg-4 col-md-6 mb-4 text-lg-start">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('assets/keditor/probiz/assets/probiz-awards-dubai-2026-dark.png') }}" alt="ProBiz Awards Dubai 2026"
+                    <img src="{{ asset('assets/keditor/probiz/assets/probiz-awards-dubai-2026-light.png') }}" alt="ProBiz Awards Dubai 2026"
                         class="footer-logo">
                 </a>
                 <p class="footer-description">

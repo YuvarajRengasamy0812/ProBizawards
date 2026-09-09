@@ -430,7 +430,7 @@
             <div class="brochure-content" data-aos="fade-down-right">
                 <div class="brochure-image">
                     <div>
-                        <img src="{{ asset('assets/keditor/probiz/assets/probiz-awards-dubai-2026-dark.png') }}" alt="ProBiz Awards Dubai 2026">
+                        <img src="{{ asset('assets/keditor/probiz/assets/probiz-awards-dubai-2026-light.png') }}" alt="ProBiz Awards Dubai 2026">
                         
                     </div>
 
