@@ -630,23 +630,42 @@ class HomeController extends Controller
     public function contact_submited(Request $request)
     {
         $validated = $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
+            'full_name' => 'nullable|string|max:255',
+            'first_name' => 'nullable|string|max:255',
+            'last_name' => 'nullable|string|max:255',
             'email' => 'required|email|max:255',
             'phone' => 'nullable|string|max:20',
             'company' => 'nullable|string|max:255',
             'country' => 'required|string|max:255',
+            'enquiry_type' => 'nullable|string|max:120',
+            'partnership_interest' => 'nullable|string|max:120',
+            'preferred_category' => 'nullable|string|max:255',
+            'message' => 'nullable|string|max:3000',
+            'privacy_ack' => 'nullable|accepted',
+            'marketing_consent' => 'nullable|boolean',
         ]);
 
-        $fullName = trim(strip_tags($validated['first_name']) . ' ' . strip_tags($validated['last_name']));
+        $fullName = trim(strip_tags($validated['full_name'] ?? ''));
+        if ($fullName === '') {
+            $fullName = trim(strip_tags($validated['first_name'] ?? '') . ' ' . strip_tags($validated['last_name'] ?? ''));
+        }
+        if ($fullName === '') {
+            $fullName = strip_tags($validated['email']);
+        }
+
         $siteEmail = @Helper::GeneralSiteSettings('site_webmails');
         $recipient = array_filter(explode(',', str_replace(' ', '', $siteEmail)));
 
         $details = [
+            'Enquiry Type' => strip_tags($validated['enquiry_type'] ?? 'Sponsorship'),
+            'Partnership Interest' => strip_tags($validated['partnership_interest'] ?? ''),
+            'Preferred Category or Pillar' => strip_tags($validated['preferred_category'] ?? ''),
             'Company' => strip_tags($validated['company'] ?? ''),
             'Country' => strip_tags($validated['country']),
             'Phone' => strip_tags($validated['phone'] ?? ''),
             'Email' => strip_tags($validated['email']),
+            'Message' => strip_tags($validated['message'] ?? ''),
+            'Marketing Consent' => $request->boolean('marketing_consent') ? 'Yes' : 'No',
         ];
 
         $messageDetails = collect($details)
@@ -659,7 +678,7 @@ class HomeController extends Controller
         $Webmail = new Webmail;
         $Webmail->cat_id = 0;
         $Webmail->group_id = null;
-        $Webmail->title = 'Sponsor Inquiry - ProBiz Awards 2026';
+        $Webmail->title = strip_tags($details['Enquiry Type']) . ' - ProBiz Awards 2026';
         $Webmail->details = $messageDetails;
         $Webmail->date = now();
         $Webmail->from_email = strip_tags($validated['email']);
@@ -674,7 +693,7 @@ class HomeController extends Controller
         if (@Helper::GeneralSiteSettings('notify_messages_status') && count($recipient) > 0) {
             try {
                 Mail::to($recipient)->send(new NotificationEmail([
-                    'title' => 'Sponsor Inquiry - ProBiz Awards 2026',
+                    'title' => strip_tags($details['Enquiry Type']) . ' - ProBiz Awards 2026',
                     'details' => $messageDetails,
                     'from_email' => strip_tags($validated['email']),
                     'from_name' => $fullName,
@@ -683,7 +702,7 @@ class HomeController extends Controller
             }
         }
 
-        return redirect()->back()->with('sponsor_success', 'Sponsor inquiry submitted successfully.');
+        return redirect()->back()->with('sponsor_success', 'Thank you. Your enquiry has been received. We will contact you using the details provided.');
     }
 
     public function subscribe_submit(Request $request)

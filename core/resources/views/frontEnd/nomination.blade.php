@@ -1,457 +1,142 @@
-
-
 @extends('frontEnd.layouts.probiz')
 
+@section('meta_title', 'Nominate Now | ProBiz Awards 2026 Dubai')
+@section('meta_description', 'Submit your business or professional achievement for review in the appropriate ProBiz award category.')
+
 @section('content')
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-<div class="hero-section">
-    <div class="trophies-container">
-       
-            <div class="award-text">            <h1>Nominate Your Business For ProBiz Awards 2026</h1>
- <p class="hero-subtitle">Showcase your excellence. Get global recognition.</p>
-            <p class="hero-description">
-                The ProBiz Awards celebrate Innovation, excellence, and leadership in the industry / niche you serve! Complete the form below to submit your business for one of nine categories. All winners will receive full recognition and awards at the awards ceremony.
-            </p>
-        </div>
-        </div>
-    </div>
-  
-</div>
-
-@if(session('success'))
-
-<script>
-    Swal.fire({
-        icon: 'success',
-        title: 'Success!',
-        text: '{{ session('success') }}',
-        confirmButtonText: 'OK'
-    });
-</script>
-@endif
-
-@if(session('error'))
-
-<script>
-    Swal.fire({
-        icon: 'error',
-        title: 'Oops...',
-        text: '{{ session('error') }}',
-        confirmButtonText: 'OK'
-    });
-</script>
-@endif
-<section class="form-section mt-5">
-        <h2>Nomination Form</h2>
-
-        <form id="nominationForm" action="{{ route('nominations.store') }}" method="POST">
-            @csrf
-            <div class="row mb-3">
-                <div class="col-md-6 form-group">
-
-                    <label>Business / Company Name</label>
-                    <input type="text" name="company" class="form-control" required>
-
-
-                </div>
-
-                <div class="col-md-6 form-group">
-                    <label>Contact Person</label>
-                    <input type="text" name="contact" class="form-control" required>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-6 form-group">
-                    <label>Job Title / Role</label>
-                    <input type="text" name="jobtitle" class="form-control" required>
-                </div>
-
-                <div class="col-md-6 form-group">
-                    <label>Email</label>
-                    <input type="email" name="email" class="form-control" required>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md-6 form-group">
-                    <label>Confirm Email Address</label>
-                    <input type="email" name="confirm_email" class="form-control" required>
-                </div>
-
-                <div class="col-md-6 form-group">
-                    <label>Phone Number</label>
-                    <input type="tel" name="phone" class="form-control" required>
-                </div>
-            </div>
-            <div class="row mb-3">
-
-               
-                <div class="col-md-6 form-group">
-                    <label>Select Award Category</label>
-                    <select id="category" name="category" class="form-control" required>
-                        <option value="">-- Select Category --</option>
-                        <option value="ForexBrokerageExcellenceAwards">Forex & Brokerage Excellence Awards</option>
-                        <option value="PropFirmAwards">Prop Firm Awards</option>
-                        <option value="TechnologyCRMInfrastructure">Technology, CRM & Infrastructure</option>
-                        <option value="FintechPaymentAwards">Fintech & Payment Awards</option>
-                        <option value="MarketingMediaAwards">Marketing & Media Awards</option>
-                        <option value="SpecialExcellenceAwards">Special Excellence Awards</option>
-                        <option value="EducationCommunityLeadership">Education, Community & Leadership</option>
-                        <option value="InfluencerExcellenceAwards">Influencer Excellence Awards</option>
-                    </select>
-                </div>
-
-                <div class="col-md-6 form-group" style="margin-top: 15px;">
-                    <label>Select Subcategory</label>
-                    <select id="subcategory" name="subcategory" class="form-control" required>
-                        <option value="">-- Select Subcategory --</option>
-                    </select>
-                </div>
-                 <div class="col-md-6 form-group">
-                    <label>Country / Region</label>
-                    <input type="text" name="country" class="form-control" required>
-                </div>
-
-            </div>
-            <div class="row mb-3">
-                <div class=" form-group col-md-6">
-                    <label>Supporting Statement - Why You Deserve to Win</label>
-                    <textarea name="statement" class="form-control" placeholder="Max 500 words"></textarea>
-                </div>
-                <div class=" form-group col-md-6">
-                    <label>Short Description / Tagline of Business</label>
-                    <textarea name="description" class="form-control" placeholder="Max 50-100 words"></textarea>
-                </div>
-
-            </div>
-
-            <div class="row mb-3">
-                <div class="form-group">
-                    <label>Consent / Agreement to Terms</label>
-                    <label><input type="checkbox" name="consent1" required> I confirm that the information provided is
-                        accurate.</label>
-                </div>
-
-                <div class="form-group">
-                    <label>Privacy / Data Consent</label>
-                    <label><input type="checkbox" name="consent2" required> I consent to ProBiz storing and processing my submitted
-                        information.</label>
-                </div>
-            </div>
-            <button type="submit"
-                style=" text-align: center; background-color:#d4af37; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">
-                Submit
-            </button>
-        </form>
-    </section>
-
-  <!-- Benefits Section -->
-    <section class="benefits-section">
-        <div class="benefits-header">
-            <h2>Why Nominate with ProBiz Awards</h2>
-            <p class="benefits-description">
-                Nominees gain visibility, credibility, and access to a focused network of financial and trading industry leaders.
-            </p>
-        </div>
-
-       <div class="benefits-grid">
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/globalreach.svg') }}" alt="Global Reach">
-                </div>
-                <h3 class="benefit-title">Global Reach</h3>
-                <p class="benefit-description">Build recognition and credibility across your industry.</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/mediaexposure.svg') }}" alt="Global Reach">
-                </div>
-                <h3 class="benefit-title">Media Exposure</h3>
-                <p class="benefit-description">Nominees and winners get published across high-authority, local & international network</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/network.svg') }}" alt="Global Reach">
-                </div>
-                <h3 class="benefit-title">Networking Opportunities</h3>
-                <p class="benefit-description">Connect with industry leaders, potential clients, partners, and investors</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/benchmark.svg') }}" alt="Global Reach">
-                </div>
-                <h3 class="benefit-title">Benchmark Against the Best</h3>
-                <p class="benefit-description">Use the nomination process to showcase your strengths and benchmark your progress.</p>
-            </div>
-
-            <div class="benefit-card">
-               <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/marketing.svg') }}" alt="Global Reach">
-                </div>
-                <h3 class="benefit-title">Marketing Credibility</h3>
-                <p class="benefit-description">Winners and finalists can use the official logo and certificate that can be added to marketing, social media, and team collateral</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/longterm.svg') }}" alt="Global Reach">
-                </div>
-                <h3 class="benefit-title">Long-Term Prestige</h3>
-                <p class="benefit-description">Winner or finalist recognition gives your brand a lasting trust signal.</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/dedicatedsupport.svg') }}" alt="Global Reach">
-                </div>
-                <h3 class="benefit-title">Dedicated Support</h3>
-                <p class="benefit-description">Nominees will receive updates, checklist, and support to clarify process if you need help, our team is available to address queries through the process</p>
-            </div>
-
-            <div class="benefit-card">
-                <div class="benefit-icon">
-                    <img class="img-fluid" style="max-width: 50px;" src="{{ asset('assets/keditor/probiz/assets/Nomination/independent.svg') }}" alt="Global Reach">
-                </div>
-                <h3 class="benefit-title">Independent Judging</h3>
-                <p class="benefit-description">All entries are evaluated by neutral panel and fair way�no conflict of interest, measurable criteria</p>
-            </div>
+    <section class="probiz-page-hero">
+        <div class="container">
+            <div class="probiz-kicker">Nominate Now</div>
+            <h1>Nominate Your Business or Achievement</h1>
+            <p>Tell us about your work and the award category you would like to enter. Our team will review your nomination and contact you about the next steps.</p>
         </div>
     </section>
 
-     <section id="roadmap" class="roadmap-area pt-130 pb-130">
-                    <div class="container custom-container-two">
-                        <div class="row justify-content-center">
-                            <div class="col-xl-5 col-lg-8">
-                                <div class="section-title text-center mb-60">
-                                    <span class="section-title-span"></span>Our Agenda<span class="section-title-span"></span>
-                                    <h2 class="title"> <span style="color: #d4af37;">ProBiz Awards</span>  Program Agenda  </h2>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="bt-roadmap_x">
-                                    <div class="bt-roadmap-wrap">
-                                        <div class="bt-roadmap-item">
-                                            <span class="roadmap-title">6:00 PM</span>
-                                            <div class="roadmap-content">
-                                                <span class="dot"></span>
-                                                <h4 class="title">Opening Ceremony</h4>
-                                                <span>Anchor Speech, ProBiz Intro & Teaser</span>
-                                                <span>Trophy Launch</span>
-                                               
-                                            </div>
-                                        </div>
-                                        <div class="bt-roadmap-item">
-                                            <span class="roadmap-title">6:15 PM</span>
-                                            <div class="roadmap-content">
-                                                <span class="dot"></span>
-                                                <h4 class="title">Speaker Speech</h4>
-                                                <span>Panel Speaker 1</span>
-                                                <span>Panel Speaker 2</span>
-                                                <span>Panel Speaker 3</span>
-                                            </div>
-                                        </div>
-                                        <div class="bt-roadmap-item">
-                                            <span class="roadmap-title">6:45 PM</span>
-                                            <div class="roadmap-content">
-                                                <span class="dot"></span>
-                                                <h4 class="title">Hi Tea & Entertainment</h4>
-                                                <span>Lunch</span>
-                                               
-                                            </div>
-                                        </div>
-                                        <div class="bt-roadmap-item">
-                                            <span class="roadmap-title">7:00 Pm</span>
-                                            <div class="roadmap-content">
-                                                <span class="dot"></span>
-                                                <h4 class="title">Award Distribution</h4>
-                                                <span>30 Awards Distribution</span>
-                                              
-                                            </div>
-                                        </div>
-                                        <div class="bt-roadmap-item">
-                                            <span class="roadmap-title">8:00 PM</span>
-                                            <div class="roadmap-content">
-                                                <span class="dot"></span>
-                                                <h4 class="title">Entertainment Show</h4>
-                                               
-                                            </div>
-                                        </div>
-                                        <div class="bt-roadmap-item">
-                                            <span class="roadmap-title">8:15 PM</span>
-                                            <div class="roadmap-content">
-                                                <span class="dot"></span>
-                                                <h4 class="title">Speaker Speech</h4>
-                                                <span>Panel Speaker 4</span>
-                                                <span>Panel Speaker 5</span>
-                                                <span>Panel Speaker 6</span>
-                                            </div>
-                                        </div>
-                                        <div class="bt-roadmap-item">
-                                            <span class="roadmap-title">8:45 PM - 10:00 PM</span>
-                                            <div class="roadmap-content">
-                                                <span class="dot"></span>
-                                                <h4 class="title">Entertainment Show30 Awards Distribution</h4>
-                                               
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+    <section class="probiz-section">
+        <div class="container">
+            @if(session('success'))
+                <div class="probiz-alert">{{ session('success') }}</div>
+            @endif
+            @if($errors->any())
+                <div class="probiz-alert probiz-alert-error">We could not submit your nomination. Please review the highlighted fields and try again.</div>
+            @endif
 
-  
+            <form id="nominationForm" action="{{ route('nominations.store') }}" method="POST" enctype="multipart/form-data" class="probiz-form">
+                @csrf
+                <div class="probiz-form-grid">
+                    <label>Nomination type
+                        <select name="nomination_type" required>
+                            @foreach(['Business', 'Individual', 'Product, Property or Platform'] as $type)
+                                <option value="{{ $type }}" @selected(old('nomination_type') === $type)>{{ $type }}</option>
+                            @endforeach
+                        </select>
+                    </label>
+                    <label>Industry pillar
+                        <select id="pillarSelect" name="category" required>
+                            <option value="">Select pillar</option>
+                            @foreach($pillars as $pillar)
+                                <option value="{{ $pillar['slug'] }}" @selected(old('category', request('pillar')) === $pillar['slug'])>{{ $pillar['title'] }}</option>
+                            @endforeach
+                            <option value="restaurant-awards" @selected(old('category', request('pillar')) === 'restaurant-awards')>Restaurant Distinctions</option>
+                        </select>
+                    </label>
+                    <label>Award category
+                        <select id="awardSelect" name="subcategory" data-selected="{{ old('subcategory', request('category')) }}" required>
+                            <option value="">Select award</option>
+                        </select>
+                    </label>
+                    <label>Business / organisation name
+                        <input type="text" name="company" value="{{ old('company') }}" required>
+                    </label>
+                    <label>Nominee / entry name
+                        <input type="text" name="nominee_name" value="{{ old('nominee_name') }}" required>
+                    </label>
+                    <label>Emirate
+                        <select name="emirate" required>
+                            @foreach(['Abu Dhabi', 'Dubai', 'Sharjah', 'Ajman', 'Umm Al Quwain', 'Ras Al Khaimah', 'Fujairah'] as $emirate)
+                                <option value="{{ $emirate }}" @selected(old('emirate') === $emirate)>{{ $emirate }}</option>
+                            @endforeach
+                        </select>
+                    </label>
+                    <label>UAE activity or contribution
+                        <input type="text" name="uae_activity" value="{{ old('uae_activity') }}" required>
+                    </label>
+                    <label>Branch / location
+                        <input type="text" name="branch_location" value="{{ old('branch_location') }}">
+                    </label>
+                    <label>Website / professional profile
+                        <input type="url" name="website" value="{{ old('website') }}" placeholder="https://">
+                    </label>
+                    <label>Contact name
+                        <input type="text" name="contact" value="{{ old('contact') }}" required>
+                    </label>
+                    <label>Contact role
+                        <input type="text" name="jobtitle" value="{{ old('jobtitle') }}" required>
+                    </label>
+                    <label>Email address
+                        <input type="email" name="email" value="{{ old('email') }}" required>
+                    </label>
+                    <label>Confirm email address
+                        <input type="email" name="confirm_email" value="{{ old('confirm_email') }}" required>
+                    </label>
+                    <label>Phone number
+                        <input type="tel" name="phone" value="{{ old('phone') }}" required>
+                    </label>
+                    <label>Country / region
+                        <input type="text" name="country" value="{{ old('country', 'United Arab Emirates') }}" required>
+                    </label>
+                    <label>Supporting evidence
+                        <input type="file" name="supporting_evidence" accept=".pdf,.jpg,.jpeg,.png">
+                    </label>
+                </div>
 
-    <div class="divider"></div>
-    
+                <label>Achievement summary <span id="summaryCount">0 words</span>
+                    <textarea id="statement" name="statement" rows="7" placeholder="Recommended 150-500 words" required>{{ old('statement') }}</textarea>
+                </label>
+                <label>Short description / tagline
+                    <textarea name="description" rows="4" placeholder="Recommended 50-100 words" required>{{ old('description') }}</textarea>
+                </label>
+
+                <label class="probiz-check"><input type="checkbox" name="whatsapp_permission" value="1" @checked(old('whatsapp_permission'))> You may contact me on WhatsApp about this nomination.</label>
+                <label class="probiz-check"><input type="checkbox" name="consent1" value="1" required @checked(old('consent1'))> I confirm the information is accurate and I am authorised to submit this nomination.</label>
+                <label class="probiz-check"><input type="checkbox" name="consent2" value="1" required @checked(old('consent2'))> I have read the Privacy Policy and nomination terms, and understand that submission does not guarantee finalist status or a win.</label>
+                <label class="probiz-check"><input type="checkbox" name="marketing_consent" value="1" @checked(old('marketing_consent'))> Send me ProBiz news and future event updates.</label>
+
+                <button type="submit" class="btn-nominate">Submit Nomination</button>
+            </form>
+        </div>
+    </section>
+
     <script>
-  const subcategories = {
-    ForexBrokerageExcellenceAwards: [
-      "Best Global Forex Broker",
-      "Best Emerging Forex Broker- India",
-      "Best Multi-Asset Broker",
-      "Most Transparent Broker",
-      "Best Broker for Beginners",
-      "Best Mobile Trading Platform",
-      "Best Institutional Broker",
-      "Best Customer Support Broker",
-      "Best Execution Broker",
-      "Best CFD Broker",
-      "Best Copy Trading Platform",
-      "Best Broker Partnership Program",
-      "Fastest Growing Broker",
-      "Best Liquidity Provider",
-      "Best White Label Solution Provider",
-      "Best Broker for Cryptocurrency Trading",
-      "Best Newcomer Broker"
-      
-    ],
-    PropFirmAwards: [
-      "Best Global Prop Firm",
-      "Best Emerging Prop Firm - India",
-      "Best Funded Trader Program",
-      "Fastest Growing Prop Firm",
-      "Best Risk Management Model in Prop Trading",
-      "Most Innovative Prop Firm Technology",
-      "Best Challenge Platform"
-     
-    ],
-    TechnologyCRMInfrastructure: [
-      "Best Trading Technology Provider",
-      "Best CRM & Back-Office Solution",
-      "Best Bridge / Liquidity Technology",
-      "Best Trading Software Developer",
-      "Best Risk Management Platform",
-      "Best Server & Hosting Infrastructure"
-    ],
-    FintechPaymentAwards: [
-      "Best Fintech Innovation",
-      "Best Digital Payment Gateway",
-      "Best PSP for Forex Industry",
-      "Best Blockchain / Crypto Payment Solution",
-      "Best Cross-Border Payment Provider",
-      "Best AI-Driven Fintech Platform"
-     
-    ],
-    MarketingMediaAwards: [
-      "Best Forex Marketing Agency",
-      "Best Broker Branding Campaign",
-      "Best Financial Media Platform of the Year",
-      "Best Fintech PR / Communications Agency"
-    ],
-    SpecialExcellenceAwards: [
-      "Fintech Innovation Leader of the Year",
-      "Outstanding Contribution to Financial Industry"
-    ],
-    EducationCommunityLeadership: [
-      "Best Forex Educator / Academy",
-      "Best Trading Community",
-      "Best Financial Training Program",
-      "Industry Leadership Award",
-      "Lifetime Achievement in Fintech & Trading"
-    ],
-    InfluencerExcellenceAwards: [
-      "Best Forex Influencer (Male)",
-      "Best Forex Influencer (Female)",
-      "Best YouTube Trading Influencer",
-      "Best Instagram Trading Influencer",
-      "Influencer of the Year"
-    ]
-  };
+        document.addEventListener('DOMContentLoaded', function () {
+            const awards = @json(collect($pillars)->mapWithKeys(fn($pillar) => [$pillar['slug'] => $pillar['awards']])->put('restaurant-awards', $restaurantAwards));
+            const pillarSelect = document.getElementById('pillarSelect');
+            const awardSelect = document.getElementById('awardSelect');
+            const selectedAward = awardSelect.dataset.selected;
+            const statement = document.getElementById('statement');
+            const summaryCount = document.getElementById('summaryCount');
 
-  const categorySelect = document.getElementById("category");
-  const subcategorySelect = document.getElementById("subcategory");
+            function populateAwards() {
+                const items = awards[pillarSelect.value] || [];
+                awardSelect.innerHTML = '<option value="">Select award</option>';
+                items.forEach(function (award) {
+                    const option = document.createElement('option');
+                    option.value = award.id;
+                    option.textContent = award.id + ' | ' + award.title;
+                    option.selected = selectedAward === award.id;
+                    awardSelect.appendChild(option);
+                });
+            }
 
-  categorySelect.addEventListener("change", function () {
-    const selected = this.value;
-    subcategorySelect.innerHTML = '<option value="">-- Select Subcategory --</option>';
+            function updateCount() {
+                const words = (statement.value || '').trim().split(/\s+/).filter(Boolean).length;
+                summaryCount.textContent = words + ' words';
+            }
 
-    if (subcategories[selected]) {
-      subcategories[selected].forEach(sub => {
-        const option = document.createElement("option");
-        option.value = sub;
-        option.textContent = sub;
-        subcategorySelect.appendChild(option);
-      });
-    }
-  });
-</script>
-
-<script>
-document.getElementById('nominationForm').addEventListener('submit', function(e) {
-    e.preventDefault(); // stop default submit
-    
-    let form = this;
-    let errors = [];
-
-    // Get form values
-    const company = form.company.value.trim();
-    const contact = form.contact.value.trim();
-    const jobtitle = form.jobtitle.value.trim();
-    const email = form.email.value.trim();
-    const confirm_email = form.confirm_email.value.trim();
-    const phone = form.phone.value.trim();
-    const category = form.category.value;
-    const subcategory = form.subcategory.value;
-    const country = form.country.value.trim();
-    const statement = form.statement.value.trim();
-    const description = form.description.value.trim();
-    const consent1 = form.consent1.checked;
-    const consent2 = form.consent2.checked;
-
-    // Validation
-    if(!company) errors.push("Please enter Business / Company Name.");
-    if(!contact) errors.push("Please enter Contact Person.");
-    if(!jobtitle) errors.push("Please enter Job Title / Role.");
-    if(!email) errors.push("Please enter Email.");
-    if(email && !/^\S+@\S+\.\S+$/.test(email)) errors.push("Please enter a valid Email.");
-    if(!confirm_email) errors.push("Please confirm Email.");
-    if(email && confirm_email && email !== confirm_email) errors.push("Emails do not match.");
-    if(!phone) errors.push("Please enter Phone Number.");
-    if(!category) errors.push("Please select Award Category.");
-    if(!subcategory) errors.push("Please select Subcategory.");
-    if(!country) errors.push("Please enter Country / Region.");
-    if(!statement) errors.push("Please enter Supporting Statement.");
-    if(!description) errors.push("Please enter Short Description / Tagline.");
-    if(!consent1) errors.push("You must confirm the accuracy of the information.");
-    if(!consent2) errors.push("You must consent to ProBiz storing your information.");
-
-    // Show errors or submit
-    if(errors.length > 0){
-        alert("Please fix the following labels:\n\n" + errors.join("\n"));
-        return false; // stop submission
-    } else {
-        // If everything is correct, submit form
-        form.submit();
-    }
-});
-</script>
-
-
-      @endsection
+            pillarSelect.addEventListener('change', populateAwards);
+            statement.addEventListener('input', updateCount);
+            populateAwards();
+            updateCount();
+        });
+    </script>
+@endsection

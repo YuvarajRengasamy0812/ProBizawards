@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProBizPageController;
 
 use App\Http\Controllers\Dashboard\NominationController;
 use App\Http\Controllers\LanguageController;
@@ -17,57 +18,48 @@ use Illuminate\Support\Facades\Route;
 | Here is where you can register web routes for your application. These
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
-|CategoriesFx
 */
-Route::get('/', function () {
-    return view('frontEnd.probiz');
-})->name('probiz');
-Route::get('/nomination', function () {
-    return view('frontEnd.nomination');
-})->name('nomination');
+Route::get('/', [ProBizPageController::class, 'home'])->name('probiz');
+Route::get('/about', [ProBizPageController::class, 'about'])->name('probiz.about');
+Route::get('/award-categories', [ProBizPageController::class, 'categories'])->name('probiz.categories');
+Route::get('/award-categories/{slug}', [ProBizPageController::class, 'pillar'])->name('probiz.pillar');
+Route::get('/awards/{slug}', [ProBizPageController::class, 'award'])->name('probiz.award');
+Route::get('/restaurant-awards', [ProBizPageController::class, 'restaurantAwards'])->name('probiz.restaurant-awards');
+Route::get('/how-it-works', [ProBizPageController::class, 'howItWorks'])->name('probiz.how-it-works');
+Route::get('/nominate', function () {
+    return view('frontEnd.nomination', [
+        'event' => config('probiz.event'),
+        'pillars' => config('probiz.pillars'),
+        'restaurantAwards' => config('probiz.restaurant_awards'),
+    ]);
+})->name('nominate');
+Route::get('/nomination', fn() => redirect('/nominate', 301))->name('nomination');
+Route::get('/finalist-package', [ProBizPageController::class, 'finalistPackage'])->name('probiz.finalist-package');
+Route::get('/finalists', [ProBizPageController::class, 'finalists'])->name('probiz.finalists');
+Route::get('/vote', [ProBizPageController::class, 'vote'])->name('probiz.vote');
+Route::get('/winners', [ProBizPageController::class, 'winners'])->name('probiz.winners');
+Route::get('/judging-and-voting', [ProBizPageController::class, 'judging'])->name('probiz.judging');
+Route::get('/judges', [ProBizPageController::class, 'judges'])->name('probiz.judges');
+Route::get('/sponsors', [ProBizPageController::class, 'sponsors'])->name('probiz.sponsors');
+Route::get('/media-partners', [ProBizPageController::class, 'mediaPartners'])->name('probiz.media-partners');
+Route::get('/gallery', [ProBizPageController::class, 'gallery'])->name('Gallery');
+Route::get('/gala-night', [ProBizPageController::class, 'gala'])->name('probiz.gala');
+Route::get('/contact', [ProBizPageController::class, 'contact'])->name('probiz.contact');
+Route::get('/faq', [ProBizPageController::class, 'faq'])->name('probiz.faq');
+Route::get('/terms-and-conditions', [ProBizPageController::class, 'terms'])->name('probiz.terms');
+Route::get('/privacy-policy', [ProBizPageController::class, 'privacy'])->name('probiz.privacy');
 
-Route::get('/previewsevent', function () {
-    return view('frontEnd.previewsevent');
-})->name('previewsevent');
-
-Route::get('/gallery', function () {
-    return view('frontEnd.Gallery');
-})->name('Gallery');
-
-Route::get('/award', function () {
-    return view('frontEnd.award');
-})->name('award');
-
-Route::get('/media', function () {
-    return view('frontEnd.media');
-})->name('media');
-
-Route::get('/event', function () {
-    return view('frontEnd.Event');
-})->name('Event');
-Route::get('/financial', function () {
-    return view('frontEnd.financial');
-})->name('financial');
-Route::get('/Categories', function () {
-    return view('frontEnd.CategoriesFx');
-})->name('CategoriesFx');
-Route::get('/categoriesaward', function () {
-    return view('frontEnd.categoriesAwards');
-})->name('categoriesAwards');
-Route::get('/educationalAcademy', function () {
-    return view('frontEnd.educationalAcademy');
-})->name('educationalAcademy');
-Route::get('/fintech', function () {
-    return view('frontEnd.fintech');
-})->name('fintech');
-
-Route::get('/influencer', function () {
-    return view('frontEnd.Influencer');
-})->name('Influencer');
-
-Route::get('/winner', function () {
-    return view('frontEnd.winner');
-})->name('winner');
+Route::get('/financial', fn() => redirect(url('/award-categories'), 301))->name('financial');
+Route::get('/Categories', fn() => redirect(url('/award-categories'), 301))->name('CategoriesFx');
+Route::get('/categoriesaward', fn() => redirect(url('/award-categories'), 301))->name('categoriesAwards');
+Route::get('/educationalAcademy', fn() => redirect(url('/award-categories'), 301))->name('educationalAcademy');
+Route::get('/fintech', fn() => redirect(url('/award-categories'), 301))->name('fintech');
+Route::get('/influencer', fn() => redirect(url('/award-categories'), 301))->name('Influencer');
+Route::get('/winner', fn() => redirect(url('/winners'), 301))->name('winner');
+Route::get('/event', fn() => redirect(url('/sponsors'), 301))->name('Event');
+Route::get('/media', fn() => redirect(url('/media-partners'), 301))->name('media');
+Route::get('/award', fn() => abort(410))->name('award');
+Route::get('/previewsevent', fn() => abort(410))->name('previewsevent');
 
 
 

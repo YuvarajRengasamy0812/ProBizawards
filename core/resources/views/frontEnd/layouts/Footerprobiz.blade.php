@@ -14,27 +14,9 @@
                         class="footer-logo">
                 </a>
                 <p class="footer-description">
-                    Asia's premier ProBiz Awards platform for financial, fintech, brokerage, and trading excellence.
+                    ProBiz Awards 2026 Dubai celebrates businesses, entrepreneurs and professionals across the UAE through industry recognition, brand visibility and an evening of networking and celebration.
                 </p>
-                <div class="d-flex align-items-center justify-content-center gap-5">
-
-                    <div>
-
-                        <div class="presented-by mt-5 text-center">Organised By</div>
-                        <a href="https://probizawards.com/" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('assets/keditor/probiz/assets/Media-logo.png') }}" alt="ProBiz Media"
-                                class="probiz-media-logo">
-                        </a>
-                    </div>
-                    <div>
-
-                        <div class="presented-by mt-5 text-center">Official Sponsor</div>
-                        <a href="https://probizawards.com/" target="_blank" rel="noopener noreferrer">
-                            <img src="{{ asset('assets/keditor/probiz/assets/Untitled-1.png') }}" alt="Official Sponsor"
-                                class="" >
-                        </a>
-                    </div>
-                </div>
+                <p class="footer-description">11 December 2026 | Falcon Ballroom 1 + 2 | Le Meridien Dubai Hotel & Conference Centre, Airport Road, Dubai, UAE</p>
             </div>
 
 
@@ -42,9 +24,10 @@
             <div class="col-lg-2 col-md-6 mb-4">
                 <h3 class="footer-heading">Quick Links</h3>
                 <ul class="footer-link">
-                    <li><a href="{{ url('/') }}#about">About Us</a></li>
-                    <li><a href="{{ url('/') }}#agenda">Agenda</a></li>
-                    <li><a href="{{ url('/') }}#speakers">Speakers</a></li>
+                    <li><a href="{{ url('/about') }}">About</a></li>
+                    <li><a href="{{ url('/award-categories') }}">Award Categories</a></li>
+                    <li><a href="{{ url('/nominate') }}">Nominate Now</a></li>
+                    <li><a href="{{ url('/faq') }}">FAQs</a></li>
                 </ul>
 
             </div>
@@ -53,17 +36,18 @@
             <div class="col-lg-2 col-md-6 mb-4">
                 <h3 class="footer-heading">Useful Links</h3>
                 <ul class="footer-link">
-                    <li><a href="{{ url('/event') }}">Recent Event Sponsor</a></li>
-                    <li><a href="{{ url('/media') }}">Media Sponsor</a></li>
+                    <li><a href="{{ url('/sponsors') }}">Sponsorship</a></li>
+                    <li><a href="{{ url('/media-partners') }}">Media Partners</a></li>
+                    <li><a href="{{ url('/gala-night') }}">Gala Night</a></li>
+                    <li><a href="{{ url('/contact') }}">Contact</a></li>
                 </ul>
             </div>
 
             <!-- Newsletter -->
             <div class="col-lg-4 col-md-6 mb-4">
-                <h3 class="footer-heading">Subscribe Newsletter</h3>
+                <h3 class="footer-heading">Stay Updated with ProBiz Awards</h3>
                 <p class="newsletter-text">
-                    Subscribe to our newsletter for the latest updates, exclusive offers, and industry insights
-                    delivered straight to your inbox
+                    Receive nomination updates, finalist announcements and gala news.
                 </p>
 
 
@@ -71,7 +55,7 @@
 
                     {{ Form::open(['route' => 'subscribeSubmit', 'method' => 'POST', 'id' => 'subscribeForm', 'class' => 'newsletter-forms']) }}
                     {!! Form::email('subscribe_email', old('subscribe_email'), [
-                        'placeholder' => 'info@probizawards.com',
+                        'placeholder' => 'Email address',
                         'class' => 'newsletter-input',
                         'id' => 'subscribe_email',
                         'required' => 'required',
@@ -80,6 +64,7 @@
                     <button type="submit" id="subscribeFormSubmit" class="newsletter-btn" aria-label="Subscribe">
                         <i class="bi bi-send"></i>
                     </button>
+                    <label class="newsletter-consent"><input type="checkbox" name="newsletter_consent" value="1"> I would like to receive ProBiz Awards news by email. I can unsubscribe at any time.</label>
                     {{ Form::close() }}
 
                 @endif
@@ -103,33 +88,21 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row align-items-center">
-                <!-- Association -->
-                <div class="col-lg-5 col-md-12 mb-3 mb-lg-0">
-                    <div class="association-section">
-                        <span class="association-text">Association With</span>
-                        <div class="association-logos">
-                            <img src="{{ asset('assets/keditor/probiz/assets/Association-with.png') }}"
-                                alt="Association partner">
-
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Copyright -->
-                <div class="col-lg-4 col-md-12 mb-3 mb-lg-0">
+                <div class="col-lg-6 col-md-12 mb-3 mb-lg-0">
                     <p class="copyright mb-0">
-                        Copyright &copy; {{ date('Y') }} <strong>ProBiz Awards</strong>. All Rights Reserved.
+                        &copy; 2026 <strong>ProBiz Awards</strong>. All rights reserved.
                     </p><br>
                     
                 </div>
 
                 <!-- Bottom Links -->
-                <div class="col-lg-3 col-md-12">
+                <div class="col-lg-6 col-md-12">
                     <div class="footer-bottom-links">
-                        <a href="{{ asset('assets/keditor/probiz/assets/Terms-and-Condition.pdf') }}" download>Terms &
-                            Conditions</a>
-                        <a href="{{ asset('assets/keditor/probiz/assets/privacy-policy.pdf') }}" download>Privacy
-                            Policy</a>
+                        <a href="{{ url('/terms-and-conditions') }}">Terms & Conditions</a>
+                        <a href="{{ url('/privacy-policy') }}">Privacy Policy</a>
+                        <a href="{{ url('/faq') }}">FAQs</a>
+                        <a href="{{ asset('magazine/ProBizAwardsMagazine-DecemberEdition2026.pdf') }}" download>Brochure</a>
                     </div>
                 </div>
             </div>

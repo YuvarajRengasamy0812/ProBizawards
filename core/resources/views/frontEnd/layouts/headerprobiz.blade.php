@@ -4,8 +4,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-9 col-md-12 text-center text-lg-start mb-2 mb-lg-0">
                     <div class="venue-info">
-                        <strong>Venue:</strong> Le Meridian, Airport Road, Dubai UAE
-                        <span class="venue-date"><strong>Date & Time:</strong> 19th December 2026, 6:00PM - 11:00PM</span>
+                        <strong>11 December 2026</strong>
+                        <span class="venue-date">Falcon Ballroom, Le Meridien Dubai Hotel & Conference Centre | Dubai, UAE</span>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-12 text-center text-lg-end">
@@ -30,80 +30,70 @@
             </a>
 
             <!-- Mobile Toggle Button -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="probiz-menu-toggle" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
 
             <!-- Navigation Menu -->
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse d-lg-flex probiz-header-menu" id="navbarNav">
                 <ul class="navbar-nav mx-auto align-items-lg-center">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url('/') }}">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/') }}#about">ABOUT US</a>
+                        <a class="nav-link" href="{{ url('/about') }}">ABOUT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/') }}#agendarecap">EVENT HIGHLIGHTS</a>
+                        <a class="nav-link" href="{{ url('/how-it-works') }}">PROCESS</a>
                     </li>
-                    <!--  <li class="nav-item">-->
-                    <!--    <a class="nav-link" href="{{ url('/') }}#agenda">AGENDA</a>-->
-                    <!--</li>-->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/gallery') }}">GALLERY</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            data-bs-auto-close="outside" aria-expanded="false">
-                            SPONSORS
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url('/event') }}">Event Sponsors</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/media') }}">Media Sponsors</a></li>
-                        </ul>
-                    </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             data-bs-auto-close="outside" aria-expanded="false">
                             CATEGORIES
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url('/financial') }}">Forex & Brokerage Excellence Awards</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/Categories') }}">Prop Firm Awards</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/categoriesaward') }}">Technology CRM & Infrastructure</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/educationalAcademy') }}">Fintech & Payment Awards</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/fintech') }}">Marketing & Media Awards</a>
-                            </li>
-                            <li><a class="dropdown-item" href="{{ url('/influencer') }}">Special Excellence Awards</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/educationalAcademy') }}">Education Community & Leadership</a></li>
-
-                            <li><a class="dropdown-item" href="{{ url('/influencer') }}">Influencer Excellence Awards</a></li>
-
+                            @foreach(config('probiz.pillars') as $pillar)
+                                <li><a class="dropdown-item" href="{{ url('/award-categories/'.$pillar['slug']) }}">{{ $pillar['title'] }}</a></li>
+                            @endforeach
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{{ url('/restaurant-awards') }}">Restaurant Distinctions</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/award-categories') }}">View All Categories</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             data-bs-auto-close="outside" aria-expanded="false">
-                          PREVIOUS AWARDS
+                            PARTNERS
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url('/award') }}">PREVIOUS AWARDS 2024</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/previewsevent') }}">PREVIOUS SPONSORS 2024</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/sponsors') }}">Sponsorship</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/media-partners') }}">Media Partners</a></li>
                         </ul>
                     </li>
-                    <!--<li class="nav-item">-->
-                    <!--    <a class="nav-link" href="{{ url('/award') }}">AWARDS</a>-->
-                    <!--</li>-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside" aria-expanded="false">
+                          GALA
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{ url('/gala-night') }}">Gala Night</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/finalist-package') }}">Finalist Experience</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/judging-and-voting') }}">Judging & Voting</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/contact') }}">CONTACT</a>
+                    </li>
                 </ul>
 
                 <!-- CTA Buttons -->
                 <div class="cta-buttons d-flex align-items-center gap-2">
-                    <a href="{{ url('/winner') }}" class="btn-nominate">WINNERS</a>
-                    <a href="{{ url('/nomination') }}" class="btn-nominate">NOMINATE</a>
+                    <a href="{{ url('/winners') }}" class="btn-nominate">WINNERS</a>
+                    <a href="{{ url('/nominate') }}" class="btn-nominate">NOMINATE</a>
                     <a href="#sponsor" class="btn-sponsor" data-bs-toggle="modal"
-                        data-bs-target="#sponsorModal">SPONSOR 2026</a>
+                        data-bs-target="#sponsorModal">SPONSOR</a>
                 </div>
             </div>
         </div>
@@ -122,59 +112,57 @@
           alt="ProBiz Awards Dubai 2026" class="sponsor-modal-logo">
       </div>
       <form action="{{ route('contactPageSubmited') }}" method="POST">
-  @csrf
-  <div class="row g-3">
-    <div class="col-md-6">
-      <label class="form-label">First Name</label>
-      <input type="text" name="first_name" class="form-control" placeholder="Enter first name" required>
-    </div>
-    <div class="col-md-6">
-      <label class="form-label">Last Name</label>
-      <input type="text" name="last_name" class="form-control" placeholder="Enter last name" required>
-    </div>
+        @csrf
+        <input type="hidden" name="enquiry_type" value="Sponsorship">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Contact name</label>
+            <input type="text" name="full_name" class="form-control" placeholder="Enter contact name" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Work email</label>
+            <input type="email" name="email" class="form-control" placeholder="Enter email" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone</label>
+            <input type="tel" name="phone" class="form-control" placeholder="Enter phone number">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Company name</label>
+            <input type="text" name="company" class="form-control" placeholder="Enter company name" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Country</label>
+            <input type="text" name="country" class="form-control" value="United Arab Emirates" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Partnership interest</label>
+            <select name="partnership_interest" class="form-select" required>
+              <option>Discuss Options</option>
+              <option>Title Partner</option>
+              <option>Platinum Partner</option>
+              <option>Gold Partner</option>
+              <option>Category Partner</option>
+              <option>Table Partner</option>
+              <option>Media Partner</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Message</label>
+            <textarea name="message" class="form-control" rows="3" placeholder="Tell us about your objectives"></textarea>
+          </div>
+          <div class="col-12">
+            <label class="form-check-label text-dark">
+              <input type="checkbox" name="privacy_ack" value="1" required>
+              I have read the Privacy Policy and understand that my details will be used to respond to this enquiry.
+            </label>
+          </div>
+        </div>
 
-    <div class="col-md-6">
-      <label class="form-label">Email</label>
-      <input type="email" name="email" class="form-control" placeholder="Enter email" required>
-    </div>
-    <div class="col-md-6">
-      <label class="form-label">Phone</label>
-      <input type="tel" name="phone" class="form-control" placeholder="Enter phone number">
-    </div>
-
-    <div class="col-md-6">
-      <label class="form-label">Company Name</label>
-      <input type="text" name="company" class="form-control" placeholder="Enter company name">
-    </div>
-
-    <div class="col-md-6">
-      <label class="form-label">Country</label>
-      <select name="country" class="form-select" required>
-        <option value="">Select Country</option>
-        <option>United States</option>
-        <option>United Kingdom</option>
-        <option>India</option>
-        <option>United Arab Emirates</option>
-        <option>Canada</option>
-        <option>Australia</option>
-        <option>Germany</option>
-        <option>France</option>
-        <option>Japan</option>
-        <option>China</option>
-        <option>Brazil</option>
-        <option>South Africa</option>
-        <option>Italy</option>
-        <option>Spain</option>
-        <option>Mexico</option>
-        <option>Singapore</option>
-      </select>
-    </div>
-  </div>
-
-  <div class="text-center mt-4">
-    <button type="submit" class="btn btn-primary px-5 py-2">Submit</button>
-  </div>
-</form>
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary px-5 py-2">Send Partnership Enquiry</button>
+        </div>
+      </form>
 
       </div>
     </div>

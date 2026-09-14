@@ -3,9 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProBiz Awards 2026 - Global Financial & Online Trading Awards</title>
-    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+    <title>@yield('meta_title', 'ProBiz Awards 2026 Dubai | UAE Business Awards')</title>
+    <meta name="description" content="@yield('meta_description', 'Explore ProBiz Awards 2026 Dubai. Discover business and restaurant award categories, nomination details and the gala on 11 December 2026.')">
+    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="icon" href="{{ asset('assets/keditor/probiz/assets/probiz-awards-dubai-2026-light.png') }}" type="image/png">
 
+    <script>
+        tailwind = {
+            config: {
+                prefix: 'tw-',
+                corePlugins: { preflight: false },
+                theme: {
+                    extend: {
+                        colors: {
+                            probizGold: '#d4a331',
+                            probizAmber: '#f4d778',
+                            probizInk: '#05060a',
+                            probizNavy: '#081826'
+                        },
+                        boxShadow: {
+                            probiz: '0 28px 80px rgba(0, 0, 0, 0.35)'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
@@ -18,13 +42,59 @@
     <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/slick.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/default.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/keditor/css/tested.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/style.css') }}?v=20260910-responsive-v6">
+    <style>
+        @media (min-width: 992px) {
+            .main-header .navbar-collapse,
+            .navbar-expand-lg .navbar-collapse {
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                height: auto !important;
+                flex-basis: auto !important;
+                align-items: center !important;
+            }
+
+            .main-header .navbar-nav {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 14px !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .main-header .nav-item,
+            .main-header .nav-link,
+            .main-header .cta-buttons {
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            .main-header .nav-link {
+                color: #ffffff !important;
+                font-size: 12px !important;
+                font-weight: 900 !important;
+                line-height: 1.2 !important;
+                padding: 8px 4px !important;
+                white-space: nowrap !important;
+            }
+
+            .main-header .cta-buttons {
+                align-items: center !important;
+                gap: 8px !important;
+                flex-shrink: 0 !important;
+            }
+        }
+    </style>
     @stack('styles')
 </head>
 <body>
-<div id="loader">
+<div id="loader" style="display:none" aria-hidden="true">
     <div class="loader"></div>
     <div class="progress-container mt-3">
         <div class="progress-bar" id="progressBar"></div>
@@ -66,7 +136,7 @@
         if (loader && progressBar && loadingText) {
             let progress = 0;
             const interval = setInterval(function () {
-                progress += 2;
+                progress += 20;
                 progressBar.style.width = progress + '%';
                 loadingText.textContent = 'Loading... ' + progress + '%';
 
@@ -78,9 +148,9 @@
                         setTimeout(function () {
                             loader.style.display = 'none';
                         }, 500);
-                    }, 200);
+                    }, 80);
                 }
-            }, 50);
+            }, 20);
         }
 
         document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
@@ -100,10 +170,23 @@
 
         const navbarCollapse = document.querySelector('.navbar-collapse');
         if (navbarCollapse) {
+            const menuToggle = document.querySelector('.probiz-menu-toggle');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function () {
+                    const isOpen = navbarCollapse.classList.toggle('probiz-menu-open');
+                    menuToggle.classList.toggle('active', isOpen);
+                    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+
             document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
                 link.addEventListener('click', function () {
                     if (window.innerWidth < 992 && !link.classList.contains('dropdown-toggle')) {
-                        bootstrap.Collapse.getOrCreateInstance(navbarCollapse, { toggle: false }).hide();
+                        navbarCollapse.classList.remove('probiz-menu-open');
+                        if (menuToggle) {
+                            menuToggle.classList.remove('active');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                        }
                     }
                 });
             });
