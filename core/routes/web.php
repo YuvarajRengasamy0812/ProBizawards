@@ -29,6 +29,7 @@ Route::get('/how-it-works', [ProBizPageController::class, 'howItWorks'])->name('
 Route::get('/nominate', function () {
     return view('frontEnd.nomination', [
         'event' => config('probiz.event'),
+        'images' => config('probiz.images'),
         'pillars' => config('probiz.pillars'),
         'restaurantAwards' => config('probiz.restaurant_awards'),
     ]);

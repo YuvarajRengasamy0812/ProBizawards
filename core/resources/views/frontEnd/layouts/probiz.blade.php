@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/keditor/css/tested.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/style.css') }}?v=20260910-responsive-v6">
+    <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/style.css') }}?v=20260914-modal-align-v1">
     <style>
         @media (min-width: 992px) {
             .main-header .navbar-collapse,
@@ -170,7 +170,7 @@
 
         const navbarCollapse = document.querySelector('.navbar-collapse');
         if (navbarCollapse) {
-            const menuToggle = document.querySelector('.probiz-menu-toggle');
+            const menuToggle = document.querySelector('.probiz-mobile-word-trigger, .probiz-mobile-trigger');
             if (menuToggle) {
                 menuToggle.addEventListener('click', function () {
                     const isOpen = navbarCollapse.classList.toggle('probiz-menu-open');
@@ -205,6 +205,51 @@
             window.addEventListener('scroll', function () {
                 scrollTopBtn.style.opacity = window.pageYOffset > 300 ? '1' : '0.7';
             });
+        }
+
+        const counters = document.querySelectorAll('.probiz-count[data-count]');
+        if (counters.length) {
+            const runCounter = function (counter) {
+                if (counter.dataset.counted === 'true') {
+                    return;
+                }
+
+                counter.dataset.counted = 'true';
+                const target = parseInt(counter.dataset.count || '0', 10);
+                const duration = 1100;
+                const startTime = performance.now();
+
+                function tick(now) {
+                    const progress = Math.min((now - startTime) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    counter.textContent = Math.round(target * eased);
+
+                    if (progress < 1) {
+                        requestAnimationFrame(tick);
+                    } else {
+                        counter.textContent = target;
+                    }
+                }
+
+                requestAnimationFrame(tick);
+            };
+
+            if ('IntersectionObserver' in window) {
+                const counterObserver = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            runCounter(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.35 });
+
+                counters.forEach(function (counter) {
+                    counterObserver.observe(counter);
+                });
+            } else {
+                counters.forEach(runCounter);
+            }
         }
 
         const video = document.querySelector('.video-background');

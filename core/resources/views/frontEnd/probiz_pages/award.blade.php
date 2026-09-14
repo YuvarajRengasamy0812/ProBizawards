@@ -4,7 +4,12 @@
 @section('meta_description', $metaDescription)
 
 @section('content')
-    <section class="probiz-page-hero">
+    @php
+        $imageBase = $images['base'];
+        $pillarImage = collect($pillars)->firstWhere('slug', $award['pillar']['slug'])['image'] ?? $images['restaurant_hero'];
+    @endphp
+
+    <section class="probiz-page-hero probiz-masthead" style="background-image: url('{{ asset($imageBase.'/'.$pillarImage) }}')">
         <div class="container">
             <div class="probiz-kicker">{{ $award['id'] }} | {{ $award['pillar']['title'] }}</div>
             <h1>{{ $award['title'] }}</h1>

@@ -4,7 +4,11 @@
 @section('meta_description', $metaDescription)
 
 @section('content')
-    <section class="probiz-page-hero">
+    @php
+        $imageBase = $images['base'];
+    @endphp
+
+    <section class="probiz-page-hero probiz-masthead" style="background-image: url('{{ asset($imageBase.'/'.$images['inner_masthead']) }}')">
         <div class="container">
             <div class="probiz-kicker">Official Finalist Experience</div>
             <h1>Your Official Finalist Experience</h1>
@@ -19,6 +23,7 @@
 
     <section class="probiz-section">
         <div class="container">
+            <img class="probiz-wide-image probiz-brochure-mockup" src="{{ asset($imageBase.'/'.$images['brochure']) }}" alt="ProBiz finalist experience brochure concept">
             <div class="probiz-grid">
                 @foreach(['Official Finalist Recognition', '3 Gala Dinner Invitations', 'Company Profile', 'Social Media Announcement', 'Voting Campaign Assets', 'Official Digital Badge', 'Red Carpet Participation', 'Professional Photography', 'Stage Recognition', 'Post-event Media Content', 'Networking Access'] as $item)
                     <article class="probiz-card"><h3>{{ $item }}</h3><p>{{ $item }} is included for confirmed finalists as part of the official ProBiz finalist experience.</p></article>

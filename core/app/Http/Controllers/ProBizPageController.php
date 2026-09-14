@@ -305,6 +305,7 @@ class ProBizPageController extends Controller
     {
         return [
             'event' => config('probiz.event'),
+            'images' => config('probiz.images'),
             'pillars' => config('probiz.pillars'),
             'restaurantAwards' => config('probiz.restaurant_awards'),
             'sponsorPackages' => config('probiz.sponsor_packages'),

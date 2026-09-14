@@ -30,10 +30,11 @@
             </a>
 
             <!-- Mobile Toggle Button -->
-            <button class="probiz-menu-toggle" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="probiz-mobile-trigger" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                style="display:inline-flex;position:fixed;top:102px;right:20px;z-index:4000;width:50px;height:42px;border:2px solid #d9b968;border-radius:8px;background:rgba(0,0,0,.86);align-items:center;justify-content:center;flex-direction:column;gap:6px;">
+                <span style="display:block;width:25px;height:2px;border-radius:2px;background:#d9b968;"></span>
+                <span style="display:block;width:25px;height:2px;border-radius:2px;background:#d9b968;"></span>
+                <span style="display:block;width:25px;height:2px;border-radius:2px;background:#d9b968;"></span>
             </button>
 
             <!-- Navigation Menu -->
@@ -90,7 +91,6 @@
 
                 <!-- CTA Buttons -->
                 <div class="cta-buttons d-flex align-items-center gap-2">
-                    <a href="{{ url('/winners') }}" class="btn-nominate">WINNERS</a>
                     <a href="{{ url('/nominate') }}" class="btn-nominate">NOMINATE</a>
                     <a href="#sponsor" class="btn-sponsor" data-bs-toggle="modal"
                         data-bs-target="#sponsorModal">SPONSOR</a>
@@ -98,6 +98,10 @@
             </div>
         </div>
     </nav>
+    <button class="probiz-mobile-word-trigger" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+        style="display:inline-flex;position:fixed;top:112px;right:18px;z-index:9000;min-width:64px;height:38px;border:2px solid #d9b968;border-radius:8px;background:#000;color:#d9b968;align-items:center;justify-content:center;font-size:12px;font-weight:900;letter-spacing:0;">
+        MENU
+    </button>
 <div class="modal fade z-index-9999" id="sponsorModal" tabindex="-1" aria-labelledby="sponsorModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content rounded-4 shadow">

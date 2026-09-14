@@ -4,11 +4,15 @@
 @section('meta_description', $metaDescription)
 
 @section('content')
-    <section class="probiz-page-hero">
+    @php
+        $imageBase = $images['base'];
+    @endphp
+
+    <section class="probiz-page-hero probiz-masthead" style="background-image: url('{{ asset($imageBase.'/'.$images['restaurant_hero']) }}')">
         <div class="container">
             <div class="probiz-kicker">Restaurant Distinctions</div>
-            <h1>Celebrating the UAE Dining Scene</h1>
-            <p>Explore special distinctions for restaurants, cafes, dining concepts and catering businesses. Choose the category that best reflects your strengths and share the story behind your guest experience.</p>
+            <h1>A place for every flavour.</h1>
+            <p>20 distinctions celebrating the UAE's dining scene. Choose the category that best reflects your strengths and share the story behind your guest experience.</p>
             <div class="probiz-actions">
                 <a href="{{ url('/nominate?pillar=restaurant-awards') }}" class="btn-nominate">Nominate Your Restaurant</a>
             </div>
@@ -17,6 +21,11 @@
 
     <section class="probiz-section">
         <div class="container">
+            <div class="probiz-section-head">
+                <div class="probiz-kicker">20 Distinctions</div>
+                <h2>Restaurant award categories</h2>
+                <p>People's Choice voting will only be activated when the official voting period and rules are published.</p>
+            </div>
             <div class="probiz-grid">
                 @foreach($restaurantAwards as $award)
                     <article class="probiz-card">

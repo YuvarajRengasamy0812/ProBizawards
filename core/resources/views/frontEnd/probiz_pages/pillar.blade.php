@@ -4,7 +4,11 @@
 @section('meta_description', $metaDescription)
 
 @section('content')
-    <section class="probiz-page-hero">
+    @php
+        $imageBase = $images['base'];
+    @endphp
+
+    <section class="probiz-page-hero probiz-masthead" style="background-image: url('{{ asset($imageBase.'/'.$pillar['image']) }}')">
         <div class="container">
             <div class="probiz-kicker">{{ $pillar['theme'] }}</div>
             <h1>{{ $pillar['title'] }}</h1>
@@ -20,6 +24,10 @@
 
     <section class="probiz-section">
         <div class="container">
+            <div class="probiz-section-head">
+                <div class="probiz-kicker">{{ $pillar['id'] }} | Five Awards</div>
+                <h2>{{ $pillar['title'] }} award categories</h2>
+            </div>
             <div class="probiz-grid">
                 @foreach($pillar['awards'] as $award)
                     <article class="probiz-card">

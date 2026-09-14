@@ -4,7 +4,11 @@
 @section('meta_description', 'Submit your business or professional achievement for review in the appropriate ProBiz award category.')
 
 @section('content')
-    <section class="probiz-page-hero">
+    @php
+        $imageBase = $images['base'] ?? 'assets/frontend/images/ProBiz_Images_Only';
+    @endphp
+
+    <section class="probiz-page-hero probiz-masthead" style="background-image: url('{{ asset($imageBase.'/'.($images['inner_masthead'] ?? 'inner-masthead.jpg')) }}')">
         <div class="container">
             <div class="probiz-kicker">Nominate Now</div>
             <h1>Nominate Your Business or Achievement</h1>

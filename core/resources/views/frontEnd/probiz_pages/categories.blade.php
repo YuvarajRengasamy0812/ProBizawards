@@ -4,7 +4,11 @@
 @section('meta_description', $metaDescription)
 
 @section('content')
-    <section class="probiz-page-hero">
+    @php
+        $imageBase = $images['base'];
+    @endphp
+
+    <section class="probiz-page-hero probiz-masthead" style="background-image: url('{{ asset($imageBase.'/'.$images['inner_masthead']) }}')">
         <div class="container">
             <div class="probiz-kicker">Award Categories</div>
             <h1>Find Your ProBiz Award Category</h1>
@@ -26,22 +30,30 @@
             <div class="probiz-grid" id="categoryCards">
                 @foreach($pillars as $pillar)
                     <article class="probiz-card probiz-category-card" data-type="business individual" data-search="{{ strtolower($pillar['title'].' '.$pillar['theme'].' '.$pillar['description']) }}">
-                        <span>{{ $pillar['id'] }}</span>
-                        <h3>{{ $pillar['title'] }}</h3>
-                        <p>{{ $pillar['description'] }}</p>
-                        <div class="probiz-card-actions">
-                            <a href="{{ url('/award-categories/'.$pillar['slug']) }}">View Category</a>
-                            <a href="{{ url('/nominate?pillar='.$pillar['slug']) }}">Nominate for This Award</a>
+                        <img src="{{ asset($imageBase.'/'.$pillar['image']) }}" alt="{{ $pillar['title'] }}">
+                        <div class="probiz-card-body">
+                            <span>{{ $pillar['id'] }}</span>
+                            <h3>{{ $pillar['title'] }}</h3>
+                            <strong>{{ $pillar['theme'] }}</strong>
+                            <p>{{ $pillar['description'] }}</p>
+                            <div class="probiz-card-actions">
+                                <a href="{{ url('/award-categories/'.$pillar['slug']) }}">View Category</a>
+                                <a href="{{ url('/nominate?pillar='.$pillar['slug']) }}">Nominate for This Award</a>
+                            </div>
                         </div>
                     </article>
                 @endforeach
                 <article class="probiz-card probiz-category-card" data-type="restaurant business" data-search="restaurant cafe dining food hospitality distinctions">
-                    <span>R01-R20</span>
-                    <h3>Restaurant Distinctions</h3>
-                    <p>Explore special distinctions for restaurants, cafes, dining concepts and catering businesses across the UAE.</p>
-                    <div class="probiz-card-actions">
-                        <a href="{{ url('/restaurant-awards') }}">View Category</a>
-                        <a href="{{ url('/nominate?pillar=restaurant-awards') }}">Nominate for This Award</a>
+                    <img src="{{ asset($imageBase.'/'.$images['restaurant_hero']) }}" alt="Restaurant distinctions">
+                    <div class="probiz-card-body">
+                        <span>R01-R20</span>
+                        <h3>Restaurant Distinctions</h3>
+                        <strong>UAE Dining Scene</strong>
+                        <p>Explore special distinctions for restaurants, cafes, dining concepts and catering businesses across the UAE.</p>
+                        <div class="probiz-card-actions">
+                            <a href="{{ url('/restaurant-awards') }}">View Category</a>
+                            <a href="{{ url('/nominate?pillar=restaurant-awards') }}">Nominate for This Award</a>
+                        </div>
                     </div>
                 </article>
             </div>

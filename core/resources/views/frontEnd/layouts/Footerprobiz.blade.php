@@ -54,17 +54,22 @@
                 @if(Helper::GeneralSiteSettings("style_subscribe"))
 
                     {{ Form::open(['route' => 'subscribeSubmit', 'method' => 'POST', 'id' => 'subscribeForm', 'class' => 'newsletter-forms']) }}
-                    {!! Form::email('subscribe_email', old('subscribe_email'), [
-                        'placeholder' => 'Email address',
-                        'class' => 'newsletter-input',
-                        'id' => 'subscribe_email',
-                        'required' => 'required',
-                        'autocomplete' => 'off'
-                    ]) !!}
-                    <button type="submit" id="subscribeFormSubmit" class="newsletter-btn" aria-label="Subscribe">
-                        <i class="bi bi-send"></i>
-                    </button>
-                    <label class="newsletter-consent"><input type="checkbox" name="newsletter_consent" value="1"> I would like to receive ProBiz Awards news by email. I can unsubscribe at any time.</label>
+                    <div class="newsletter-input-row">
+                        {!! Form::email('subscribe_email', old('subscribe_email'), [
+                            'placeholder' => 'Email address',
+                            'class' => 'newsletter-input',
+                            'id' => 'subscribe_email',
+                            'required' => 'required',
+                            'autocomplete' => 'off'
+                        ]) !!}
+                        <button type="submit" id="subscribeFormSubmit" class="newsletter-btn" aria-label="Subscribe">
+                            <i class="bi bi-send"></i>
+                        </button>
+                    </div>
+                    <label class="newsletter-consent">
+                        <input type="checkbox" name="newsletter_consent" value="1">
+                        <span>I would like to receive ProBiz Awards news by email. I can unsubscribe at any time.</span>
+                    </label>
                     {{ Form::close() }}
 
                 @endif

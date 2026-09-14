@@ -13,6 +13,18 @@ return [
         'finalist_invitations' => '3 gala dinner invitations',
     ],
 
+    'images' => [
+        'base' => 'assets/frontend/images/ProBiz_Images_Only',
+        'hero_desktop' => 'hero-desktop.jpg',
+        'hero_mobile' => 'hero-mobile.jpg',
+        'inner_masthead' => 'inner-masthead.jpg',
+        'restaurant_hero' => 'restaurant-hero.jpg',
+        'gala' => 'gala-concept.jpg',
+        'networking' => 'networking-concept.jpg',
+        'media' => 'media-concept.jpg',
+        'brochure' => 'brochure-mockup.png',
+    ],
+
     'pillars' => [
         [
             'id' => 'P01',
@@ -20,6 +32,7 @@ return [
             'title' => 'Business & Entrepreneurship',
             'theme' => 'Visionary of the Year',
             'description' => 'Celebrating entrepreneurs, business leaders and enterprises contributing to the UAE business community.',
+            'image' => '01-business.jpg',
             'awards' => [
                 ['id' => 'M01', 'slug' => 'visionary-entrepreneur-of-the-year', 'title' => 'Visionary Entrepreneur of the Year', 'description' => 'Recognising an entrepreneur who combines a clear business vision with purposeful leadership, original thinking and demonstrated progress.'],
                 ['id' => 'M02', 'slug' => 'business-leader-of-the-year', 'title' => 'Business Leader of the Year', 'description' => 'Recognising a leader whose decisions, team development and business achievements show a meaningful contribution to their organisation.'],
@@ -34,6 +47,7 @@ return [
             'title' => 'Food, Chef & Hospitality',
             'theme' => 'Master of Craft',
             'description' => 'Recognising the talent, leadership and ideas behind memorable dining and hospitality experiences.',
+            'image' => '02-hospitality.jpg',
             'awards' => [
                 ['id' => 'M06', 'slug' => 'chef-of-the-year', 'title' => 'Chef of the Year', 'description' => 'Celebrating a chef whose culinary skill, originality and consistency create a distinctive dining experience.'],
                 ['id' => 'M07', 'slug' => 'restaurant-of-the-year', 'title' => 'Restaurant of the Year', 'description' => 'Recognising a restaurant that brings together food quality, service, atmosphere and a compelling overall guest experience.'],
@@ -48,6 +62,7 @@ return [
             'title' => 'Fashion & Beauty',
             'theme' => 'Icon of Style',
             'description' => 'Celebrating creativity, professional expertise and distinctive contributions across fashion and beauty.',
+            'image' => '03-fashion.jpg',
             'awards' => [
                 ['id' => 'M11', 'slug' => 'designer-of-the-year', 'title' => 'Designer of the Year', 'description' => 'Recognising a designer whose creative direction, craftsmanship and body of work show a distinctive contribution to fashion.'],
                 ['id' => 'M12', 'slug' => 'beauty-brand-of-the-year', 'title' => 'Beauty Brand of the Year', 'description' => 'Celebrating a beauty brand with a clear identity, thoughtful products or services and a strong customer experience.'],
@@ -62,6 +77,7 @@ return [
             'title' => 'Healthcare & Wellness',
             'theme' => 'Guardian of Wellbeing',
             'description' => 'Recognising professionals, brands and initiatives contributing to healthcare, fitness and wellbeing.',
+            'image' => '04-healthcare.jpg',
             'awards' => [
                 ['id' => 'M16', 'slug' => 'medical-professional-of-the-year', 'title' => 'Medical Professional of the Year', 'description' => 'Recognising a medical professional contribution to patient care, professional practice and service improvement.'],
                 ['id' => 'M17', 'slug' => 'wellness-brand-of-the-year', 'title' => 'Wellness Brand of the Year', 'description' => 'Celebrating a wellness brand with a considered approach to service quality, customer care and wellbeing.'],
@@ -76,6 +92,7 @@ return [
             'title' => 'Lifestyle, Luxury & Innovation',
             'theme' => 'Pioneer of Excellence',
             'description' => 'Celebrating distinctive brands, ideas and experiences across lifestyle and luxury.',
+            'image' => '05-luxury.jpg',
             'awards' => [
                 ['id' => 'M21', 'slug' => 'luxury-brand-of-the-year', 'title' => 'Luxury Brand of the Year', 'description' => 'Recognising a luxury brand that combines a clear identity, craftsmanship or service quality and a distinctive customer experience.'],
                 ['id' => 'M22', 'slug' => 'innovator-of-the-year', 'title' => 'Innovator of the Year', 'description' => 'Celebrating an individual whose original idea or approach creates a demonstrated improvement in their field.'],
@@ -90,6 +107,7 @@ return [
             'title' => 'Real Estate & Property',
             'theme' => 'Architect of Vision',
             'description' => 'Recognising professionals, developments and ideas contributing to the UAE property sector.',
+            'image' => '06-property.jpg',
             'awards' => [
                 ['id' => 'M26', 'slug' => 'real-estate-developer-of-the-year', 'title' => 'Real Estate Developer of the Year', 'description' => 'Recognising a developer project quality, delivery approach and contribution to the built environment.'],
                 ['id' => 'M27', 'slug' => 'real-estate-agent-broker-of-the-year', 'title' => 'Real Estate Agent/Broker of the Year', 'description' => 'Celebrating an agent or agency whose professional service, market understanding and client care demonstrate strong performance.'],
@@ -104,6 +122,7 @@ return [
             'title' => 'Opticals & Eyewear',
             'theme' => 'Vision of Clarity',
             'description' => 'Celebrating professional care, design and customer experience across optical services and eyewear.',
+            'image' => '07-opticals.jpg',
             'awards' => [
                 ['id' => 'M31', 'slug' => 'optical-brand-of-the-year', 'title' => 'Optical Brand of the Year', 'description' => 'Recognising an optical brand with a clear offering, consistent quality and a considered customer experience.'],
                 ['id' => 'M32', 'slug' => 'eyewear-designer-of-the-year', 'title' => 'Eyewear Designer of the Year', 'description' => 'Celebrating a designer whose eyewear combines creative identity, craftsmanship and practical design.'],
@@ -118,6 +137,7 @@ return [
             'title' => 'Electronics & Technology',
             'theme' => 'Pioneer of Innovation',
             'description' => 'Recognising brands and solutions shaping consumer technology and connected living.',
+            'image' => '08-electronics.jpg',
             'awards' => [
                 ['id' => 'M36', 'slug' => 'electronics-brand-of-the-year', 'title' => 'Electronics Brand of the Year', 'description' => 'Celebrating an electronics brand product offering, customer experience and contribution to its market.'],
                 ['id' => 'M37', 'slug' => 'consumer-tech-innovation-award', 'title' => 'Consumer Tech Innovation Award', 'description' => 'Recognising a consumer technology product or solution that addresses a real user need through a useful innovation.'],
@@ -132,6 +152,7 @@ return [
             'title' => 'Travel, Tourism & Resorts',
             'theme' => 'Journey of Distinction',
             'description' => 'Celebrating organisations and experiences contributing to travel, tourism and hospitality.',
+            'image' => '09-travel.jpg',
             'awards' => [
                 ['id' => 'M41', 'slug' => 'resort-of-the-year', 'title' => 'Resort of the Year', 'description' => 'Recognising a resort service, setting, facilities and overall guest experience.'],
                 ['id' => 'M42', 'slug' => 'travel-agency-of-the-year', 'title' => 'Travel Agency of the Year', 'description' => 'Celebrating a travel agency planning expertise, customer support and quality of travel arrangements.'],
@@ -146,6 +167,7 @@ return [
             'title' => 'IT, Software & Digital Platforms',
             'theme' => 'Digital Trailblazer',
             'description' => 'Recognising digital businesses and products that create useful experiences for customers and organisations.',
+            'image' => '10-digital.jpg',
             'awards' => [
                 ['id' => 'M46', 'slug' => 'software-company-of-the-year', 'title' => 'Software Company of the Year', 'description' => 'Celebrating a software company solutions, delivery standards, customer support and demonstrated client value.'],
                 ['id' => 'M47', 'slug' => 'e-commerce-platform-of-the-year', 'title' => 'E-commerce Platform of the Year', 'description' => 'Recognising an e-commerce platform shopping experience, operational reliability and value for customers or sellers.'],

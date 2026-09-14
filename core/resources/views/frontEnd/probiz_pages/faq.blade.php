@@ -4,7 +4,11 @@
 @section('meta_description', $metaDescription)
 
 @section('content')
-    <section class="probiz-page-hero">
+    @php
+        $imageBase = $images['base'];
+    @endphp
+
+    <section class="probiz-page-hero probiz-masthead" style="background-image: url('{{ asset($imageBase.'/'.$images['inner_masthead']) }}')">
         <div class="container">
             <div class="probiz-kicker">FAQs</div>
             <h1>Frequently Asked Questions</h1>
