@@ -55,7 +55,7 @@
                 @elseif($isHowItWorksPage)
                     <div class="probiz-process-carousel" aria-label="How It Works steps">
                         <div class="probiz-process-track">
-                            @for($repeat = 0; $repeat < 2; $repeat++)
+                            @for($repeat = 0; $repeat < 1; $repeat++)
                                 @foreach($page['sections'] as $section)
                                     <article class="probiz-card probiz-process-card" aria-hidden="{{ $repeat === 1 ? 'true' : 'false' }}">
                                         <h3>{{ $section['title'] }}</h3>

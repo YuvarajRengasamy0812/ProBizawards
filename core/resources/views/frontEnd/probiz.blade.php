@@ -87,7 +87,7 @@
             </div>
             <picture class="probiz-hero-stage">
                 <source media="(max-width: 575px)" srcset="{{ asset($imageBase.'/'.$images['hero_mobile']) }}">
-                <img src="{{ asset($imageBase.'/'.$images['hero_desktop']) }}" alt="ProBiz Awards trophy with Dubai skyline">
+                <img src="{{ asset($imageBase.'/'.$images['hero_desktop']) }}" alt="ProBiz Awards trophy with Dubai skyline" fetchpriority="high" width="1536" height="1024">
             </picture>
         </div>
     </section>
@@ -102,10 +102,10 @@
                 <p>ProBiz Awards brings together businesses and leaders from across the UAE for recognition, networking and celebration. From restaurants and hospitality to technology, real estate, healthcare and entrepreneurship, the programme gives eligible nominees a platform to present their achievements and connect with a wider business community.</p>
             </div>
             <div class="probiz-stats" data-aos="fade-up">
-                <div><strong class="probiz-count" data-count="10">0</strong><span>Industry Pillars</span></div>
-                <div><strong class="probiz-count" data-count="50">0</strong><span>Main Awards</span></div>
-                <div><strong class="probiz-count" data-count="20">0</strong><span>Restaurant Distinctions</span></div>
-                <div><strong class="probiz-count" data-count="3">0</strong><span>Gala Invitations Per Finalist</span></div>
+                <div><strong class="probiz-count" data-count="10">10</strong><span>Industry Pillars</span></div>
+                <div><strong class="probiz-count" data-count="50">50</strong><span>Main Awards</span></div>
+                <div><strong class="probiz-count" data-count="20">20</strong><span>Restaurant Distinctions</span></div>
+                <div><strong class="probiz-count" data-count="3">3</strong><span>Gala Invitations Per Finalist</span></div>
             </div>
         </div>
     </section>
@@ -120,8 +120,8 @@
             <div class="probiz-thumb-strip" aria-label="ProBiz pillar image set">
                 @foreach($pillars as $pillar)
                     <a href="{{ url('/award-categories/'.$pillar['slug']) }}">
-                        <img src="{{ asset($imageBase.'/'.$pillar['image']) }}" alt="{{ $pillar['title'] }}">
-                        <strong>{{ $thumbLabels[$pillar['slug']] ?? $pillar['id'].'-'.$pillar['slug'] }}</strong>
+                        <img loading="lazy" src="{{ asset($imageBase.'/'.$pillar['image']) }}" alt="{{ $pillar['title'] }}">
+                        <strong>{{ $pillar['title'] }}</strong>
                         <span class="probiz-thumb-view">View</span>
                     </a>
                 @endforeach
@@ -151,7 +151,7 @@
             </div>
             <div class="probiz-home-process-carousel" aria-label="ProBiz process">
                 <div class="probiz-home-process-track">
-                    @for($repeat = 0; $repeat < 2; $repeat++)
+                    @for($repeat = 0; $repeat < 1; $repeat++)
                         @foreach(['Choose your category', 'Submit your nomination', 'Eligibility review', 'Shortlisting', 'Confirm finalist participation', 'Evaluation, voting and gala'] as $index => $step)
                             <article class="probiz-card probiz-home-process-card" aria-hidden="{{ $repeat === 1 ? 'true' : 'false' }}">
                                 <span>{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
@@ -176,7 +176,7 @@
 
             <div class="probiz-home-logo-carousel" aria-label="Media partner logos">
                 <div class="probiz-home-logo-track">
-                    @for($repeat = 0; $repeat < 2; $repeat++)
+                    @for($repeat = 0; $repeat < 1; $repeat++)
                         @if($approvedHomeMediaPartners->isNotEmpty())
                             @foreach($approvedHomeMediaPartners as $partner)
                                 <a href="{{ $partner->website ?: '#' }}"

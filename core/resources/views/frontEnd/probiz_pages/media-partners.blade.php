@@ -34,7 +34,7 @@
 
             <div class="probiz-media-card-carousel" aria-label="Media partner information">
                 <div class="probiz-media-card-track">
-                    @for($repeat = 0; $repeat < 2; $repeat++)
+                    @for($repeat = 0; $repeat < 1; $repeat++)
                         @foreach($mediaCards as $section)
                             <article class="probiz-card probiz-media-info-card" aria-hidden="{{ $repeat === 1 ? 'true' : 'false' }}">
                                 <h3>{{ $section['title'] }}</h3>

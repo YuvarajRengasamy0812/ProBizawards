@@ -21,12 +21,21 @@
             @if(session('sponsor_success'))
                 <div class="probiz-alert">{{ session('sponsor_success') }}</div>
             @endif
-            <div class="probiz-grid">
+            <div class="probiz-section-head">
+                <div class="probiz-kicker">Sponsorship Packages</div>
+                <h2>Partner for greater impact</h2>
+            </div>
+            <div class="probiz-grid probiz-package-grid">
                 @foreach($sponsorPackages as $package)
-                    <article class="probiz-card">
+                    <article class="probiz-card probiz-package-card">
+                        <i class="bi {{ ['bi-trophy', 'bi-gem', 'bi-stars', 'bi-award', 'bi-people'][$loop->index] ?? 'bi-award' }} probiz-package-icon" aria-hidden="true"></i>
                         <span>{{ $package['price'] }}</span>
                         <h3>{{ $package['title'] }}</h3>
-                        <p>{{ $package['description'] }}</p>
+                        <ul class="probiz-package-benefits">
+                            @foreach(array_filter(array_map('trim', explode(';', $package['description']))) as $benefit)
+                                <li>{{ $benefit }}</li>
+                            @endforeach
+                        </ul>
                         <button type="button"
                             class="probiz-package-btn"
                             data-bs-toggle="modal"
@@ -34,7 +43,7 @@
                             data-package-id="{{ $package['id'] }}"
                             data-package-title="{{ $package['title'] }}"
                             data-package-price="{{ $package['price'] }}">
-                            Enquire About This Package
+                            Enquire About This Package <span aria-hidden="true">↗</span>
                         </button>
                     </article>
                 @endforeach
@@ -50,9 +59,9 @@
                 <h2>Build a Relevant Industry Connection</h2>
                 <p>Align your brand with a category or an agreed industry partnership at ProBiz Awards. Create a focused presence through category association, relevant content and event participation.</p>
             </div>
-            <div class="probiz-grid probiz-grid-2">
+            <div class="probiz-grid probiz-grid-2 probiz-partner-grid">
                 @foreach(['Official Restaurant Awards Partner', 'Official Real Estate Awards Partner', 'Official Technology Awards Partner', 'Official Beauty & Wellness Awards Partner', 'Official Travel Awards Partner'] as $theme)
-                    <article class="probiz-card"><h3>{{ $theme }}</h3><p>Discuss the right partnership scope with our team, including visibility, content, gala branding and hospitality as agreed in your partnership package.</p></article>
+                    <article class="probiz-card probiz-industry-card"><i class="bi {{ ['bi-cup-hot', 'bi-house', 'bi-laptop', 'bi-flower1', 'bi-airplane'][$loop->index] }}" aria-hidden="true"></i><div><h3>{{ $theme }}</h3><p>Discuss the right partnership scope with our team, including visibility, content, gala branding and hospitality as agreed in your partnership package.</p><a class="probiz-industry-link" href="{{ url('/contact?topic=sponsorship') }}" aria-label="Enquire about {{ $theme }}">↗</a></div></article>
                 @endforeach
             </div>
             <div class="probiz-spotlight">

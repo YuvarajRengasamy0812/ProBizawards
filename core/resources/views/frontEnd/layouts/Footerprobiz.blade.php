@@ -1,6 +1,6 @@
 <footer class="footer" id="footer">
     <!-- Scroll to Top Button -->
-    <a href="#top" class="scroll-top5">
+    <a href="#top" class="scroll-top5" aria-label="Back to top">
         <i class="bi bi-arrow-up"></i>
     </a>
 

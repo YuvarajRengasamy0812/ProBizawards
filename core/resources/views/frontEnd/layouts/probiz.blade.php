@@ -92,8 +92,13 @@
         }
     </style>
     @stack('styles')
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/luxury.css') }}?v=20260915-1">
 </head>
-<body>
+<body class="probiz-luxury">
+<a class="probiz-skip-link" href="#main">Skip to content</a>
 <div id="loader" style="display:none" aria-hidden="true">
     <div class="loader"></div>
     <div class="progress-container mt-3">
@@ -298,5 +303,6 @@
         }
     });
 </script>
+<script src="{{ asset('assets/keditor/probiz/js/luxury.js') }}?v=20260915-1"></script>
 </body>
 </html>
