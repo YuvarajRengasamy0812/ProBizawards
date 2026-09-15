@@ -29,79 +29,72 @@
                     alt="ProBiz Awards Dubai 2026" class="header-logo">
             </a>
 
-            <!-- Mobile Toggle Button -->
-            <button class="probiz-mobile-trigger" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
-                style="display:inline-flex;position:fixed;top:102px;right:20px;z-index:4000;width:50px;height:42px;border:2px solid #d9b968;border-radius:8px;background:rgba(0,0,0,.86);align-items:center;justify-content:center;flex-direction:column;gap:6px;">
-                <span style="display:block;width:25px;height:2px;border-radius:2px;background:#d9b968;"></span>
-                <span style="display:block;width:25px;height:2px;border-radius:2px;background:#d9b968;"></span>
-                <span style="display:block;width:25px;height:2px;border-radius:2px;background:#d9b968;"></span>
+            <button class="probiz-mobile-word-trigger" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="bi bi-list" aria-hidden="true"></i>
+                <span class="probiz-mobile-label">MENU</span>
             </button>
 
             <!-- Navigation Menu -->
             <div class="collapse navbar-collapse d-lg-flex probiz-header-menu" id="navbarNav">
                 <ul class="navbar-nav mx-auto align-items-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/') }}">HOME</a>
+                        <a class="nav-link" href="{{ url('/') }}"><i class="bi bi-house-door" aria-hidden="true"></i><span>HOME</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/about') }}">ABOUT</a>
+                        <a class="nav-link" href="{{ url('/about') }}"><i class="bi bi-info-circle" aria-hidden="true"></i><span>ABOUT</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/how-it-works') }}">PROCESS</a>
+                        <a class="nav-link" href="{{ url('/how-it-works') }}"><i class="bi bi-diagram-3" aria-hidden="true"></i><span>PROCESS</span></a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             data-bs-auto-close="outside" aria-expanded="false">
-                            CATEGORIES
+                            <i class="bi bi-grid" aria-hidden="true"></i><span>CATEGORIES</span>
                         </a>
                         <ul class="dropdown-menu">
                             @foreach(config('probiz.pillars') as $pillar)
-                                <li><a class="dropdown-item" href="{{ url('/award-categories/'.$pillar['slug']) }}">{{ $pillar['title'] }}</a></li>
+                                <li><a class="dropdown-item" href="{{ url('/award-categories/'.$pillar['slug']) }}"><i class="bi bi-award" aria-hidden="true"></i><span>{{ $pillar['title'] }}</span></a></li>
                             @endforeach
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{{ url('/restaurant-awards') }}">Restaurant Distinctions</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/award-categories') }}">View All Categories</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/restaurant-awards') }}"><i class="bi bi-cup-hot" aria-hidden="true"></i><span>Restaurant Distinctions</span></a></li>
+                            <li><a class="dropdown-item" href="{{ url('/award-categories') }}"><i class="bi bi-list-stars" aria-hidden="true"></i><span>View All Categories</span></a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             data-bs-auto-close="outside" aria-expanded="false">
-                            PARTNERS
+                            <i class="bi bi-people" aria-hidden="true"></i><span>PARTNERS</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url('/sponsors') }}">Sponsorship</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/media-partners') }}">Media Partners</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/sponsors') }}"><i class="bi bi-gem" aria-hidden="true"></i><span>Sponsorship</span></a></li>
+                            <li><a class="dropdown-item" href="{{ url('/media-partners') }}"><i class="bi bi-megaphone" aria-hidden="true"></i><span>Media Partners</span></a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             data-bs-auto-close="outside" aria-expanded="false">
-                          GALA
+                            <i class="bi bi-calendar-event" aria-hidden="true"></i><span>GALA</span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{ url('/gala-night') }}">Gala Night</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/finalist-package') }}">Finalist Experience</a></li>
-                            <li><a class="dropdown-item" href="{{ url('/judging-and-voting') }}">Judging & Voting</a></li>
+                            <li><a class="dropdown-item" href="{{ url('/gala-night') }}"><i class="bi bi-stars" aria-hidden="true"></i><span>Gala Night</span></a></li>
+                            <li><a class="dropdown-item" href="{{ url('/finalist-package') }}"><i class="bi bi-trophy" aria-hidden="true"></i><span>Finalist Experience</span></a></li>
+                            <li><a class="dropdown-item" href="{{ url('/judging-and-voting') }}"><i class="bi bi-check2-square" aria-hidden="true"></i><span>Judging & Voting</span></a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/contact') }}">CONTACT</a>
+                        <a class="nav-link" href="{{ url('/contact') }}"><i class="bi bi-envelope" aria-hidden="true"></i><span>CONTACT</span></a>
                     </li>
                 </ul>
 
                 <!-- CTA Buttons -->
                 <div class="cta-buttons d-flex align-items-center gap-2">
-                    <a href="{{ url('/nominate') }}" class="btn-nominate">NOMINATE</a>
+                    <a href="{{ url('/nominate') }}" class="btn-nominate"><i class="bi bi-pencil-square" aria-hidden="true"></i><span>NOMINATE</span></a>
                     <a href="#sponsor" class="btn-sponsor" data-bs-toggle="modal"
-                        data-bs-target="#sponsorModal">SPONSOR</a>
+                        data-bs-target="#sponsorModal"><i class="bi bi-gem" aria-hidden="true"></i><span>SPONSOR</span></a>
                 </div>
             </div>
         </div>
     </nav>
-    <button class="probiz-mobile-word-trigger" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
-        style="display:inline-flex;position:fixed;top:112px;right:18px;z-index:9000;min-width:64px;height:38px;border:2px solid #d9b968;border-radius:8px;background:#000;color:#d9b968;align-items:center;justify-content:center;font-size:12px;font-weight:900;letter-spacing:0;">
-        MENU
-    </button>
 <div class="modal fade z-index-9999" id="sponsorModal" tabindex="-1" aria-labelledby="sponsorModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content rounded-4 shadow">
@@ -196,4 +189,3 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 </script>
-

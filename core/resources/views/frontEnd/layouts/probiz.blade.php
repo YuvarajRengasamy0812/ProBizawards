@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/keditor/css/tested.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/style.css') }}?v=20260915-sponsors-compact-v1">
+    <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/style.css') }}?v=20260915-mobile-menu-icons-v1">
     <style>
         @media (min-width: 992px) {
             .main-header .navbar-collapse,
@@ -168,27 +168,49 @@
             });
         });
 
-        const navbarCollapse = document.querySelector('.navbar-collapse');
+        const navbarCollapse = document.getElementById('navbarNav') || document.querySelector('.navbar-collapse');
         if (navbarCollapse) {
-            const menuToggle = document.querySelector('.probiz-mobile-word-trigger, .probiz-mobile-trigger');
-            if (menuToggle) {
-                menuToggle.addEventListener('click', function () {
-                    const isOpen = navbarCollapse.classList.toggle('probiz-menu-open');
-                    menuToggle.classList.toggle('active', isOpen);
-                    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-                });
-            }
-
-            document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
-                link.addEventListener('click', function () {
-                    if (window.innerWidth < 992 && !link.classList.contains('dropdown-toggle')) {
-                        navbarCollapse.classList.remove('probiz-menu-open');
-                        if (menuToggle) {
-                            menuToggle.classList.remove('active');
-                            menuToggle.setAttribute('aria-expanded', 'false');
+            const menuToggles = document.querySelectorAll('.probiz-mobile-word-trigger, .probiz-mobile-trigger, .probiz-menu-toggle, .navbar-toggler');
+            const setMenuState = function (isOpen) {
+                navbarCollapse.classList.toggle('probiz-menu-open', isOpen);
+                navbarCollapse.classList.toggle('show', isOpen);
+                menuToggles.forEach(function (toggle) {
+                    toggle.classList.toggle('active', isOpen);
+                    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    if (toggle.classList.contains('probiz-mobile-word-trigger')) {
+                        const label = toggle.querySelector('.probiz-mobile-label');
+                        const icon = toggle.querySelector('i');
+                        if (label) {
+                            label.textContent = isOpen ? 'CLOSE' : 'MENU';
+                        }
+                        if (icon) {
+                            icon.classList.toggle('bi-list', !isOpen);
+                            icon.classList.toggle('bi-x-lg', isOpen);
                         }
                     }
                 });
+            };
+
+            menuToggles.forEach(function (menuToggle) {
+                menuToggle.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    setMenuState(!navbarCollapse.classList.contains('probiz-menu-open'));
+                });
+            });
+
+            navbarCollapse.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth < 992 && !link.classList.contains('dropdown-toggle')) {
+                        setMenuState(false);
+                    }
+                });
+            });
+
+            window.addEventListener('scroll', function () {
+                const header = document.querySelector('.main-header');
+                if (window.innerWidth < 992 && header && header.getBoundingClientRect().bottom <= 0) {
+                    setMenuState(false);
+                }
             });
 
         }
