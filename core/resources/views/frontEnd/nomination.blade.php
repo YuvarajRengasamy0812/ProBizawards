@@ -101,10 +101,24 @@
                     <textarea name="description" rows="4" placeholder="Recommended 50-100 words" required>{{ old('description') }}</textarea>
                 </label>
 
-                <label class="probiz-check"><input type="checkbox" name="whatsapp_permission" value="1" @checked(old('whatsapp_permission'))> You may contact me on WhatsApp about this nomination.</label>
-                <label class="probiz-check"><input type="checkbox" name="consent1" value="1" required @checked(old('consent1'))> I confirm the information is accurate and I am authorised to submit this nomination.</label>
-                <label class="probiz-check"><input type="checkbox" name="consent2" value="1" required @checked(old('consent2'))> I have read the Privacy Policy and nomination terms, and understand that submission does not guarantee finalist status or a win.</label>
-                <label class="probiz-check"><input type="checkbox" name="marketing_consent" value="1" @checked(old('marketing_consent'))> Send me ProBiz news and future event updates.</label>
+                <div class="probiz-consent-stack" id="nomination-consents">
+                    <label class="probiz-check">
+                        <input type="checkbox" name="whatsapp_permission" value="1" @checked(old('whatsapp_permission'))>
+                        <span>You may contact me on WhatsApp about this nomination.</span>
+                    </label>
+                    <label class="probiz-check">
+                        <input type="checkbox" name="consent1" value="1" required @checked(old('consent1'))>
+                        <span>I confirm the information is accurate and I am authorised to submit this nomination.</span>
+                    </label>
+                    <label class="probiz-check">
+                        <input type="checkbox" name="consent2" value="1" required @checked(old('consent2'))>
+                        <span>I have read the Privacy Policy and nomination terms, and understand that submission does not guarantee finalist status or a win.</span>
+                    </label>
+                    <label class="probiz-check">
+                        <input type="checkbox" name="marketing_consent" value="1" @checked(old('marketing_consent'))>
+                        <span>Send me ProBiz news and future event updates.</span>
+                    </label>
+                </div>
 
                 <button type="submit" class="btn-nominate">Submit Nomination</button>
             </form>

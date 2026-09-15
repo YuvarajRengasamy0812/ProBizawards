@@ -166,7 +166,7 @@
         </div>
     </section>
 
-    <section class="probiz-section probiz-home-media-showcase">
+    <section class="probiz-section probiz-home-media-showcase" id="home-media-partners">
         <div class="container">
             <div class="probiz-section-head probiz-media-logo-head">
                 <div class="probiz-kicker">Our Media Partners</div>
@@ -207,7 +207,7 @@
         </div>
     </section>
 
-    <section class="probiz-section probiz-section-alt probiz-home-awards-showcase">
+    <section class="probiz-section probiz-section-alt probiz-home-awards-showcase" id="home-awards-partners">
         <div class="container">
             <div class="probiz-section-head probiz-media-logo-head">
                 <div class="probiz-kicker">ProBiz Awards Sponsors</div>

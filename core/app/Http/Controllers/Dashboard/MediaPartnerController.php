@@ -4,17 +4,24 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\MediaPartner;
+use App\Models\WebmasterSection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
 
 class MediaPartnerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $mediaPartners = MediaPartner::latest()->paginate(config('smartend.backend_pagination'));
+        $GeneralWebmasterSections = $this->generalWebmasterSections();
 
-        return view('dashboard.media_partners.index', compact('mediaPartners'));
+        return view('dashboard.media_partners.index', compact('mediaPartners', 'GeneralWebmasterSections'));
     }
 
     public function create()
@@ -23,8 +30,9 @@ class MediaPartnerController extends Controller
             'category' => 'Confirmed Media Partners',
             'status' => 'pending',
         ]);
+        $GeneralWebmasterSections = $this->generalWebmasterSections();
 
-        return view('dashboard.media_partners.form', compact('mediaPartner'));
+        return view('dashboard.media_partners.form', compact('mediaPartner', 'GeneralWebmasterSections'));
     }
 
     public function store(Request $request)
@@ -46,7 +54,9 @@ class MediaPartnerController extends Controller
 
     public function edit(MediaPartner $mediaPartner)
     {
-        return view('dashboard.media_partners.form', compact('mediaPartner'));
+        $GeneralWebmasterSections = $this->generalWebmasterSections();
+
+        return view('dashboard.media_partners.form', compact('mediaPartner', 'GeneralWebmasterSections'));
     }
 
     public function update(Request $request, MediaPartner $mediaPartner)
@@ -141,5 +151,10 @@ class MediaPartnerController extends Controller
     private function uploadDirectory(): string
     {
         return base_path('../uploads/media_partners');
+    }
+
+    private function generalWebmasterSections()
+    {
+        return WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();
     }
 }

@@ -4,16 +4,23 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\Nomination;
+use App\Models\WebmasterSection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class NominationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $nominations = Nomination::latest()->paginate(config('smartend.backend_pagination'));
+        $GeneralWebmasterSections = $this->generalWebmasterSections();
 
-        return view('dashboard.nominations.index', compact('nominations'));
+        return view('dashboard.nominations.index', compact('nominations', 'GeneralWebmasterSections'));
     }
 
     public function store(Request $request)
@@ -93,5 +100,10 @@ class NominationController extends Controller
         } while (Nomination::where('reference_id', $reference)->exists());
 
         return $reference;
+    }
+
+    private function generalWebmasterSections()
+    {
+        return WebmasterSection::where('status', '=', '1')->orderby('row_no', 'asc')->get();
     }
 }

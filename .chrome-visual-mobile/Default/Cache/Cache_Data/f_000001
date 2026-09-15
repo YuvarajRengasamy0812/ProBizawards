@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nominate Now | ProBiz Awards 2026 Dubai</title>
+    <meta name="description" content="Submit your business or professional achievement for review in the appropriate ProBiz award category.">
+    <link rel="canonical" href="http://localhost/ProBizawards/nominate">
+    <link rel="icon" href="http://localhost/ProBizawards/assets/keditor/probiz/assets/probiz-awards-dubai-2026-light.png" type="image/png">
+
+    <script>
+        tailwind = {
+            config: {
+                prefix: 'tw-',
+                corePlugins: { preflight: false },
+                theme: {
+                    extend: {
+                        colors: {
+                            probizGold: '#d4a331',
+                            probizAmber: '#f4d778',
+                            probizInk: '#05060a',
+                            probizNavy: '#081826'
+                        },
+                        boxShadow: {
+                            probiz: '0 28px 80px rgba(0, 0, 0, 0.35)'
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="http://localhost/ProBizawards/assets/keditor/probiz/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://localhost/ProBizawards/assets/keditor/probiz/css/animate.min.css">
+    <link rel="stylesheet" href="http://localhost/ProBizawards/assets/keditor/probiz/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="http://localhost/ProBizawards/assets/keditor/probiz/css/mCustomScrollbar.min.css">
+    <link rel="stylesheet" href="http://localhost/ProBizawards/assets/keditor/probiz/css/odometer.css">
+    <link rel="stylesheet" href="http://localhost/ProBizawards/assets/keditor/probiz/css/slick.css">
+    <link rel="stylesheet" href="http://localhost/ProBizawards/assets/keditor/probiz/css/default.css">
+    <link rel="stylesheet" href="http://localhost/ProBizawards/assets/keditor/probiz/css/styles.css">
+    <link rel="stylesheet" href="http://localhost/ProBizawards/assets/keditor/probiz/css/responsive.css">
+    <link rel="stylesheet" href="http://localhost/ProBizawards/assets/keditor/css/tested.css">
+    <link rel="stylesheet" href="http://localhost/ProBizawards/assets/keditor/probiz/css/style.css?v=20260915-logo-form-align-v1">
+    <style>
+        @media (min-width: 992px) {
+            .main-header .navbar-collapse,
+            .navbar-expand-lg .navbar-collapse {
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+                height: auto !important;
+                flex-basis: auto !important;
+                align-items: center !important;
+            }
+
+            .main-header .navbar-nav {
+                display: flex !important;
+                flex-direction: row !important;
+                align-items: center !important;
+                justify-content: center !important;
+                gap: 14px !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            .main-header .nav-item,
+            .main-header .nav-link,
+            .main-header .cta-buttons {
+                display: flex !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+
+            .main-header .nav-link {
+                color: #ffffff !important;
+                font-size: 12px !important;
+                font-weight: 900 !important;
+                line-height: 1.2 !important;
+                padding: 8px 4px !important;
+                white-space: nowrap !important;
+            }
+
+            .main-header .cta-buttons {
+                align-items: center !important;
+                gap: 8px !important;
+                flex-shrink: 0 !important;
+            }
+        }
+    </style>
+    </head>
+<body>
+<div id="loader" style="display:none" aria-hidden="true">
+    <div class="loader"></div>
+    <div class="progress-container mt-3">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="loading-text" id="loadingText">Loading...</div>
+</div>
+
+<!-- Top Bar -->
+    <div class="top-bar" id="top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-9 col-md-12 text-center text-lg-start mb-2 mb-lg-0">
+                    <div class="venue-info">
+                        <strong>11 December 2026</strong>
+                        <span class="venue-date">Falcon Ballroom, Le Meridien Dubai Hotel & Conference Centre | Dubai, UAE</span>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-12 text-center text-lg-end">
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/probizawards" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/probizawards?igsh=MTgzbmx0bDh5dnl5eA%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.youtube.com/channel/UCH48JVPRS6QMuuATpSelwXA" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                        <a href="https://api.whatsapp.com/send/?phone=%2B971588845033&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar navbar-expand-lg main-header">
+        <div class="container-fluid">
+            <!-- Logo -->
+            <a class="navbar-brand probiz-brand" href="http://localhost/ProBizawards" aria-label="ProBiz Awards 2026">
+                <img src="http://localhost/ProBizawards/assets/keditor/probiz/assets/probiz-awards-dubai-2026-light.png"
+                    alt="ProBiz Awards Dubai 2026" class="header-logo">
+            </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="probiz-mobile-trigger" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                style="display:inline-flex;position:fixed;top:102px;right:20px;z-index:4000;width:50px;height:42px;border:2px solid #d9b968;border-radius:8px;background:rgba(0,0,0,.86);align-items:center;justify-content:center;flex-direction:column;gap:6px;">
+                <span style="display:block;width:25px;height:2px;border-radius:2px;background:#d9b968;"></span>
+                <span style="display:block;width:25px;height:2px;border-radius:2px;background:#d9b968;"></span>
+                <span style="display:block;width:25px;height:2px;border-radius:2px;background:#d9b968;"></span>
+            </button>
+
+            <!-- Navigation Menu -->
+            <div class="collapse navbar-collapse d-lg-flex probiz-header-menu" id="navbarNav">
+                <ul class="navbar-nav mx-auto align-items-lg-center">
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost/ProBizawards">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost/ProBizawards/about">ABOUT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost/ProBizawards/how-it-works">PROCESS</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside" aria-expanded="false">
+                            CATEGORIES
+                        </a>
+                        <ul class="dropdown-menu">
+                                                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/award-categories/business-entrepreneurship">Business &amp; Entrepreneurship</a></li>
+                                                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/award-categories/food-chef-hospitality">Food, Chef &amp; Hospitality</a></li>
+                                                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/award-categories/fashion-beauty">Fashion &amp; Beauty</a></li>
+                                                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/award-categories/healthcare-wellness">Healthcare &amp; Wellness</a></li>
+                                                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/award-categories/lifestyle-luxury-innovation">Lifestyle, Luxury &amp; Innovation</a></li>
+                                                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/award-categories/real-estate-property">Real Estate &amp; Property</a></li>
+                                                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/award-categories/opticals-eyewear">Opticals &amp; Eyewear</a></li>
+                                                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/award-categories/electronics-technology">Electronics &amp; Technology</a></li>
+                                                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/award-categories/travel-tourism-resorts">Travel, Tourism &amp; Resorts</a></li>
+                                                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/award-categories/it-software-digital-platforms">IT, Software &amp; Digital Platforms</a></li>
+                                                        <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/restaurant-awards">Restaurant Distinctions</a></li>
+                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/award-categories">View All Categories</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside" aria-expanded="false">
+                            PARTNERS
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/sponsors">Sponsorship</a></li>
+                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/media-partners">Media Partners</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            data-bs-auto-close="outside" aria-expanded="false">
+                          GALA
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/gala-night">Gala Night</a></li>
+                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/finalist-package">Finalist Experience</a></li>
+                            <li><a class="dropdown-item" href="http://localhost/ProBizawards/judging-and-voting">Judging & Voting</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost/ProBizawards/contact">CONTACT</a>
+                    </li>
+                </ul>
+
+                <!-- CTA Buttons -->
+                <div class="cta-buttons d-flex align-items-center gap-2">
+                    <a href="http://localhost/ProBizawards/nominate" class="btn-nominate">NOMINATE</a>
+                    <a href="#sponsor" class="btn-sponsor" data-bs-toggle="modal"
+                        data-bs-target="#sponsorModal">SPONSOR</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <button class="probiz-mobile-word-trigger" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+        style="display:inline-flex;position:fixed;top:112px;right:18px;z-index:9000;min-width:64px;height:38px;border:2px solid #d9b968;border-radius:8px;background:#000;color:#d9b968;align-items:center;justify-content:center;font-size:12px;font-weight:900;letter-spacing:0;">
+        MENU
+    </button>
+<div class="modal fade z-index-9999" id="sponsorModal" tabindex="-1" aria-labelledby="sponsorModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content rounded-4 shadow">
+      <div class="modal-header">
+        <h5 class="modal-title text-dark fw-semibold" id="sponsorModalLabel">Become a Sponsor</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+      <div class="text-center mb-3">
+        <img src="http://localhost/ProBizawards/assets/keditor/probiz/assets/probiz-awards-dubai-2026-light.png"
+          alt="ProBiz Awards Dubai 2026" class="sponsor-modal-logo">
+      </div>
+      <form action="http://localhost/ProBizawards" method="POST">
+        <input type="hidden" name="_token" value="QFrFmBOPSveGs8EW0uhOjI1MojYm0m6ZvBs8XqgL" autocomplete="off">        <input type="hidden" name="enquiry_type" value="Sponsorship">
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Contact name</label>
+            <input type="text" name="full_name" class="form-control" placeholder="Enter contact name" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Work email</label>
+            <input type="email" name="email" class="form-control" placeholder="Enter email" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone</label>
+            <input type="tel" name="phone" class="form-control" placeholder="Enter phone number">
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Company name</label>
+            <input type="text" name="company" class="form-control" placeholder="Enter company name" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Country</label>
+            <input type="text" name="country" class="form-control" value="United Arab Emirates" required>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Partnership interest</label>
+            <select name="partnership_interest" class="form-select" required>
+              <option>Discuss Options</option>
+              <option>Title Partner</option>
+              <option>Platinum Partner</option>
+              <option>Gold Partner</option>
+              <option>Category Partner</option>
+              <option>Table Partner</option>
+              <option>Media Partner</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label class="form-label">Message</label>
+            <textarea name="message" class="form-control" rows="3" placeholder="Tell us about your objectives"></textarea>
+          </div>
+          <div class="col-12">
+            <label class="form-check-label text-dark">
+              <input type="checkbox" name="privacy_ack" value="1" required>
+              I have read the Privacy Policy and understand that my details will be used to respond to this enquiry.
+            </label>
+          </div>
+        </div>
+
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-primary px-5 py-2">Send Partnership Enquiry</button>
+        </div>
+      </form>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Check if session has sponsor_success
+            var sponsorSuccess = false;
+    
+    if(sponsorSuccess){
+        var sponsorModalEl = document.getElementById('sponsorModal');
+        if(sponsorModalEl){
+            var sponsorModal = new bootstrap.Modal(sponsorModalEl);
+            sponsorModal.show();
+
+            // Auto close after 3 seconds
+            setTimeout(function() {
+                sponsorModal.hide();
+            }, 3000);
+        }
+    }
+});
+</script>
+
+<div class="sidebar-social">
+        <a href="https://www.facebook.com/probizawards"target="_blank" rel="noopener noreferrer"  class="facebook" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+        <a href="https://t.me/probizawards"target="_blank" rel="noopener noreferrer" class="telegram" aria-label="Telegram"><i class="bi bi-telegram"></i></a>
+        <a href="https://www.instagram.com/probizawards?igsh=MTgzbmx0bDh5dnl5eA%3D%3D"target="_blank" rel="noopener noreferrer" class="instagram" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCH48JVPRS6QMuuATpSelwXA" target="_blank" rel="noopener noreferrer" class="youtube" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+        <a href="https://api.whatsapp.com/send/?phone=%2B971588845033&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    </div>
+<main id="main" class="fixed-top-margin">
+        
+    <section class="probiz-page-hero probiz-masthead" style="background-image: url('http://localhost/ProBizawards/assets/frontend/images/ProBiz_Images_Only/inner-masthead.jpg')">
+        <div class="container">
+            <div class="probiz-kicker">Nominate Now</div>
+            <h1>Nominate Your Business or Achievement</h1>
+            <p>Tell us about your work and the award category you would like to enter. Our team will review your nomination and contact you about the next steps.</p>
+        </div>
+    </section>
+
+    <section class="probiz-section">
+        <div class="container">
+                        
+            <form id="nominationForm" action="http://localhost/ProBizawards/nominations/store" method="POST" enctype="multipart/form-data" class="probiz-form">
+                <input type="hidden" name="_token" value="QFrFmBOPSveGs8EW0uhOjI1MojYm0m6ZvBs8XqgL" autocomplete="off">                <div class="probiz-form-grid">
+                    <label>Nomination type
+                        <select name="nomination_type" required>
+                                                            <option value="Business" >Business</option>
+                                                            <option value="Individual" >Individual</option>
+                                                            <option value="Product, Property or Platform" >Product, Property or Platform</option>
+                                                    </select>
+                    </label>
+                    <label>Industry pillar
+                        <select id="pillarSelect" name="category" required>
+                            <option value="">Select pillar</option>
+                                                            <option value="business-entrepreneurship" >Business &amp; Entrepreneurship</option>
+                                                            <option value="food-chef-hospitality" >Food, Chef &amp; Hospitality</option>
+                                                            <option value="fashion-beauty" >Fashion &amp; Beauty</option>
+                                                            <option value="healthcare-wellness" >Healthcare &amp; Wellness</option>
+                                                            <option value="lifestyle-luxury-innovation" >Lifestyle, Luxury &amp; Innovation</option>
+                                                            <option value="real-estate-property" >Real Estate &amp; Property</option>
+                                                            <option value="opticals-eyewear" >Opticals &amp; Eyewear</option>
+                                                            <option value="electronics-technology" >Electronics &amp; Technology</option>
+                                                            <option value="travel-tourism-resorts" >Travel, Tourism &amp; Resorts</option>
+                                                            <option value="it-software-digital-platforms" >IT, Software &amp; Digital Platforms</option>
+                                                        <option value="restaurant-awards" >Restaurant Distinctions</option>
+                        </select>
+                    </label>
+                    <label>Award category
+                        <select id="awardSelect" name="subcategory" data-selected="" required>
+                            <option value="">Select award</option>
+                        </select>
+                    </label>
+                    <label>Business / organisation name
+                        <input type="text" name="company" value="" required>
+                    </label>
+                    <label>Nominee / entry name
+                        <input type="text" name="nominee_name" value="" required>
+                    </label>
+                    <label>Emirate
+                        <select name="emirate" required>
+                                                            <option value="Abu Dhabi" >Abu Dhabi</option>
+                                                            <option value="Dubai" >Dubai</option>
+                                                            <option value="Sharjah" >Sharjah</option>
+                                                            <option value="Ajman" >Ajman</option>
+                                                            <option value="Umm Al Quwain" >Umm Al Quwain</option>
+                                                            <option value="Ras Al Khaimah" >Ras Al Khaimah</option>
+                                                            <option value="Fujairah" >Fujairah</option>
+                                                    </select>
+                    </label>
+                    <label>UAE activity or contribution
+                        <input type="text" name="uae_activity" value="" required>
+                    </label>
+                    <label>Branch / location
+                        <input type="text" name="branch_location" value="">
+                    </label>
+                    <label>Website / professional profile
+                        <input type="url" name="website" value="" placeholder="https://">
+                    </label>
+                    <label>Contact name
+                        <input type="text" name="contact" value="" required>
+                    </label>
+                    <label>Contact role
+                        <input type="text" name="jobtitle" value="" required>
+                    </label>
+                    <label>Email address
+                        <input type="email" name="email" value="" required>
+                    </label>
+                    <label>Confirm email address
+                        <input type="email" name="confirm_email" value="" required>
+                    </label>
+                    <label>Phone number
+                        <input type="tel" name="phone" value="" required>
+                    </label>
+                    <label>Country / region
+                        <input type="text" name="country" value="United Arab Emirates" required>
+                    </label>
+                    <label>Supporting evidence
+                        <input type="file" name="supporting_evidence" accept=".pdf,.jpg,.jpeg,.png">
+                    </label>
+                </div>
+
+                <label>Achievement summary <span id="summaryCount">0 words</span>
+                    <textarea id="statement" name="statement" rows="7" placeholder="Recommended 150-500 words" required></textarea>
+                </label>
+                <label>Short description / tagline
+                    <textarea name="description" rows="4" placeholder="Recommended 50-100 words" required></textarea>
+                </label>
+
+                <div class="probiz-consent-stack" id="nomination-consents">
+                    <label class="probiz-check">
+                        <input type="checkbox" name="whatsapp_permission" value="1" >
+                        <span>You may contact me on WhatsApp about this nomination.</span>
+                    </label>
+                    <label class="probiz-check">
+                        <input type="checkbox" name="consent1" value="1" required >
+                        <span>I confirm the information is accurate and I am authorised to submit this nomination.</span>
+                    </label>
+                    <label class="probiz-check">
+                        <input type="checkbox" name="consent2" value="1" required >
+                        <span>I have read the Privacy Policy and nomination terms, and understand that submission does not guarantee finalist status or a win.</span>
+                    </label>
+                    <label class="probiz-check">
+                        <input type="checkbox" name="marketing_consent" value="1" >
+                        <span>Send me ProBiz news and future event updates.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-nominate">Submit Nomination</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const awards = {"business-entrepreneurship":[{"id":"M01","slug":"visionary-entrepreneur-of-the-year","title":"Visionary Entrepreneur of the Year","description":"Recognising an entrepreneur who combines a clear business vision with purposeful leadership, original thinking and demonstrated progress."},{"id":"M02","slug":"business-leader-of-the-year","title":"Business Leader of the Year","description":"Recognising a leader whose decisions, team development and business achievements show a meaningful contribution to their organisation."},{"id":"M03","slug":"emerging-enterprise-of-the-year","title":"Emerging Enterprise of the Year","description":"Recognising a developing enterprise with a distinctive offering, evidence of progress and a clear direction for sustainable growth."},{"id":"M04","slug":"women-in-business-excellence-award","title":"Women in Business Excellence Award","description":"Celebrating a woman whose leadership, enterprise or professional contribution has created a meaningful impact in business."},{"id":"M05","slug":"corporate-legacy-award","title":"Corporate Legacy Award","description":"Recognising an established organisation with a sustained contribution to its industry, customers and business community."}],"food-chef-hospitality":[{"id":"M06","slug":"chef-of-the-year","title":"Chef of the Year","description":"Celebrating a chef whose culinary skill, originality and consistency create a distinctive dining experience."},{"id":"M07","slug":"restaurant-of-the-year","title":"Restaurant of the Year","description":"Recognising a restaurant that brings together food quality, service, atmosphere and a compelling overall guest experience."},{"id":"M08","slug":"hospitality-leader-of-the-year","title":"Hospitality Leader of the Year","description":"Recognising a hospitality professional whose leadership strengthens service standards, team performance and guest experience."},{"id":"M09","slug":"culinary-innovation-award","title":"Culinary Innovation Award","description":"Celebrating a culinary concept, technique or offering that introduces a fresh approach and a meaningful improvement to the dining experience."},{"id":"M10","slug":"hospitality-innovation-award","title":"Hospitality Innovation Award","description":"Recognising an initiative that improves hospitality operations, guest service or the way an experience is delivered."}],"fashion-beauty":[{"id":"M11","slug":"designer-of-the-year","title":"Designer of the Year","description":"Recognising a designer whose creative direction, craftsmanship and body of work show a distinctive contribution to fashion."},{"id":"M12","slug":"beauty-brand-of-the-year","title":"Beauty Brand of the Year","description":"Celebrating a beauty brand with a clear identity, thoughtful products or services and a strong customer experience."},{"id":"M13","slug":"style-icon-of-the-year","title":"Style Icon of the Year","description":"Recognising an individual with a distinctive style identity and a positive contribution to the fashion and lifestyle community."},{"id":"M14","slug":"fashion-influencer-of-the-year","title":"Fashion Influencer of the Year","description":"Recognising a creator whose original fashion content, audience engagement and professional approach make a meaningful contribution."},{"id":"M15","slug":"beauty-expert-of-the-year","title":"Beauty Expert of the Year","description":"Celebrating a beauty professional whose expertise, client care and standard of work demonstrate professional excellence."}],"healthcare-wellness":[{"id":"M16","slug":"medical-professional-of-the-year","title":"Medical Professional of the Year","description":"Recognising a medical professional contribution to patient care, professional practice and service improvement."},{"id":"M17","slug":"wellness-brand-of-the-year","title":"Wellness Brand of the Year","description":"Celebrating a wellness brand with a considered approach to service quality, customer care and wellbeing."},{"id":"M18","slug":"healthcare-innovation-award","title":"Healthcare Innovation Award","description":"Recognising an initiative that demonstrates a useful improvement in healthcare delivery, access, experience or operations."},{"id":"M19","slug":"fitness-wellbeing-icon","title":"Fitness & Wellbeing Icon","description":"Celebrating an individual whose work encourages positive participation in fitness and wellbeing."},{"id":"M20","slug":"mental-health-advocate-of-the-year","title":"Mental Health Advocate of the Year","description":"Recognising a person whose advocacy, education or community work supports greater understanding of mental wellbeing."}],"lifestyle-luxury-innovation":[{"id":"M21","slug":"luxury-brand-of-the-year","title":"Luxury Brand of the Year","description":"Recognising a luxury brand that combines a clear identity, craftsmanship or service quality and a distinctive customer experience."},{"id":"M22","slug":"innovator-of-the-year","title":"Innovator of the Year","description":"Celebrating an individual whose original idea or approach creates a demonstrated improvement in their field."},{"id":"M23","slug":"lifestyle-influencer-of-the-year","title":"Lifestyle Influencer of the Year","description":"Recognising a creator whose original lifestyle content, audience connection and professional standards distinguish their work."},{"id":"M24","slug":"sustainable-luxury-award","title":"Sustainable Luxury Award","description":"Recognising a luxury initiative supported by evidence of responsible materials, operations or resource use."},{"id":"M25","slug":"luxury-retail-excellence-award","title":"Luxury Retail Excellence Award","description":"Celebrating a luxury retailer product presentation, customer service and overall shopping experience."}],"real-estate-property":[{"id":"M26","slug":"real-estate-developer-of-the-year","title":"Real Estate Developer of the Year","description":"Recognising a developer project quality, delivery approach and contribution to the built environment."},{"id":"M27","slug":"real-estate-agent-broker-of-the-year","title":"Real Estate Agent\/Broker of the Year","description":"Celebrating an agent or agency whose professional service, market understanding and client care demonstrate strong performance."},{"id":"M28","slug":"luxury-property-of-the-year","title":"Luxury Property of the Year","description":"Recognising a named property with distinctive design, quality, amenities and an exceptional residential or guest experience."},{"id":"M29","slug":"real-estate-innovation-award","title":"Real Estate Innovation Award","description":"Celebrating a solution or initiative that improves property services, development processes or the customer experience."},{"id":"M30","slug":"sustainable-development-award","title":"Sustainable Development Award","description":"Recognising a property development supported by evidence of environmental consideration and responsible design or operation."}],"opticals-eyewear":[{"id":"M31","slug":"optical-brand-of-the-year","title":"Optical Brand of the Year","description":"Recognising an optical brand with a clear offering, consistent quality and a considered customer experience."},{"id":"M32","slug":"eyewear-designer-of-the-year","title":"Eyewear Designer of the Year","description":"Celebrating a designer whose eyewear combines creative identity, craftsmanship and practical design."},{"id":"M33","slug":"optometrist-of-the-year","title":"Optometrist of the Year","description":"Recognising an optometrist professional practice, patient communication and contribution to eye care."},{"id":"M34","slug":"optical-retail-excellence-award","title":"Optical Retail Excellence Award","description":"Celebrating an optical retailer product guidance, service standards and overall customer journey."},{"id":"M35","slug":"innovation-in-eye-care-award","title":"Innovation in Eye Care Award","description":"Recognising an evidence-supported initiative that improves eye-care services, access, experience or delivery."}],"electronics-technology":[{"id":"M36","slug":"electronics-brand-of-the-year","title":"Electronics Brand of the Year","description":"Celebrating an electronics brand product offering, customer experience and contribution to its market."},{"id":"M37","slug":"consumer-tech-innovation-award","title":"Consumer Tech Innovation Award","description":"Recognising a consumer technology product or solution that addresses a real user need through a useful innovation."},{"id":"M38","slug":"smart-home-excellence-award","title":"Smart Home Excellence Award","description":"Celebrating a smart-home product or solution that combines usability, integration and practical value for residents."},{"id":"M39","slug":"electronics-retailer-of-the-year","title":"Electronics Retailer of the Year","description":"Recognising an electronics retailer product guidance, shopping experience and after-sales support."},{"id":"M40","slug":"emerging-tech-startup-of-the-year","title":"Emerging Tech Startup of the Year","description":"Celebrating a developing technology business with a relevant solution, evidence of progress and a clear market opportunity."}],"travel-tourism-resorts":[{"id":"M41","slug":"resort-of-the-year","title":"Resort of the Year","description":"Recognising a resort service, setting, facilities and overall guest experience."},{"id":"M42","slug":"travel-agency-of-the-year","title":"Travel Agency of the Year","description":"Celebrating a travel agency planning expertise, customer support and quality of travel arrangements."},{"id":"M43","slug":"airline-excellence-award","title":"Airline Excellence Award","description":"Recognising an airline contribution to passenger experience, service quality and customer support."},{"id":"M44","slug":"tourism-board-of-the-year","title":"Tourism Board of the Year","description":"Celebrating a tourism board destination promotion, visitor engagement and contribution to tourism development."},{"id":"M45","slug":"luxury-travel-experience-award","title":"Luxury Travel Experience Award","description":"Recognising a distinctive travel experience combining thoughtful planning, service quality and memorable guest experiences."}],"it-software-digital-platforms":[{"id":"M46","slug":"software-company-of-the-year","title":"Software Company of the Year","description":"Celebrating a software company solutions, delivery standards, customer support and demonstrated client value."},{"id":"M47","slug":"e-commerce-platform-of-the-year","title":"E-commerce Platform of the Year","description":"Recognising an e-commerce platform shopping experience, operational reliability and value for customers or sellers."},{"id":"M48","slug":"mobile-app-of-the-year","title":"Mobile App of the Year","description":"Celebrating a mobile application that combines useful functionality, accessible design and a strong user experience."},{"id":"M49","slug":"digital-platform-innovation-award","title":"Digital Platform Innovation Award","description":"Recognising a digital platform that introduces a useful improvement in how users connect, transact or access services."},{"id":"M50","slug":"best-loyalty-rewards-program","title":"Best Loyalty & Rewards Program","description":"Celebrating a loyalty programme that offers clear customer value, an accessible experience and meaningful engagement."}],"restaurant-awards":[{"id":"R01","slug":"best-pakistani-restaurant","title":"Best Pakistani Restaurant","description":"Recognising a Pakistani restaurant for its food, hospitality and a consistent experience that reflects its culinary identity."},{"id":"R02","slug":"best-indian-restaurant","title":"Best Indian Restaurant","description":"Celebrating an Indian restaurant that brings together distinctive food, reliable service and a memorable dining experience."},{"id":"R03","slug":"best-arabic-restaurant","title":"Best Arabic Restaurant","description":"Recognising an Arabic restaurant for its cuisine, hospitality and overall guest experience."},{"id":"R04","slug":"best-asian-restaurant","title":"Best Asian Restaurant","description":"Celebrating an Asian restaurant with a distinctive culinary offering, consistent quality and thoughtful service."},{"id":"R05","slug":"best-turkish-restaurant","title":"Best Turkish Restaurant","description":"Recognising a Turkish restaurant for its food, cultural character and guest experience."},{"id":"R06","slug":"best-fine-dining-restaurant","title":"Best Fine Dining Restaurant","description":"Celebrating a restaurant where culinary execution, service, atmosphere and attention to detail form a refined dining experience."},{"id":"R07","slug":"best-casual-dining-restaurant","title":"Best Casual Dining Restaurant","description":"Recognising an approachable dining concept with consistent food, welcoming service and everyday customer appeal."},{"id":"R08","slug":"best-cafe","title":"Best Cafe","description":"Celebrating a cafe drinks, food offering, atmosphere and customer experience."},{"id":"R09","slug":"best-bakery-dessert-brand","title":"Best Bakery & Dessert Brand","description":"Recognising a bakery or dessert brand for its product quality, creativity and customer experience."},{"id":"R10","slug":"best-quick-service-restaurant","title":"Best Quick Service Restaurant","description":"Celebrating a quick-service restaurant for consistent quality, efficient service and a convenient customer journey."},{"id":"R11","slug":"best-family-restaurant","title":"Best Family Restaurant","description":"Recognising a restaurant that thoughtfully serves families through its menu, facilities, atmosphere and service."},{"id":"R12","slug":"best-rooftop-dining","title":"Best Rooftop Dining","description":"Celebrating a rooftop dining venue that combines its setting with food, service and an engaging guest experience."},{"id":"R13","slug":"best-customer-experience","title":"Best Customer Experience","description":"Recognising a restaurant whose customer care creates a consistent, welcoming experience across the guest journey."},{"id":"R14","slug":"best-new-restaurant","title":"Best New Restaurant","description":"Celebrating a newly opened restaurant with a distinctive concept and a promising guest experience."},{"id":"R15","slug":"best-restaurant-interior-ambience","title":"Best Restaurant Interior & Ambience","description":"Recognising a restaurant whose interior, lighting, layout and atmosphere strengthen its dining concept."},{"id":"R16","slug":"best-healthy-dining-concept","title":"Best Healthy Dining Concept","description":"Celebrating a dining concept with a clear approach to balanced menu choices, ingredient information and customer needs."},{"id":"R17","slug":"best-homegrown-restaurant-brand","title":"Best Homegrown Restaurant Brand","description":"Recognising a restaurant brand founded in the UAE with a distinctive identity and contribution to the local dining scene."},{"id":"R18","slug":"best-restaurant-chain","title":"Best Restaurant Chain","description":"Celebrating a restaurant group or chain for consistency, service and brand experience across its locations."},{"id":"R19","slug":"best-catering-company","title":"Best Catering Company","description":"Recognising a catering business for food quality, planning, service and delivery of client events."},{"id":"R20","slug":"peoples-choice-restaurant","title":"People's Choice Restaurant","description":"Celebrating the restaurant selected through the published public voting process, subject to vote validation and eligibility checks."}]};
+            const pillarSelect = document.getElementById('pillarSelect');
+            const awardSelect = document.getElementById('awardSelect');
+            const selectedAward = awardSelect.dataset.selected;
+            const statement = document.getElementById('statement');
+            const summaryCount = document.getElementById('summaryCount');
+
+            function populateAwards() {
+                const items = awards[pillarSelect.value] || [];
+                awardSelect.innerHTML = '<option value="">Select award</option>';
+                items.forEach(function (award) {
+                    const option = document.createElement('option');
+                    option.value = award.id;
+                    option.textContent = award.id + ' | ' + award.title;
+                    option.selected = selectedAward === award.id;
+                    awardSelect.appendChild(option);
+                });
+            }
+
+            function updateCount() {
+                const words = (statement.value || '').trim().split(/\s+/).filter(Boolean).length;
+                summaryCount.textContent = words + ' words';
+            }
+
+            pillarSelect.addEventListener('change', populateAwards);
+            statement.addEventListener('input', updateCount);
+            populateAwards();
+            updateCount();
+        });
+    </script>
+</main>
+
+<footer class="footer" id="footer">
+    <!-- Scroll to Top Button -->
+    <a href="#top" class="scroll-top5">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+
+    <div class="container">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-lg-4 col-md-6 mb-4 text-lg-start">
+                <a href="http://localhost/ProBizawards">
+                    <img src="http://localhost/ProBizawards/assets/keditor/probiz/assets/probiz-awards-dubai-2026-light.png" alt="ProBiz Awards Dubai 2026"
+                        class="footer-logo">
+                </a>
+                <p class="footer-description">
+                    ProBiz Awards 2026 Dubai celebrates businesses, entrepreneurs and professionals across the UAE through industry recognition, brand visibility and an evening of networking and celebration.
+                </p>
+                <p class="footer-description">11 December 2026 | Falcon Ballroom 1 + 2 | Le Meridien Dubai Hotel & Conference Centre, Airport Road, Dubai, UAE</p>
+            </div>
+
+
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h3 class="footer-heading">Quick Links</h3>
+                <ul class="footer-link">
+                    <li><a href="http://localhost/ProBizawards/about">About</a></li>
+                    <li><a href="http://localhost/ProBizawards/award-categories">Award Categories</a></li>
+                    <li><a href="http://localhost/ProBizawards/nominate">Nominate Now</a></li>
+                    <li><a href="http://localhost/ProBizawards/faq">FAQs</a></li>
+                </ul>
+
+            </div>
+
+            <!-- Useful Links -->
+            <div class="col-lg-2 col-md-6 mb-4">
+                <h3 class="footer-heading">Useful Links</h3>
+                <ul class="footer-link">
+                    <li><a href="http://localhost/ProBizawards/sponsors">Sponsorship</a></li>
+                    <li><a href="http://localhost/ProBizawards/media-partners">Media Partners</a></li>
+                    <li><a href="http://localhost/ProBizawards/gala-night">Gala Night</a></li>
+                    <li><a href="http://localhost/ProBizawards/contact">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <h3 class="footer-heading">Stay Updated with ProBiz Awards</h3>
+                <p class="newsletter-text">
+                    Receive nomination updates, finalist announcements and gala news.
+                </p>
+
+
+                
+                    <form method="POST" action="http://localhost/ProBizawards/subscribe" accept-charset="UTF-8" id="subscribeForm" class="newsletter-forms"><input name="_token" type="hidden" value="QFrFmBOPSveGs8EW0uhOjI1MojYm0m6ZvBs8XqgL">
+                    <div class="newsletter-input-row">
+                        <input placeholder="Email address" class="newsletter-input" id="subscribe_email" required="required" autocomplete="off" name="subscribe_email" type="email">
+                        <button type="submit" id="subscribeFormSubmit" class="newsletter-btn" aria-label="Subscribe">
+                            <i class="bi bi-send"></i>
+                        </button>
+                    </div>
+                    <label class="newsletter-consent">
+                        <input type="checkbox" name="newsletter_consent" value="1">
+                        <span>I would like to receive ProBiz Awards news by email. I can unsubscribe at any time.</span>
+                    </label>
+                    </form>
+
+                                <div class="social-icons-footer">
+                    <a href="https://www.facebook.com/probizawards" target="_blank" rel="noopener noreferrer"
+                        aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                    <a href="https://www.instagram.com/probizawards?igsh=MTgzbmx0bDh5dnl5eA%3D%3D"
+                        target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i
+                            class="bi bi-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UCH48JVPRS6QMuuATpSelwXA" target="_blank"
+                        rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="https://api.whatsapp.com/send/?phone=%2B971588845033&text&type=phone_number&app_absent=0"
+                        target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i
+                            class="bi bi-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Copyright -->
+                <div class="col-lg-6 col-md-12 mb-3 mb-lg-0">
+                    <p class="copyright mb-0">
+                        &copy; 2026 <strong>ProBiz Awards</strong>. All rights reserved.
+                    </p><br>
+                    
+                </div>
+
+                <!-- Bottom Links -->
+                <div class="col-lg-6 col-md-12">
+                    <div class="footer-bottom-links">
+                        <a href="http://localhost/ProBizawards/terms-and-conditions">Terms & Conditions</a>
+                        <a href="http://localhost/ProBizawards/privacy-policy">Privacy Policy</a>
+                        <a href="http://localhost/ProBizawards/faq">FAQs</a>
+                        <a href="http://localhost/ProBizawards/magazine/ProBizAwardsMagazine-DecemberEdition2026.pdf" download>Brochure</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="http://localhost/ProBizawards/assets/keditor/probiz/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="http://localhost/ProBizawards/assets/keditor/probiz/js/jquery.odometer.min.js"></script>
+<script src="http://localhost/ProBizawards/assets/keditor/probiz/js/jquery.countdown.min.js"></script>
+<script src="http://localhost/ProBizawards/assets/keditor/probiz/js/jquery.knob.min.js"></script>
+<script src="http://localhost/ProBizawards/assets/keditor/probiz/js/jquery-countdowngampang.min.js"></script>
+<script src="http://localhost/ProBizawards/assets/keditor/probiz/js/jquery.ba-throttle-debounce.min.js"></script>
+<script src="http://localhost/ProBizawards/assets/keditor/probiz/js/jquery.mCustomScrollbar.min.js"></script>
+<script src="http://localhost/ProBizawards/assets/keditor/probiz/js/jarallax.min.js"></script>
+<script src="http://localhost/ProBizawards/assets/keditor/probiz/js/jquery.appear.js"></script>
+<script src="http://localhost/ProBizawards/assets/keditor/probiz/js/jquery.easing.js"></script>
+<script src="http://localhost/ProBizawards/assets/keditor/probiz/js/slick.min.js"></script>
+<script src="http://localhost/ProBizawards/assets/keditor/probiz/js/wow.min.js"></script>
+<script src="http://localhost/ProBizawards/assets/keditor/probiz/js/main.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const loader = document.getElementById('loader');
+        const progressBar = document.getElementById('progressBar');
+        const loadingText = document.getElementById('loadingText');
+
+        if (loader && progressBar && loadingText) {
+            let progress = 0;
+            const interval = setInterval(function () {
+                progress += 20;
+                progressBar.style.width = progress + '%';
+                loadingText.textContent = 'Loading... ' + progress + '%';
+
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    setTimeout(function () {
+                        loader.style.opacity = '0';
+                        loader.style.transition = 'opacity 0.5s ease';
+                        setTimeout(function () {
+                            loader.style.display = 'none';
+                        }, 500);
+                    }, 80);
+                }
+            }, 20);
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+            anchor.addEventListener('click', function (event) {
+                const selector = this.getAttribute('href');
+                if (!selector || selector === '#') {
+                    return;
+                }
+
+                const target = document.querySelector(selector);
+                if (target) {
+                    event.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarCollapse) {
+            const menuToggle = document.querySelector('.probiz-mobile-word-trigger, .probiz-mobile-trigger');
+            if (menuToggle) {
+                menuToggle.addEventListener('click', function () {
+                    const isOpen = navbarCollapse.classList.toggle('probiz-menu-open');
+                    menuToggle.classList.toggle('active', isOpen);
+                    menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                });
+            }
+
+            document.querySelectorAll('.navbar-nav .nav-link').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    if (window.innerWidth < 992 && !link.classList.contains('dropdown-toggle')) {
+                        navbarCollapse.classList.remove('probiz-menu-open');
+                        if (menuToggle) {
+                            menuToggle.classList.remove('active');
+                            menuToggle.setAttribute('aria-expanded', 'false');
+                        }
+                    }
+                });
+            });
+
+        }
+
+        const header = document.querySelector('.main-header');
+        if (header) {
+            window.addEventListener('scroll', function () {
+                header.classList.toggle('scrolled', window.scrollY > 50);
+            });
+        }
+
+        const scrollTopBtn = document.querySelector('.scroll-top5');
+        if (scrollTopBtn) {
+            window.addEventListener('scroll', function () {
+                scrollTopBtn.style.opacity = window.pageYOffset > 300 ? '1' : '0.7';
+            });
+        }
+
+        const counters = document.querySelectorAll('.probiz-count[data-count]');
+        if (counters.length) {
+            const runCounter = function (counter) {
+                if (counter.dataset.counted === 'true') {
+                    return;
+                }
+
+                counter.dataset.counted = 'true';
+                const target = parseInt(counter.dataset.count || '0', 10);
+                const duration = 1100;
+                const startTime = performance.now();
+
+                function tick(now) {
+                    const progress = Math.min((now - startTime) / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    counter.textContent = Math.round(target * eased);
+
+                    if (progress < 1) {
+                        requestAnimationFrame(tick);
+                    } else {
+                        counter.textContent = target;
+                    }
+                }
+
+                requestAnimationFrame(tick);
+            };
+
+            if ('IntersectionObserver' in window) {
+                const counterObserver = new IntersectionObserver(function (entries, observer) {
+                    entries.forEach(function (entry) {
+                        if (entry.isIntersecting) {
+                            runCounter(entry.target);
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.35 });
+
+                counters.forEach(function (counter) {
+                    counterObserver.observe(counter);
+                });
+            } else {
+                counters.forEach(runCounter);
+            }
+        }
+
+        const video = document.querySelector('.video-background');
+        if (video) {
+            video.play().catch(function () {});
+        }
+
+        const track = document.querySelector('.impact-track');
+        const prevBtn = document.querySelector('.carousel-btn.prev');
+        const nextBtn = document.querySelector('.carousel-btn.next');
+        const dots = document.querySelectorAll('.dot');
+        if (track && prevBtn && nextBtn && dots.length) {
+            let index = 0;
+            const totalSlides = Math.max(dots.length, 1);
+
+            function updateCarousel() {
+                track.style.transform = 'translateX(-' + (index * 100) + '%)';
+                dots.forEach(function (dot, i) {
+                    dot.classList.toggle('active', i === index);
+                });
+            }
+
+            nextBtn.addEventListener('click', function () {
+                index = (index + 1) % totalSlides;
+                updateCarousel();
+            });
+
+            prevBtn.addEventListener('click', function () {
+                index = (index - 1 + totalSlides) % totalSlides;
+                updateCarousel();
+            });
+
+            dots.forEach(function (dot, i) {
+                dot.addEventListener('click', function () {
+                    index = i;
+                    updateCarousel();
+                });
+            });
+        }
+
+        if (window.AOS) {
+            AOS.init({
+                duration: 1000,
+                once: true
+            });
+        }
+    });
+</script>
+</body>
+</html>
