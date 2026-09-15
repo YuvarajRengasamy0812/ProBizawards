@@ -35,9 +35,9 @@
                             @endforeach
                         </select>
                     </label>
-                    <label>Industry pillar
+                    <label>Award category
                         <select id="pillarSelect" name="category" required>
-                            <option value="">Select pillar</option>
+                            <option value="">Select category</option>
                             @foreach($pillars as $pillar)
                                 <option value="{{ $pillar['slug'] }}" @selected(old('category', request('pillar')) === $pillar['slug'])>{{ $pillar['title'] }}</option>
                             @endforeach

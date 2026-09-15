@@ -12,7 +12,7 @@
         <div class="container">
             <div class="probiz-kicker">Award Categories</div>
             <h1>Find Your ProBiz Award Category</h1>
-            <p>Explore 50 main awards across 10 industry pillars, plus 20 restaurant distinctions. Select the category that best reflects your achievement and review its requirements before submitting a nomination.</p>
+            <p>Explore 50 main awards across 10 categories, plus 20 restaurant distinctions. Select the category that best reflects your achievement and review its requirements before submitting a nomination.</p>
         </div>
     </section>
 

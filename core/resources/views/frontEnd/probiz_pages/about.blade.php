@@ -26,7 +26,7 @@
             <div class="probiz-about-intro" data-aos="fade-up">
                 <div>
                     <div class="probiz-kicker">ABOUT PROBIZ</div>
-                    <h2>Built for clear, credible UAE business recognition.</h2>
+                    <h2>Built for clear, credible UAE <span class="probiz-gradient-text">business recognition</span></h2>
                 </div>
                 <p>ProBiz Awards 2026 Dubai focuses on eligible achievement, category fit and transparent participation. The programme is presented as a first-edition platform for businesses, entrepreneurs and professionals across the UAE.</p>
             </div>
@@ -46,7 +46,7 @@
             <div class="probiz-about-cta" data-aos="fade-up">
                 <div>
                     <div class="probiz-kicker">Next Step</div>
-                    <h3>Find the category that fits your achievement.</h3>
+                    <h3>Find the <span class="probiz-gradient-text">category</span> that fits your <span class="probiz-gradient-text">achievement</span></h3>
                 </div>
                 <div class="probiz-actions">
                     @foreach($page['buttons'] as $button)

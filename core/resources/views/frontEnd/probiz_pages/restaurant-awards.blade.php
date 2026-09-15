@@ -11,7 +11,7 @@
     <section class="probiz-page-hero probiz-masthead" style="background-image: url('{{ asset($imageBase.'/'.$images['restaurant_hero']) }}')">
         <div class="container">
             <div class="probiz-kicker">Restaurant Distinctions</div>
-            <h1>A place for every flavour.</h1>
+            <h1>A Place For Every Flavour</h1>
             <p>20 distinctions celebrating the UAE's dining scene. Choose the category that best reflects your strengths and share the story behind your guest experience.</p>
             <div class="probiz-actions">
                 <a href="{{ url('/nominate?pillar=restaurant-awards') }}" class="btn-nominate">Nominate Your Restaurant</a>

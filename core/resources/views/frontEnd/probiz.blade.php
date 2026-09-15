@@ -7,16 +7,28 @@
     @php
         $imageBase = $images['base'];
         $thumbLabels = [
-            'business-entrepreneurship' => '01-entrepreneurship',
-            'food-chef-hospitality' => '02-hospitality',
-            'fashion-beauty' => '03-beauty',
-            'healthcare-wellness' => '04-wellness',
-            'lifestyle-luxury-innovation' => '05-luxury-innovation',
-            'real-estate-property' => '06-property',
-            'opticals-eyewear' => '07-eyewear',
-            'electronics-technology' => '08-technology',
-            'travel-tourism-resorts' => '09-tourism-resorts',
-            'it-software-digital-platforms' => '10-digital-platforms',
+            'business-entrepreneurship' => '01 Entrepreneurship',
+            'food-chef-hospitality' => '02 Hospitality',
+            'fashion-beauty' => '03 Beauty',
+            'healthcare-wellness' => '04 Wellness',
+            'lifestyle-luxury-innovation' => '05 Luxury Innovation',
+            'real-estate-property' => '06 Property',
+            'opticals-eyewear' => '07 Eyewear',
+            'electronics-technology' => '08 Technology',
+            'travel-tourism-resorts' => '09 Tourism Resorts',
+            'it-software-digital-platforms' => '10 Digital Platforms',
+        ];
+        $thumbIcons = [
+            'business-entrepreneurship' => 'bi-briefcase',
+            'food-chef-hospitality' => 'bi-cup-hot',
+            'fashion-beauty' => 'bi-stars',
+            'healthcare-wellness' => 'bi-heart-pulse',
+            'lifestyle-luxury-innovation' => 'bi-gem',
+            'real-estate-property' => 'bi-buildings',
+            'opticals-eyewear' => 'bi-eyeglasses',
+            'electronics-technology' => 'bi-cpu',
+            'travel-tourism-resorts' => 'bi-airplane',
+            'it-software-digital-platforms' => 'bi-window-stack',
         ];
         $approvedHomeMediaPartners = ($approvedMediaPartners ?? collect())->flatten(1)->filter(function ($partner) {
             return !empty($partner->logo);
@@ -75,9 +87,9 @@
                 <div class="probiz-kicker">First Edition / Dubai 2026</div>
                 <h1>
                     <span class="probiz-title-line">Celebrating</span>
-                    <span class="probiz-title-line probiz-gold-word">excellence</span>
-                    <span class="probiz-title-line">across UAE</span>
-                    <span class="probiz-title-line">business.</span>
+                    <span class="probiz-title-line probiz-gradient-text">Excellence</span>
+                    <span class="probiz-title-line">Across UAE</span>
+                    <span class="probiz-title-line">Business</span>
                 </h1>
                 <div class="probiz-event-line">11 December 2026 | Le Meridien Dubai</div>
                 <div class="probiz-actions">
@@ -97,15 +109,15 @@
             <div class="probiz-split">
                 <div>
                     <div class="probiz-kicker">Introduction</div>
-                    <h2>Where business excellence takes centre stage</h2>
+                    <h2>Where Business <span class="probiz-gradient-text">Excellence</span> Takes Centre Stage</h2>
                 </div>
                 <p>ProBiz Awards brings together businesses and leaders from across the UAE for recognition, networking and celebration. From restaurants and hospitality to technology, real estate, healthcare and entrepreneurship, the programme gives eligible nominees a platform to present their achievements and connect with a wider business community.</p>
             </div>
             <div class="probiz-stats" data-aos="fade-up">
-                <div><strong class="probiz-count" data-count="10">0</strong><span>Industry Pillars</span></div>
-                <div><strong class="probiz-count" data-count="50">0</strong><span>Main Awards</span></div>
-                <div><strong class="probiz-count" data-count="20">0</strong><span>Restaurant Distinctions</span></div>
-                <div><strong class="probiz-count" data-count="3">0</strong><span>Gala Invitations Per Finalist</span></div>
+                <div><i class="bi bi-grid-3x3-gap"></i><strong class="probiz-count" data-count="10">0</strong><span>Award Categories</span></div>
+                <div><i class="bi bi-trophy"></i><strong class="probiz-count" data-count="50">0</strong><span>Main Awards</span></div>
+                <div><i class="bi bi-cup-hot"></i><strong class="probiz-count" data-count="20">0</strong><span>Restaurant Distinctions</span></div>
+                <div><i class="bi bi-ticket-perforated"></i><strong class="probiz-count" data-count="3">0</strong><span>Gala Invitations Per Finalist</span></div>
             </div>
         </div>
     </section>
@@ -114,13 +126,14 @@
         <div class="container">
             <div class="probiz-section-head">
                 <div class="probiz-kicker">Categories</div>
-                <h2>Find the award that fits your achievement</h2>
-                <p>Explore 10 industry pillars and 50 main awards. Each pillar includes five focused categories so nominees can choose the recognition path that matches their work.</p>
+                <h2>Find The <span class="probiz-gradient-text">Award</span> That Fits Your Achievement</h2>
+                <p>Explore 10 categories and 50 main awards. Each category includes five focused awards so nominees can choose the recognition path that matches their work.</p>
             </div>
-            <div class="probiz-thumb-strip" aria-label="ProBiz pillar image set">
+            <div class="probiz-thumb-strip" aria-label="ProBiz category image set">
                 @foreach($pillars as $pillar)
                     <a href="{{ url('/award-categories/'.$pillar['slug']) }}">
                         <img src="{{ asset($imageBase.'/'.$pillar['image']) }}" alt="{{ $pillar['title'] }}">
+                        <i class="bi {{ $thumbIcons[$pillar['slug']] ?? 'bi-award' }}"></i>
                         <strong>{{ $thumbLabels[$pillar['slug']] ?? $pillar['id'].'-'.$pillar['slug'] }}</strong>
                         <span class="probiz-thumb-view">View</span>
                     </a>
@@ -134,7 +147,7 @@
             <div class="probiz-feature-row probiz-restaurant-feature" data-aos="fade-up">
                 <div data-aos="fade-right" data-aos-delay="100">
                     <div class="probiz-kicker">Restaurant Distinctions</div>
-                    <h2>A place for every flavour.</h2>
+                    <h2>A Place For <span class="probiz-gradient-text">Every Flavour</span></h2>
                     <p>20 distinctions celebrating the UAE dining scene, from cuisine and service to ambience, customer experience and homegrown restaurant brands.</p>
                     <a href="{{ url('/restaurant-awards') }}" class="btn-nominate">Explore Restaurant Distinctions</a>
                 </div>
@@ -147,7 +160,7 @@
         <div class="container">
             <div class="probiz-section-head">
                 <div class="probiz-kicker">Process</div>
-                <h2>Choose. Submit. Review. Celebrate.</h2>
+                <h2>Choose. <span class="probiz-gradient-text">Submit.</span> Review. Celebrate.</h2>
             </div>
             <div class="probiz-home-process-carousel" aria-label="ProBiz process">
                 <div class="probiz-home-process-track">
@@ -170,7 +183,7 @@
         <div class="container">
             <div class="probiz-section-head probiz-media-logo-head">
                 <div class="probiz-kicker">Our Media Partners</div>
-                <h2>Media Partners</h2>
+                <h2><span class="probiz-gradient-text">Media</span> Partners</h2>
                 <p>Approved media partners and event coverage collaborators appear here.</p>
             </div>
 
@@ -211,7 +224,7 @@
         <div class="container">
             <div class="probiz-section-head probiz-media-logo-head">
                 <div class="probiz-kicker">ProBiz Awards Sponsors</div>
-                <h2>Check Who Made The Event Possible</h2>
+                <h2>Check Who Made The <span class="probiz-gradient-text">Event Possible</span></h2>
             </div>
 
             <div class="probiz-home-awards-stack">
@@ -241,7 +254,7 @@
                 <img class="probiz-brochure-mockup" src="{{ asset($imageBase.'/'.$images['brochure']) }}" alt="ProBiz Awards 2026 brochure concept">
                 <div>
                     <div class="probiz-kicker">Finalist Experience</div>
-                    <h2>More than an award.</h2>
+                    <h2>More Than An <span class="probiz-gradient-text">Award</span></h2>
                     <p>The Official Finalist Experience is priced at {{ $event['finalist_price'] }} and includes {{ $event['finalist_invitations'] }}, finalist recognition, a business profile, campaign assets and event participation.</p>
                     <div class="probiz-actions">
                         <a href="{{ url('/finalist-package') }}" class="btn-nominate">View Finalist Experience</a>
@@ -257,7 +270,7 @@
             <div class="probiz-final-cta">
                 <div>
                     <div class="probiz-kicker">Partners</div>
-                    <h2>Partner with ProBiz Awards</h2>
+                    <h2><span class="probiz-light-title">Partner With</span> <span class="probiz-gradient-text">ProBiz Awards</span></h2>
                     <p>Explore Title, Platinum, Gold, Category and Table partnership options with clear hospitality allocations and event visibility.</p>
                 </div>
                 <a href="{{ url('/sponsors') }}" class="btn-nominate">View Sponsorship Packages</a>

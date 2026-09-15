@@ -22,7 +22,11 @@
     <section class="probiz-page-hero probiz-masthead {{ $isHowItWorksPage ? 'probiz-how-hero' : '' }}" style="background-image: url('{{ asset($imageBase.'/'.$simpleImage) }}')">
         <div class="container">
             <div class="probiz-kicker">{{ $page['eyebrow'] ?? 'ProBiz Awards 2026 Dubai' }}</div>
-            <h1>{{ $page['title'] }}</h1>
+            @if($isHowItWorksPage)
+                <h1><span class="probiz-light-title">Your journey to</span> <span class="probiz-gradient-text">ProBiz Awards 2026</span></h1>
+            @else
+                <h1>{{ $page['title'] }}</h1>
+            @endif
             <p>{{ $page['intro'] }}</p>
             @if(!empty($page['buttons']))
                 <div class="probiz-actions">

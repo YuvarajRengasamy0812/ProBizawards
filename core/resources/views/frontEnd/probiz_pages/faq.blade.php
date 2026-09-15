@@ -23,7 +23,7 @@
                     ['What is ProBiz Awards?', 'ProBiz Awards 2026 Dubai recognises businesses, entrepreneurs and professionals across the UAE through a category-based awards programme and gala celebration.'],
                     ['When and where is the gala?', 'The gala is on 11 December 2026 at Falcon Ballroom 1 + 2, Le Meridien Dubai Hotel & Conference Centre, Airport Road, Dubai, UAE. Detailed timings will be shared before the event.'],
                     ['Who can submit a nomination?', 'Eligible businesses, entrepreneurs and professionals with relevant UAE activity can enter the appropriate category. Each entry is reviewed for eligibility and category fit.'],
-                    ['Which categories are available?', 'The programme includes 50 main awards across 10 industry pillars and 20 special restaurant distinctions. Visit Award Categories to find a suitable award.'],
+                    ['Which categories are available?', 'The programme includes 50 main awards across 10 categories and 20 special restaurant distinctions. Visit Award Categories to find a suitable award.'],
                     ['How do I nominate?', 'Choose your award category, complete the nomination form and provide accurate details about your work. Our team will review the entry and explain the next steps.'],
                     ['Does nomination make me a finalist?', 'No. Nomination, shortlisting and confirmed finalist participation are separate stages.'],
                     ['What is the finalist package?', 'The Official Finalist Experience is AED 5,000 and includes three gala dinner invitations, a company profile, an official finalist announcement, campaign assets, a digital badge and the event inclusions listed on the package page.'],

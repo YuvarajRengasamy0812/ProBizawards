@@ -25,7 +25,7 @@ class ProBizPageController extends Controller
                 'intro' => 'ProBiz Awards 2026 Dubai celebrates achievement across the UAE business community. The programme brings together businesses, entrepreneurs, professionals and industry leaders through award nominations, finalist recognition, promotional activity and a gala evening in Dubai.',
                 'sections' => [
                     ['title' => 'Our Purpose', 'body' => 'We aim to give business achievement a clear platform: an opportunity to present meaningful work, build visibility and connect with people across industries. ProBiz recognises both business performance and the people behind it.'],
-                    ['title' => 'Who Can Participate', 'body' => 'Eligible businesses, entrepreneurs and professionals with relevant UAE activity can explore the award categories. The programme covers ten industry pillars, with additional restaurant distinctions celebrating the country\'s diverse dining scene. Eligibility is assessed against the requirements of each category.'],
+                    ['title' => 'Who Can Participate', 'body' => 'Eligible businesses, entrepreneurs and professionals with relevant UAE activity can explore the award categories. The programme covers ten business categories, with additional restaurant distinctions celebrating the country\'s diverse dining scene. Eligibility is assessed against the requirements of each category.'],
                     ['title' => 'What Participants Can Expect', 'body' => 'A category-based nomination process, eligibility review and shortlisting. Selected finalists receive participation details before confirmation. Confirmed finalists take part in the applicable evaluation and voting process and the ProBiz gala experience.'],
                     ['title' => 'Credibility Statement', 'body' => 'Recognition is subject to eligibility checks and the process published for each category. Finalist participation and sponsorship do not guarantee a category win.'],
                 ],
@@ -41,7 +41,7 @@ class ProBizPageController extends Controller
     {
         return view('frontEnd.probiz_pages.categories', $this->baseData() + [
             'metaTitle' => 'Award Categories | ProBiz Awards 2026 Dubai',
-            'metaDescription' => 'Explore 10 industry pillars, 50 main awards and 20 restaurant distinctions. Find the right ProBiz category for your business or achievement.',
+            'metaDescription' => 'Explore 10 award categories, 50 main awards and 20 restaurant distinctions. Find the right ProBiz category for your business or achievement.',
         ]);
     }
 
@@ -89,7 +89,7 @@ class ProBizPageController extends Controller
                 'title' => 'Your Journey to ProBiz Awards 2026',
                 'intro' => 'From choosing a category to joining the gala, here is how the ProBiz nomination and recognition process works.',
                 'sections' => [
-                    ['title' => '1. Choose Your Category', 'body' => 'Explore the award pillars and restaurant distinctions. Select the category that best represents your business, professional work or achievement.'],
+                    ['title' => '1. Choose Your Category', 'body' => 'Explore the award categories and restaurant distinctions. Select the category that best represents your business, professional work or achievement.'],
                     ['title' => '2. Submit Your Nomination', 'body' => 'Complete the nomination form with accurate details and a clear summary of your achievements. Include relevant supporting information.'],
                     ['title' => '3. Eligibility Review', 'body' => 'The ProBiz team reviews your entry for eligibility, identity and category relevance. We may contact you if further details are required.'],
                     ['title' => '4. Shortlisting', 'body' => 'Qualified entries may be shortlisted. The team will explain the next steps to selected nominees.'],
@@ -157,7 +157,7 @@ class ProBizPageController extends Controller
     {
         return view('frontEnd.probiz_pages.sponsors', $this->baseData() + [
             'metaTitle' => 'Sponsorship | ProBiz Awards 2026 Dubai',
-            'metaDescription' => 'Explore ProBiz Awards partnership options, from Title Partner to Category and Table partnerships. View prices, gala seats and brand visibility benefits.',
+            'metaDescription' => 'Explore ProBiz Awards 2026 Dubai partnership options, from Title Partner to Category and Table partnerships. View prices, gala seats and brand visibility benefits.',
         ]);
     }
 

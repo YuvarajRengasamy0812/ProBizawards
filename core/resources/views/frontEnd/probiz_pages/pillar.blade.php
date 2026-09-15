@@ -14,7 +14,7 @@
             <h1>{{ $pillar['title'] }}</h1>
             <p>{{ $pillar['description'] }}</p>
             <div class="probiz-actions">
-                <a href="{{ url('/nominate?pillar='.$pillar['slug']) }}" class="btn-nominate">Nominate for an Award in This Pillar</a>
+                <a href="{{ url('/nominate?pillar='.$pillar['slug']) }}" class="btn-nominate">Nominate for an Award in This Category</a>
                 @if($pillar['slug'] === 'food-chef-hospitality')
                     <a href="{{ url('/restaurant-awards') }}" class="btn-sponsor">Restaurant Distinctions</a>
                 @endif
