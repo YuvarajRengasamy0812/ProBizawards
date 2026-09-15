@@ -19,6 +19,7 @@ use App\Http\Controllers\Dashboard\FileManagerController;
 use App\Http\Controllers\Dashboard\TagController;
 use App\Http\Controllers\Dashboard\PopupController;
 use App\Http\Controllers\Dashboard\NominationController;
+use App\Http\Controllers\Dashboard\MediaPartnerController;
 use Illuminate\Support\Facades\Route;
 
 // Admin Home
@@ -102,6 +103,13 @@ Route::post('/{webmasterId}/categories/updateAll', [CategoriesController::class,
 
 
 Route::get('nominations', [NominationController::class,'index'])->name('nominations.index');
+Route::get('media-partners', [MediaPartnerController::class, 'index'])->name('mediaPartners.index');
+Route::get('media-partners/create', [MediaPartnerController::class, 'create'])->name('mediaPartners.create');
+Route::post('media-partners/store', [MediaPartnerController::class, 'store'])->name('mediaPartners.storeAdmin');
+Route::get('media-partners/{mediaPartner}/edit', [MediaPartnerController::class, 'edit'])->name('mediaPartners.edit');
+Route::post('media-partners/{mediaPartner}/update', [MediaPartnerController::class, 'update'])->name('mediaPartners.update');
+Route::post('media-partners/{mediaPartner}/approve', [MediaPartnerController::class, 'approve'])->name('mediaPartners.approve');
+Route::get('media-partners/{mediaPartner}/destroy', [MediaPartnerController::class, 'destroy'])->name('mediaPartners.destroy');
 
 // Topics
 Route::get('/{webmasterId}/topics', [TopicsController::class, 'index'])->name('topics');
@@ -303,5 +311,4 @@ Route::get('/cache-clear', [DashboardController::class, 'cache_clear'])->name('c
 Route::get('/cache-cleared', [DashboardController::class, 'cache_cleared'])->name('cacheCleared');
 // logout
 Route::get('/logout', [DashboardController::class, 'logout'])->name('adminLogout');
-
 

@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Arr;
+use App\Models\MediaPartner;
 
 class ProBizPageController extends Controller
 {
     public function home()
     {
-        return view('frontEnd.probiz', $this->baseData());
+        return view('frontEnd.probiz', $this->baseData() + [
+            'approvedMediaPartners' => $this->approvedMediaPartnerGroups(),
+        ]);
     }
 
     public function about()
     {
-        return view('frontEnd.probiz_pages.simple', $this->baseData() + [
+        return view('frontEnd.probiz_pages.about', $this->baseData() + [
             'metaTitle' => 'About ProBiz Awards | UAE Business Recognition',
             'metaDescription' => 'Learn about ProBiz Awards 2026 Dubai, who can participate and how the programme recognises businesses and professionals across the UAE.',
             'page' => [
@@ -22,7 +25,7 @@ class ProBizPageController extends Controller
                 'intro' => 'ProBiz Awards 2026 Dubai celebrates achievement across the UAE business community. The programme brings together businesses, entrepreneurs, professionals and industry leaders through award nominations, finalist recognition, promotional activity and a gala evening in Dubai.',
                 'sections' => [
                     ['title' => 'Our Purpose', 'body' => 'We aim to give business achievement a clear platform: an opportunity to present meaningful work, build visibility and connect with people across industries. ProBiz recognises both business performance and the people behind it.'],
-                    ['title' => 'Who Can Participate', 'body' => 'Eligible businesses, entrepreneurs and professionals with relevant UAE activity can explore the award categories. The programme covers ten industry pillars, with additional restaurant distinctions celebrating the country\'s diverse dining scene.'],
+                    ['title' => 'Who Can Participate', 'body' => 'Eligible businesses, entrepreneurs and professionals with relevant UAE activity can explore the award categories. The programme covers ten industry pillars, with additional restaurant distinctions celebrating the country\'s diverse dining scene. Eligibility is assessed against the requirements of each category.'],
                     ['title' => 'What Participants Can Expect', 'body' => 'A category-based nomination process, eligibility review and shortlisting. Selected finalists receive participation details before confirmation. Confirmed finalists take part in the applicable evaluation and voting process and the ProBiz gala experience.'],
                     ['title' => 'Credibility Statement', 'body' => 'Recognition is subject to eligibility checks and the process published for each category. Finalist participation and sponsorship do not guarantee a category win.'],
                 ],
@@ -160,9 +163,10 @@ class ProBizPageController extends Controller
 
     public function mediaPartners()
     {
-        return view('frontEnd.probiz_pages.simple', $this->baseData() + [
+        return view('frontEnd.probiz_pages.media-partners', $this->baseData() + [
             'metaTitle' => 'Media Partners | ProBiz Awards 2026 Dubai',
             'metaDescription' => 'Explore media collaboration with ProBiz Awards 2026 Dubai, including business stories, finalist coverage and gala highlights.',
+            'approvedMediaPartners' => $this->approvedMediaPartnerGroups(),
             'page' => [
                 'eyebrow' => 'Media Partners',
                 'title' => 'Connect with the ProBiz Business Community',
@@ -280,6 +284,15 @@ class ProBizPageController extends Controller
                 ],
             ],
         ]);
+    }
+
+    private function approvedMediaPartnerGroups()
+    {
+        return MediaPartner::approved()
+            ->orderBy('category')
+            ->orderBy('company_name')
+            ->get()
+            ->groupBy('category');
     }
 
     private function findAward(string $slug): ?array

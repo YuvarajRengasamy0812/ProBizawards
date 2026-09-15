@@ -34,14 +34,14 @@
                         <span>{{ $award['id'] }}</span>
                         <h3>{{ $award['title'] }}</h3>
                         <p>{{ $award['description'] }}</p>
-                        <div class="probiz-card-actions">
+                        <div class="probiz-card-actions probiz-pillar-card-actions">
                             <a href="{{ url('/awards/'.$award['slug']) }}">View Category</a>
-                            <a href="{{ url('/nominate?category='.$award['id']) }}">Nominate for This Award</a>
+                            <a href="{{ url('/nominate?category='.$award['id']) }}">Nominate</a>
                         </div>
                     </article>
                 @endforeach
             </div>
-            <p class="probiz-note">Every nomination is reviewed for eligibility and category fit. Submission does not confirm finalist status or guarantee a win.</p>
+            <!-- <p class="probiz-note">Every nomination is reviewed for eligibility and category fit. Submission does not confirm finalist status or guarantee a win.</p> -->
         </div>
     </section>
 @endsection

@@ -58,7 +58,7 @@
                 </article>
             </div>
             <p class="probiz-no-results" id="categoryNoResults" hidden>No matching category found. Try another keyword or contact the ProBiz team for guidance.</p>
-            <p class="probiz-note">Every nomination is reviewed for eligibility and category fit. Submission does not confirm finalist status or guarantee a win.</p>
+            <!-- <p class="probiz-note">Every nomination is reviewed for eligibility and category fit. Submission does not confirm finalist status or guarantee a win.</p> -->
         </div>
     </section>
 

@@ -4493,4 +4493,829 @@ body,
     }
 }
 
+/* About page dedicated layout. */
+.probiz-about-hero {
+    min-height: 480px !important;
+    padding: 76px 0 70px !important;
+    background-color: #05060a !important;
+    background-position: right 8% center !important;
+    background-repeat: no-repeat !important;
+    background-size: min(48vw, 620px) auto !important;
+}
+
+.probiz-about-hero h1 {
+    max-width: 700px !important;
+    font-size: clamp(30px, 3vw, 44px) !important;
+    line-height: 1.18 !important;
+}
+
+.probiz-about-hero p {
+    max-width: 690px !important;
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+}
+
+.probiz-about-section {
+    padding-top: 64px !important;
+}
+
+.probiz-about-intro {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 64px;
+    align-items: center;
+    margin-bottom: 58px;
+}
+
+.probiz-about-intro h2,
+.probiz-about-cta h2,
+.probiz-about-cta h3 {
+    font-size: clamp(26px, 2.7vw, 38px);
+    line-height: 1.14;
+    text-transform: uppercase;
+}
+
+.probiz-about-intro p {
+    max-width: 100%;
+    margin: 0;
+}
+
+.probiz-about-flow {
+    position: relative;
+    display: grid;
+    gap: 28px;
+    margin: 0 auto;
+    padding: 8px 0 20px;
+}
+
+.probiz-about-flow::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, transparent, rgba(217, 185, 104, 0.75), transparent);
+}
+
+.probiz-about-flow-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 76px minmax(0, 1fr);
+    align-items: center;
+    min-height: 230px;
+}
+
+.probiz-about-flow-item .probiz-card {
+    min-height: 210px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
+
+.probiz-about-flow-item.is-left .probiz-card {
+    grid-column: 1;
+}
+
+.probiz-about-flow-item.is-right .probiz-card {
+    grid-column: 3;
+}
+
+.probiz-about-number {
+    grid-column: 2;
+    width: 54px;
+    height: 54px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: center;
+    border: 2px solid var(--probiz-gold);
+    border-radius: 50%;
+    background: #05060a;
+    color: var(--probiz-gold);
+    font-weight: 900;
+    z-index: 2;
+    align-self: center;
+}
+
+.probiz-about-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    margin-top: 58px;
+    padding: 28px;
+    border: 1px solid rgba(217, 185, 104, 0.25);
+    border-radius: 12px;
+    background: linear-gradient(145deg, rgba(21, 24, 28, 0.98), rgba(17, 31, 42, 0.72));
+}
+
+@media (max-width: 991px) {
+    .probiz-about-hero {
+        min-height: auto !important;
+        padding: 72px 0 !important;
+        background-position: right top !important;
+        background-size: min(70vw, 430px) auto !important;
+    }
+
+    .probiz-about-intro {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .probiz-about-flow::before {
+        left: 27px;
+        transform: none;
+    }
+
+    .probiz-about-flow-item {
+        grid-template-columns: 56px minmax(0, 1fr);
+        min-height: 0;
+    }
+
+    .probiz-about-flow-item.is-left .probiz-card,
+    .probiz-about-flow-item.is-right .probiz-card {
+        grid-column: 2;
+    }
+
+    .probiz-about-number {
+        grid-column: 1;
+        width: 46px;
+        height: 46px;
+    }
+
+    .probiz-about-cta {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 575px) {
+    .probiz-about-hero h1 {
+        font-size: 28px !important;
+    }
+
+    .probiz-about-hero p {
+        font-size: 15px !important;
+    }
+
+    .probiz-about-flow-item .probiz-card {
+        min-height: 0;
+    }
+}
+
+/* Shared ProBiz card title and action button treatment. */
+.probiz-card h3,
+.probiz-card-body h3 {
+    text-transform: uppercase;
+}
+
+.probiz-card-actions {
+    gap: 10px !important;
+}
+
+.probiz-card-actions a {
+    min-height: 42px;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border: 2px solid var(--probiz-gold);
+    border-radius: 8px;
+    background: linear-gradient(90deg, var(--probiz-gold-deep), var(--probiz-gold-soft), var(--probiz-gold));
+    color: #05060a !important;
+    font-size: 14px;
+    font-weight: 900 !important;
+    line-height: 1.1;
+    text-align: center;
+    text-decoration: none !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.probiz-card-actions a:first-child {
+    background: #d9b968;
+}
+
+.probiz-card-actions a:hover {
+    color: #05060a !important;
+    transform: translateY(-1px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}
+
+.probiz-how-hero {
+    padding: 82px 0 76px !important;
+}
+
+.probiz-how-hero h1 {
+    max-width: 760px !important;
+    font-size: clamp(36px, 4vw, 56px) !important;
+    line-height: 1.12 !important;
+}
+
+.probiz-how-hero p {
+    max-width: 790px !important;
+    text-transform: uppercase;
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+}
+
+.probiz-how-section {
+    overflow: hidden;
+}
+
+.probiz-process-carousel {
+    --probiz-process-gap: 22px;
+    --probiz-process-gap-half: 11px;
+    width: min(100%, 1180px);
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 8px 0 18px;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.probiz-process-track {
+    width: max-content;
+    display: flex;
+    align-items: stretch;
+    gap: var(--probiz-process-gap);
+    animation: probizProcessRoll 38s linear infinite;
+    will-change: transform;
+}
+
+.probiz-process-carousel:hover .probiz-process-track {
+    animation-play-state: paused;
+}
+
+.probiz-process-card {
+    width: clamp(310px, 36vw, 470px);
+    flex: 0 0 clamp(310px, 36vw, 470px);
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.probiz-process-card h3 {
+    min-height: 58px;
+}
+
+.probiz-process-card p {
+    flex: 1;
+}
+
+.probiz-process-card .btn-nominate {
+    width: fit-content;
+    margin-top: 18px;
+    text-decoration: none;
+}
+
+.probiz-pillar-card-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    flex-wrap: nowrap !important;
+}
+
+.probiz-pillar-card-actions a {
+    width: 100%;
+    min-width: 0;
+    padding-inline: 10px;
+}
+
+@keyframes probizProcessRoll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - var(--probiz-process-gap-half)));
+    }
+}
+
+@media (max-width: 767px) {
+    .probiz-how-hero {
+        padding: 66px 0 62px !important;
+        overflow: hidden !important;
+    }
+
+    .probiz-how-hero .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .probiz-how-hero h1 {
+        width: calc(100vw - 40px) !important;
+        max-width: calc(100vw - 40px) !important;
+        font-size: 28px !important;
+        overflow-wrap: anywhere;
+    }
+
+    .probiz-how-hero p {
+        width: min(calc(100vw - 40px), 330px) !important;
+        max-width: min(calc(100vw - 40px), 330px) !important;
+        font-size: 13px !important;
+        overflow-wrap: break-word;
+    }
+
+    .probiz-how-hero .probiz-actions {
+        width: calc(100vw - 40px) !important;
+        max-width: calc(100vw - 40px) !important;
+    }
+
+    .probiz-how-hero .probiz-actions .btn-nominate {
+        width: min(100%, 276px) !important;
+        max-width: 276px !important;
+    }
+
+    .probiz-process-track {
+        max-width: none !important;
+        animation-duration: 32s;
+    }
+
+    .probiz-process-carousel {
+        --probiz-process-gap: 16px;
+        --probiz-process-gap-half: 8px;
+        max-width: 100% !important;
+    }
+
+    .probiz-process-card {
+        width: min(82vw, 340px);
+        max-width: min(82vw, 340px) !important;
+        flex: 0 0 min(82vw, 340px);
+        min-height: 330px;
+    }
+
+    .probiz-pillar-card-actions {
+        gap: 8px !important;
+    }
+
+    .probiz-pillar-card-actions a {
+        font-size: 12px;
+    }
+}
+
+.probiz-media-hero {
+    min-height: 520px !important;
+    padding: 86px 0 78px !important;
+    background-position: center right !important;
+}
+
+.probiz-media-hero::before {
+    background:
+        linear-gradient(90deg, rgba(5, 6, 10, 0.78), rgba(5, 6, 10, 0.44), rgba(5, 6, 10, 0.18)),
+        linear-gradient(180deg, rgba(5, 6, 10, 0.08), rgba(5, 6, 10, 0.44)) !important;
+}
+
+.probiz-media-hero h1 {
+    max-width: 720px !important;
+    font-size: clamp(34px, 3.8vw, 54px) !important;
+    line-height: 1.14 !important;
+}
+
+.probiz-media-hero p {
+    max-width: 760px !important;
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+}
+
+.probiz-media-page-section {
+    overflow: hidden;
+}
+
+.probiz-media-card-carousel {
+    --probiz-media-card-gap: 22px;
+    --probiz-media-card-gap-half: 11px;
+    width: min(100%, 1180px);
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 8px 0 22px;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.probiz-media-card-track {
+    width: max-content;
+    display: flex;
+    align-items: stretch;
+    gap: var(--probiz-media-card-gap);
+    animation: probizMediaCardRoll 28s linear infinite;
+    will-change: transform;
+}
+
+.probiz-media-card-carousel:hover .probiz-media-card-track {
+    animation-play-state: paused;
+}
+
+.probiz-media-info-card {
+    width: clamp(340px, 38vw, 520px);
+    flex: 0 0 clamp(340px, 38vw, 520px);
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.probiz-media-info-card h3 {
+    margin-bottom: 16px;
+}
+
+.probiz-media-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 18px;
+}
+
+.probiz-media-open-btn,
+.probiz-media-modal .btn-nominate,
+.probiz-media-info-card .btn-nominate {
+    color: #05060a !important;
+}
+
+.probiz-media-logo-section {
+    background: #081826 !important;
+}
+
+.probiz-home-process-carousel {
+    --probiz-home-process-gap: 22px;
+    --probiz-home-process-gap-half: 11px;
+    width: min(100%, 1180px);
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 8px 0 20px;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.probiz-home-process-track {
+    width: max-content;
+    display: flex;
+    align-items: stretch;
+    gap: var(--probiz-home-process-gap);
+    animation: probizHomeProcessRoll 36s linear infinite;
+    will-change: transform;
+}
+
+.probiz-home-process-carousel:hover .probiz-home-process-track {
+    animation-play-state: paused;
+}
+
+.probiz-home-process-card {
+    width: clamp(320px, 31vw, 390px);
+    flex: 0 0 clamp(320px, 31vw, 390px);
+    min-height: 268px;
+}
+
+.probiz-home-media-showcase,
+.probiz-home-awards-showcase {
+    overflow: hidden;
+}
+
+.probiz-home-logo-carousel {
+    --probiz-home-logo-gap: 24px;
+    --probiz-home-logo-gap-half: 12px;
+    width: min(100%, 1180px);
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px 0 22px;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
+}
+
+.probiz-home-logo-track {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: var(--probiz-home-logo-gap);
+    animation: probizHomeLogoRoll 34s linear infinite;
+    will-change: transform;
+}
+
+.probiz-home-logo-carousel:hover .probiz-home-logo-track {
+    animation-play-state: paused;
+}
+
+.probiz-home-media-logo {
+    width: clamp(220px, 19vw, 280px);
+    flex: 0 0 clamp(220px, 19vw, 280px);
+    height: 138px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    border: 1px solid rgba(217, 185, 104, 0.34);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.055);
+    text-decoration: none;
+    transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.probiz-home-media-logo:hover {
+    transform: translateY(-3px);
+    border-color: rgba(245, 215, 123, 0.72);
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.probiz-home-media-logo.is-disabled {
+    pointer-events: none;
+}
+
+.probiz-home-media-logo img {
+    max-width: 190px;
+    max-height: 72px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.probiz-home-awards-stack {
+    display: grid;
+    gap: 30px;
+    width: min(100%, 980px);
+    margin: 0 auto;
+}
+
+.probiz-home-awards-tier {
+    text-align: center;
+}
+
+.probiz-home-awards-tier h3 {
+    margin: 0 auto 14px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.probiz-home-awards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px 28px;
+}
+
+.probiz-home-awards-logo {
+    width: 168px;
+    height: 92px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    border-radius: 6px;
+    background: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.probiz-home-awards-logo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 52px rgba(0, 0, 0, 0.32);
+}
+
+.probiz-home-awards-logo img {
+    max-width: 132px;
+    max-height: 58px;
+    object-fit: contain;
+}
+
+.probiz-media-logo-head {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.probiz-media-logo-head h2 {
+    text-transform: uppercase;
+}
+
+.probiz-media-tier-stack {
+    display: grid;
+    gap: 44px;
+}
+
+.probiz-media-tier {
+    text-align: center;
+}
+
+.probiz-media-tier h3 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 22px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 900;
+}
+
+.probiz-media-logo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px 28px;
+    align-items: center;
+    justify-items: center;
+}
+
+.probiz-media-logo-card {
+    width: 100%;
+    min-height: 118px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    border: 1px solid rgba(217, 185, 104, 0.34);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.055);
+    text-decoration: none;
+    transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+}
+
+.probiz-media-logo-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(245, 215, 123, 0.72);
+    background: rgba(255, 255, 255, 0.09);
+}
+
+.probiz-media-logo-card.is-disabled {
+    pointer-events: none;
+}
+
+.probiz-media-logo-card img {
+    max-width: 190px;
+    max-height: 70px;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+}
+
+.probiz-media-logo-card strong,
+.probiz-media-empty h3 {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.probiz-media-empty {
+    width: min(100%, 640px);
+    margin: 0 auto;
+    padding: 34px;
+    text-align: center;
+    border: 1px solid rgba(217, 185, 104, 0.28);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.055);
+}
+
+.probiz-alert-error {
+    border-color: rgba(220, 53, 69, 0.55) !important;
+    color: #ffd8dd !important;
+}
+
+.probiz-form-full {
+    grid-column: 1 / -1;
+}
+
+@keyframes probizMediaCardRoll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - var(--probiz-media-card-gap-half)));
+    }
+}
+
+@keyframes probizHomeProcessRoll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - var(--probiz-home-process-gap-half)));
+    }
+}
+
+@keyframes probizHomeLogoRoll {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - var(--probiz-home-logo-gap-half)));
+    }
+}
+
+@media (max-width: 991px) {
+    .probiz-media-logo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 767px) {
+    .probiz-media-hero {
+        min-height: auto !important;
+        padding: 66px 0 62px !important;
+        overflow: hidden !important;
+    }
+
+    .probiz-media-hero .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .probiz-media-hero h1 {
+        width: calc(100vw - 40px) !important;
+        max-width: calc(100vw - 40px) !important;
+        font-size: 28px !important;
+        overflow-wrap: anywhere;
+    }
+
+    .probiz-media-hero p {
+        width: min(calc(100vw - 40px), 330px) !important;
+        max-width: min(calc(100vw - 40px), 330px) !important;
+        font-size: 13px !important;
+    }
+
+    .probiz-media-card-carousel {
+        --probiz-media-card-gap: 16px;
+        --probiz-media-card-gap-half: 8px;
+        max-width: 100% !important;
+    }
+
+    .probiz-home-process-carousel {
+        --probiz-home-process-gap: 16px;
+        --probiz-home-process-gap-half: 8px;
+        max-width: 100% !important;
+    }
+
+    .probiz-home-logo-carousel {
+        --probiz-home-logo-gap: 16px;
+        --probiz-home-logo-gap-half: 8px;
+        max-width: 100% !important;
+    }
+
+    .probiz-media-card-track,
+    .probiz-home-process-track,
+    .probiz-home-logo-track {
+        max-width: none !important;
+        animation-duration: 24s;
+    }
+
+    .probiz-media-info-card {
+        width: min(82vw, 330px);
+        max-width: min(82vw, 330px) !important;
+        flex: 0 0 min(82vw, 330px);
+        min-height: 290px;
+    }
+
+    .probiz-home-process-card {
+        width: min(82vw, 330px);
+        max-width: min(82vw, 330px) !important;
+        flex: 0 0 min(82vw, 330px);
+        min-height: 280px;
+    }
+
+    .probiz-home-media-logo {
+        width: min(72vw, 260px);
+        max-width: min(72vw, 260px) !important;
+        flex: 0 0 min(72vw, 260px);
+        height: 118px;
+        padding: 20px;
+    }
+
+    .probiz-home-media-logo img {
+        max-width: 170px;
+        max-height: 62px;
+    }
+
+    .probiz-media-logo-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .probiz-media-logo-card {
+        min-height: 104px;
+    }
+
+    .probiz-home-awards-stack {
+        gap: 24px;
+    }
+
+    .probiz-home-awards-grid {
+        gap: 14px;
+    }
+
+    .probiz-home-awards-logo {
+        width: min(42vw, 154px);
+        height: 82px;
+        padding: 14px;
+    }
+
+    .probiz-home-awards-logo img {
+        max-width: 118px;
+        max-height: 50px;
+    }
+}
+
 

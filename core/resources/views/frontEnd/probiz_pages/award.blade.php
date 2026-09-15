@@ -29,7 +29,7 @@
                 <article class="probiz-card"><h3>Selection</h3><p>Selection follows the published process for the category and may include eligibility review, evaluation, voting and final verification.</p></article>
                 <article class="probiz-card"><h3>Dates</h3><p>Nomination and voting deadlines will be displayed after they are confirmed.</p></article>
             </div>
-            <p class="probiz-note">Every nomination is reviewed for eligibility and category fit. Submission does not confirm finalist status or guarantee a win.</p>
+            <p class="probiz-note"></p>
         </div>
     </section>
 @endsection

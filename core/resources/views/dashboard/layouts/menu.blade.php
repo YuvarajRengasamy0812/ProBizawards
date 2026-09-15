@@ -46,6 +46,14 @@ $mnu_title_var2 = "title_" . config('smartend.default_language');
                             <span class="nav-text">Nominations</span>
                         </a>
                     </li>
+                    <li {{ (str_starts_with(Route::currentRouteName() ?? '', 'mediaPartners.')) ? 'class=active' : '' }}>
+                        <a href="{{ route('mediaPartners.index') }}">
+                  <span class="nav-icon">
+                    <i class="material-icons">&#xe02f;</i>
+                  </span>
+                            <span class="nav-text">Media Partners</span>
+                        </a>
+                    </li>
 
 <!-- 
                     @if (config('smartend.geoip_status'))

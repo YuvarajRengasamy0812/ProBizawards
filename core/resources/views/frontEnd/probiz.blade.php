@@ -18,6 +18,54 @@
             'travel-tourism-resorts' => '09-tourism-resorts',
             'it-software-digital-platforms' => '10-digital-platforms',
         ];
+        $approvedHomeMediaPartners = ($approvedMediaPartners ?? collect())->flatten(1)->filter(function ($partner) {
+            return !empty($partner->logo);
+        });
+        $homeMediaFallback = [
+            ['name' => 'Coinstelegram', 'logo' => 'assets/keditor/probiz/assets/partners/coinstelegram.png'],
+            ['name' => 'Cryptoken Media', 'logo' => 'assets/keditor/probiz/assets/CryptokenMedia.png'],
+            ['name' => 'Coins Capture', 'logo' => 'assets/keditor/probiz/assets/partners/coins.png'],
+            ['name' => 'The Coin Republic', 'logo' => 'assets/keditor/probiz/assets/partners/thecoinrepublic.png'],
+            ['name' => 'Financial Markets Media', 'logo' => 'assets/keditor/probiz/assets/partners/financial-markets-media.png'],
+            ['name' => 'Forex Live', 'logo' => 'assets/keditor/probiz/assets/partners/forex-live-1.png'],
+            ['name' => 'FXMAG', 'logo' => 'assets/keditor/probiz/assets/partners/fxmag-1.png'],
+            ['name' => 'Arabic Trader', 'logo' => 'assets/keditor/probiz/assets/partners/arabic-trader.png'],
+        ];
+        $homeAwardTiers = [
+            [
+                'label' => 'Official Sponsor',
+                'logos' => [
+                    ['name' => 'Domino Markets', 'logo' => 'assets/keditor/probiz/assets/sponsors/Domino Markets.png'],
+                ],
+            ],
+            [
+                'label' => 'Event Sponsor',
+                'logos' => [
+                    ['name' => 'Bridging FX', 'logo' => 'assets/keditor/probiz/assets/sponsors/bridgingfx.png'],
+                    ['name' => 'FinxCart', 'logo' => 'assets/keditor/probiz/assets/sponsors/finxcart.png'],
+                ],
+            ],
+            [
+                'label' => 'Co-Sponsors',
+                'logos' => [
+                    ['name' => 'Bridging White', 'logo' => 'assets/keditor/probiz/assets/sponsors/bridging-white.png'],
+                    ['name' => 'Profit White', 'logo' => 'assets/keditor/probiz/assets/sponsors/profit-white.png'],
+                ],
+            ],
+            [
+                'label' => 'Award Winners',
+                'logos' => [
+                    ['name' => 'YaMarkets', 'logo' => 'assets/keditor/probiz/assets/sponsors/9-yamarkets.png'],
+                    ['name' => 'HyroTrader', 'logo' => 'assets/keditor/probiz/assets/sponsors/hyrotrader.png'],
+                    ['name' => 'Leverage Markets', 'logo' => 'assets/keditor/probiz/assets/sponsors/leveragemarkets.png'],
+                    ['name' => 'Pipstone Capital', 'logo' => 'assets/keditor/probiz/assets/pipstones.png'],
+                    ['name' => 'Forexer', 'logo' => 'assets/keditor/probiz/assets/sponsors/10-forexer.png'],
+                    ['name' => 'TradeUltra', 'logo' => 'assets/keditor/probiz/assets/partners/tradeultra.png'],
+                    ['name' => 'Liberty Markets', 'logo' => 'assets/keditor/probiz/assets/sponsors/libertymarkets.png'],
+                    ['name' => 'ArabicBroker', 'logo' => 'assets/keditor/probiz/assets/arabicbroker.png'],
+                ],
+            ],
+        ];
     @endphp
 
     <section class="probiz-hero probiz-composition-hero">
@@ -101,16 +149,89 @@
                 <div class="probiz-kicker">Process</div>
                 <h2>Choose. Submit. Review. Celebrate.</h2>
             </div>
-            <div class="probiz-grid probiz-steps-grid">
-                @foreach(['Choose your category', 'Submit your nomination', 'Eligibility review', 'Shortlisting', 'Confirm finalist participation', 'Evaluation, voting and gala'] as $index => $step)
-                    <article class="probiz-card">
-                        <span>{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
-                        <h3>{{ $step }}</h3>
-                        <p>{{ $index === 4 ? 'Confirmed finalists receive the AED 5,000 finalist experience with three gala dinner invitations.' : 'The ProBiz team will guide eligible entries through the published process for the selected category.' }}</p>
-                    </article>
-                @endforeach
+            <div class="probiz-home-process-carousel" aria-label="ProBiz process">
+                <div class="probiz-home-process-track">
+                    @for($repeat = 0; $repeat < 2; $repeat++)
+                        @foreach(['Choose your category', 'Submit your nomination', 'Eligibility review', 'Shortlisting', 'Confirm finalist participation', 'Evaluation, voting and gala'] as $index => $step)
+                            <article class="probiz-card probiz-home-process-card" aria-hidden="{{ $repeat === 1 ? 'true' : 'false' }}">
+                                <span>{{ str_pad($index + 1, 2, '0', STR_PAD_LEFT) }}</span>
+                                <h3>{{ $step }}</h3>
+                                <p>{{ $index === 4 ? 'Confirmed finalists receive the AED 5,000 finalist experience with three gala dinner invitations.' : 'The ProBiz team will guide eligible entries through the published process for the selected category.' }}</p>
+                            </article>
+                        @endforeach
+                    @endfor
+                </div>
             </div>
             <!-- <p class="probiz-note">Submitting a nomination does not confirm finalist status. Finalist participation does not guarantee category victory.</p> -->
+        </div>
+    </section>
+
+    <section class="probiz-section probiz-home-media-showcase">
+        <div class="container">
+            <div class="probiz-section-head probiz-media-logo-head">
+                <div class="probiz-kicker">Our Media Partners</div>
+                <h2>Media Partners</h2>
+                <p>Approved media partners and event coverage collaborators appear here.</p>
+            </div>
+
+            <div class="probiz-home-logo-carousel" aria-label="Media partner logos">
+                <div class="probiz-home-logo-track">
+                    @for($repeat = 0; $repeat < 2; $repeat++)
+                        @if($approvedHomeMediaPartners->isNotEmpty())
+                            @foreach($approvedHomeMediaPartners as $partner)
+                                <a href="{{ $partner->website ?: '#' }}"
+                                    class="probiz-home-media-logo {{ $partner->website ? '' : 'is-disabled' }}"
+                                    @if($partner->website) target="_blank" rel="noopener noreferrer" @endif
+                                    aria-label="{{ $partner->company_name }}"
+                                    aria-hidden="{{ $repeat === 1 ? 'true' : 'false' }}">
+                                    <img src="{{ asset('uploads/media_partners/'.$partner->logo) }}" alt="{{ $partner->company_name }}">
+                                </a>
+                            @endforeach
+                        @else
+                            @foreach($homeMediaFallback as $partner)
+                                <a href="{{ url('/media-partners') }}"
+                                    class="probiz-home-media-logo"
+                                    aria-label="{{ $partner['name'] }}"
+                                    aria-hidden="{{ $repeat === 1 ? 'true' : 'false' }}">
+                                    <img src="{{ asset($partner['logo']) }}" alt="{{ $partner['name'] }}">
+                                </a>
+                            @endforeach
+                        @endif
+                    @endfor
+                </div>
+            </div>
+
+            <div class="probiz-media-cta">
+                <a href="{{ url('/media-partners') }}" class="btn-nominate probiz-media-open-btn">Become a Media Partner</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="probiz-section probiz-section-alt probiz-home-awards-showcase">
+        <div class="container">
+            <div class="probiz-section-head probiz-media-logo-head">
+                <div class="probiz-kicker">ProBiz Awards Sponsors</div>
+                <h2>Check Who Made The Event Possible</h2>
+            </div>
+
+            <div class="probiz-home-awards-stack">
+                @foreach($homeAwardTiers as $tier)
+                    <div class="probiz-home-awards-tier">
+                        <h3>{{ $tier['label'] }}</h3>
+                        <div class="probiz-home-awards-grid">
+                            @foreach($tier['logos'] as $item)
+                                <a href="{{ url('/sponsors') }}" class="probiz-home-awards-logo" aria-label="{{ $item['name'] }}">
+                                    <img src="{{ asset($item['logo']) }}" alt="{{ $item['name'] }}">
+                                </a>
+                            @endforeach
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="probiz-media-cta">
+                <a href="{{ url('/sponsors') }}" class="btn-nominate probiz-media-open-btn">View Sponsorship Packages</a>
+            </div>
         </div>
     </section>
 

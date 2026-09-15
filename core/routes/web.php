@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\SocialAuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\MediaPartnerController;
 use App\Http\Controllers\ProBizPageController;
 
 use App\Http\Controllers\Dashboard\NominationController;
@@ -115,6 +116,7 @@ Route::post('/', [HomeController::class, 'contact_submited'])->name('contactPage
 
 // - Nominations
 Route::post('nominations/store', [NominationController::class, 'store'])->name('nominations.store');
+Route::post('media-partners/store', [MediaPartnerController::class, 'store'])->name('mediaPartners.store');
 
 
 

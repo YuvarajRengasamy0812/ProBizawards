@@ -16,9 +16,10 @@
             $simpleImage = $images['media'] ?? $simpleImage;
         }
         $isGalaPage = str_contains($eyebrow, 'gala');
+        $isHowItWorksPage = str_contains($eyebrow, 'how it works');
     @endphp
 
-    <section class="probiz-page-hero probiz-masthead" style="background-image: url('{{ asset($imageBase.'/'.$simpleImage) }}')">
+    <section class="probiz-page-hero probiz-masthead {{ $isHowItWorksPage ? 'probiz-how-hero' : '' }}" style="background-image: url('{{ asset($imageBase.'/'.$simpleImage) }}')">
         <div class="container">
             <div class="probiz-kicker">{{ $page['eyebrow'] ?? 'ProBiz Awards 2026 Dubai' }}</div>
             <h1>{{ $page['title'] }}</h1>
@@ -34,7 +35,7 @@
     </section>
 
     @if(!empty($page['sections']))
-        <section class="probiz-section">
+        <section class="probiz-section {{ $isHowItWorksPage ? 'probiz-how-section' : '' }}">
             <div class="container">
                 @if(!$isGalaPage && in_array($simpleImage, [($images['networking'] ?? ''), ($images['gala'] ?? ''), ($images['media'] ?? '')], true))
                     <img class="probiz-wide-image" src="{{ asset($imageBase.'/'.$simpleImage) }}" alt="{{ $page['eyebrow'] ?? 'ProBiz Awards 2026 Dubai' }}">
@@ -50,6 +51,20 @@
                                 </div>
                             </article>
                         @endforeach
+                    </div>
+                @elseif($isHowItWorksPage)
+                    <div class="probiz-process-carousel" aria-label="How It Works steps">
+                        <div class="probiz-process-track">
+                            @for($repeat = 0; $repeat < 2; $repeat++)
+                                @foreach($page['sections'] as $section)
+                                    <article class="probiz-card probiz-process-card" aria-hidden="{{ $repeat === 1 ? 'true' : 'false' }}">
+                                        <h3>{{ $section['title'] }}</h3>
+                                        <p>{{ $section['body'] }}</p>
+                                        <a href="{{ url('/nominate') }}" class="btn-nominate" @if($repeat === 1) tabindex="-1" @endif>Nomination</a>
+                                    </article>
+                                @endforeach
+                            @endfor
+                        </div>
                     </div>
                 @else
                     <div class="probiz-grid probiz-grid-2">
