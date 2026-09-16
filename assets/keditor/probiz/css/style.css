@@ -6411,6 +6411,22 @@ body,
     }
 }
 
+/* Header icons are for mobile and tablet only. */
+@media (min-width: 992px) {
+    body .main-header .probiz-mobile-word-trigger,
+    body .main-header .nav-link > i,
+    body .main-header .dropdown-item > i,
+    body .main-header .cta-buttons a > i {
+        display: none !important;
+    }
+
+    body .main-header .nav-link,
+    body .main-header .dropdown-item,
+    body .main-header .cta-buttons a {
+        gap: 0 !important;
+    }
+}
+
 /* Mobile and tablet menu reliability fix. */
 @media (max-width: 991px) {
     body > .probiz-mobile-word-trigger {

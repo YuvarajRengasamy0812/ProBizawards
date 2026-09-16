@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/responsive.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/keditor/css/tested.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/style.css') }}?v=20260915-mobile-menu-icons-v1">
+    <link rel="stylesheet" href="{{ asset('assets/keditor/probiz/css/style.css') }}?v=20260916-mobile-icons-only-v1">
     <style>
         @media (min-width: 992px) {
             .main-header .navbar-collapse,
